@@ -9,11 +9,14 @@ module.exports = function(grunt){
 		typescript:{
 			mgr:{
 				src:['script/**/*.ts','controller/**/*.ts','directive/script/**/*.ts','klass/**/*.ts','study/**/*.ts'],
-				dest:'script/main.js',
+				// dest:'script/index.js',
 				options:{
-					// module: 'amd', //or commonjs
+					module: 'amd', //or commonjs
 					target: 'es5', //or es3
-					rootDir: 'path/to/typescript/files'
+					// rootDir: 'path/to/typescript/files'
+					// rootDir: '/study2',
+					generateTsConfig:true,
+					 keepDirectoryHierarchy: true
 				}
 			}
 		},
@@ -73,5 +76,8 @@ module.exports = function(grunt){
 			'watch'
 		]
 	);
+
+
+	grunt.registerTask('ts',['typescript:mgr']);
 
 };

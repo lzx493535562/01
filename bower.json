@@ -23,6 +23,8 @@
     "jquery": "~2.2.0",
     "angular-route": "~1.4.8",
     "async": "~1.5.2",
-    "DateJS": "datejs#~1.0.0-rc3"
+    "DateJS": "datejs#~1.0.0-rc3",
+    "requirejs": "~2.1.22"
+
   }
 }
