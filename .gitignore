@@ -1,1 +1,4 @@
 study/
+bower_components/
+node_modules/
+script/main.js
