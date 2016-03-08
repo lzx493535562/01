@@ -1,7 +1,8 @@
 define(["app",
 	"angularRoute",
 	'ctrl-index',
-	"ctrl-mygoodspage"
+	"ctrl-mygoodspage",
+	"ctrl-loginpage"
 	// "ctrl-settlement"
 	],
 	function(app){
@@ -15,6 +16,10 @@ define(["app",
 					.when("/mygoodspage",{
 						templateUrl:"view/mygoodspage.html",
 						controller:"lmMygoodspageCtrl"
+					})
+					.when("/loginpage",{
+					 	templateUrl:"view/loginpage.html",
+					 	controller:"lmLoginpageCtrl"
 					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",

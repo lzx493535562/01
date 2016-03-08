@@ -23,10 +23,14 @@ requirejs.config({
 		// ctrl
 		"ctrl-index":"controller/script/index",
 		"ctrl-mygoodspage":"controller/script/mygoodspage",
+		"ctrl-loginpage":"controller/script/loginpage",
 		// directive
 		"directive-test":"directive/script/test",
 		"directive-mygoods":"directive/script/mygoods",
 		"directive-topbar":"directive/script/topbar",
+		"directive-copyright":"directive/script/copyright",
+		"directive-topmenu":"directive/script/topmenu",
+		"directive-sidebar":"directive/script/sidebar",
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",
