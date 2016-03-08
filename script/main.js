@@ -22,8 +22,11 @@ requirejs.config({
 		// "service-request":"service/script/request",
 		// ctrl
 		"ctrl-index":"controller/script/index",
+		"ctrl-mygoodspage":"controller/script/mygoodspage",
 		// directive
 		"directive-test":"directive/script/test",
+		"directive-mygoods":"directive/script/mygoods",
+		"directive-topbar":"directive/script/topbar",
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",
