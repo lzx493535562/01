@@ -1,7 +1,6 @@
 study/
 bower_components/
 node_modules/
-script/main.js
 tsconfig.json
 controller/dist/
 directive/dist/
