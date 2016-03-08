@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 			},
 			directive:{
 				files:['directive/script/**/*.js'],
-				tasks:["concat"]
+				tasks:['lessChangedAlert',"concat"]
 			},
 			service:{
 				files:['service/script/**/*.js'],
