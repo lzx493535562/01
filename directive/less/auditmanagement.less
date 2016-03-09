@@ -255,5 +255,56 @@ lmauditmanagement {
 				}
 			}
 		}
+		.audit-box {
+			width:350px;
+			min-height:250px;
+			border:1px solid @main-color-border;
+			border-radius:3px;
+			box-shadow:0 0 8px #888;
+			padding:0 20px;
+			position: absolute;
+			.audit-title {
+				width:310px;
+				height:40px;
+				line-height: 40px;
+				border-bottom:1px solid @main-color-border;
+				font-size:16px;
+				text-align: left;
+				padding-left:10px;
+				.close {
+					float:right;
+					font-size:38px;
+					margin-right:10px;
+					cursor: pointer;
+				}
+			}
+			.dismiss-reason {
+				height:43px;
+				line-height: 43px;
+				li {
+					float:left;
+					margin-left:10px;
+				}
+			}
+			.dismiss-text {
+				width:309px;
+				height:120px;
+				border:1px solid @main-color-border;
+				border-radius:3px;
+				outline: none;
+			}
+			.dismiss-btn {
+				float:right;
+				width:80px;
+				height:30px;
+				line-height: 30px;
+				text-align: center;
+				color:#fff;
+				background-color:rgb(251,142,142);
+				border-radius:3px;
+				margin:10px 0;
+				cursor: pointer;
+			}
+		}
 	}
 }
