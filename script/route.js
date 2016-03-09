@@ -3,7 +3,8 @@ define(["app",
 	'ctrl-index',
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
-	"ctrl-loginpage"
+	"ctrl-loginpage",
+	"ctrl-firstpage"
 	// "ctrl-settlement"
 	],
 	function(app){
@@ -25,6 +26,10 @@ define(["app",
 					.when("/loginpage",{
 					 	templateUrl:"view/loginpage.html",
 					 	controller:"lmLoginpageCtrl"
+					})
+					.when("/firstpage",{
+					 	templateUrl:"view/firstpage.html",
+					 	controller:"lmfirstpageCtrl"
 					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",
