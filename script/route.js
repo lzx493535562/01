@@ -5,7 +5,8 @@ define(["app",
 	"ctrl-auditmanagementpage",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
-	"ctrl-firstpage"
+	"ctrl-firstpage",
+	"ctrl-secondpage"
 	// "ctrl-settlement"
 	],
 	function(app){
@@ -35,6 +36,10 @@ define(["app",
 					.when("/firstpage",{
 					 	templateUrl:"view/firstpage.html",
 					 	controller:"lmfirstpageCtrl"
+					})
+					.when("/secondpage",{
+					 	templateUrl:"view/secondpage.html",
+					 	controller:"lmsecondpageCtrl"
 					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",
