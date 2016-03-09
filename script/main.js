@@ -31,6 +31,9 @@ requirejs.config({
 		"directive-copyright":"directive/script/copyright",
 		"directive-topmenu":"directive/script/topmenu",
 		"directive-sidebar":"directive/script/sidebar",
+		"directive-pager":"directive/script/pager",
+		"directive-leftsidebar":"directive/script/leftsidebar",
+
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",

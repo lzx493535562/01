@@ -1,258 +1,194 @@
 @import "../../less/colors.less";
 lmmygoods {
-	.wrap{
-		font-family: "微软雅黑";
-		font-size:14px;
-		color:@main-color-text;
-		.sidebar {
-			float:left;
-			width:200px;
-			height:980px;
-			font-size:16px;
-			background-color: @main-color-background;
-			.current {
-				color:@main-color-current;
+	.right-content {
+		background-color:#fff;
+		padding-left:50px;
+		margin-top:10px;
+		.content-title {
+			width:100%;
+			height:50px;
+			line-height: 50px;
+			text-align: center;
+			background-color:@main-color-background;
+			.title-text {
+				width:120px;
+				background-color:@main-color-current;
 			}
-			ul {
-				li {
-					height:49px;
-					line-height: 49px;
-					text-align: center;
-					border-bottom:1px solid @main-color-border;
-					cursor: pointer;
-					a {
-						height:50px;
-						line-height: 50px;
-						border-bottom:1px solid #fff;
-						display:block;
-						color:@main-color-text;
+		}
+		.goods-detail {
+			width:100%;
+			font-size:14px;
+			tr {
+				width:100%;
+				height:50px;
+				line-height: 50px;
+				td {
+					span {
+						float:left;
+					}
+					.select {
+						width:100px;
+						height:30px;
+						line-height: 30px;
+						border:1px solid #eff1f6;
+						padding-left:10px;
+						margin-top:10px;
+						border-radius:3px;
+						cursor: pointer;
+						.xiala {
+							float: right;
+							margin-right:5px;
+							color:#999;
+							cursor: pointer;
+							font-size: 30px;
+							margin-top:-2px;
+						}
+					}
+					.barcode-input {
+						width:168px;
+						height:30px;
+						line-height: 30px;
+						padding-left:10px;
+						border:1px solid @main-color-border;
+						outline: none;
+					}
+					.btn-box {
+						.btn {
+							width:80px;
+							height:30px;
+							line-height: 30px;
+							text-align: center;
+							border-radius: 3px;
+							cursor: pointer;
+							display: inline-block;
+						}
+						.search-btn {
+							float: left;
+							background-color:@main-color-current;
+							margin-top:10px;
+							.search-icon {
+								float:left;
+								font-size:26px;
+								margin-left:10px;
+							}
+							.search-text {
+								margin-top:2px;
+							}
+						}
+						.batch-search-btn {
+							float: left;
+							background-color:@main-color-blue;
+							color:#fff;
+							margin-top:10px;
+							margin-left:20px;
+						}
+						a {
+							font-size: 12px;
+							color:@main-color-blue;
+							border-bottom:1px solid @main-color-blue;
+							margin-left:10px;
+						}
 					}
 				}
 			}
 		}
-		.right-content {
-			background-color:#fff;
-			padding-left:50px;
-			margin-top:10px;
-			.content-title {
+		.checkbox {
+			float:left;
+			width:14px;
+			height:14px;
+			background:url("../../images/common/checkbox.png");
+			display:inline-block;
+			margin: 14px 10px 0 10px;
+			cursor: pointer;
+		}
+		.checkon {
+			background-position: 0px -14px;
+		}
+		.choose-all {
+			width:100%;
+			height:40px;
+			line-height: 40px;
+			background-color:@main-color-background;
+			.choose-all-text {
+				width:40px;
+				display:inline-block;
+				cursor: pointer;
+			}
+			.down-choose {
+				width:70px;
+				height:26px;
+				line-height: 26px;
+				text-align: center;
+				border-radius:3px;
+				color:@main-color-current;
+				border:1px solid @main-color-current;
+				display:inline-block;
+				margin-bottom:7px;
+				cursor: pointer;
+			}
+			.pager {
+				float:right;
+				font-size: 12px;
+				margin-right:10px;
+				display:flex;
+				.goods-total,.pager-num {
+					margin-right:10px;
+				}
+				.prev,.next {
+					width:50px;
+					height:20px;
+					line-height: 19px;
+					text-align: center;
+					border-radius:3px;
+					margin:10px 10px 0 0;
+					cursor: pointer;
+				}
+				.prev {
+					border:1px solid @main-color-border;
+				}
+				.next {
+					border:1px solid @main-color-current;
+					color:@main-color-current;
+				}
+				.prevNum {
+					color:@main-color-current;
+				}
+			}
+		}
+		.goods-list {
+			width:100%;
+			.thead ,tr{
 				width:100%;
 				height:50px;
 				line-height: 50px;
 				text-align: center;
-				background-color:@main-color-background;
-				.title-text {
-					width:120px;
-					background-color:@main-color-current;
-				}
 			}
-			/*.goods-detail {
+			.thead {
+				font-size:16px;
+				border-bottom:4px solid @main-color-border;					
+			}
+			.tbody {
 				width:100%;
-				margin-top:10px;
-				font-size: 14px;
-				li {
-					float:left;
-					display: inline-block;
-					height:50px;
-					line-height: 50px;
-					margin-right:20px;
-				}
-				.goods-type {
-					.select {
-						float:left;
-						width:100px;
-						height:30px;
-						line-height: 30px;
-						border-radius:3px;
-						border: 1px solid @main-color-border;
-						padding-left:10px;
-						cursor: pointer;
-						margin-top:10px;
-					}
-					.xiala {
-						float:right;
-						color:#999;
-						cursor: pointer;
-						margin-right:5px;
-					}
-				}
-				.type-text {
-					float:left;					
-				}
-				.barcode-input {
-					width:180px;
-					height:30px;
-					line-height: 30px;
-					padding-left:10px;
-					border:1px solid @main-color-border;
-					outline: none;
-				}
-				.btn {
-					width:80px;
-					height:30px;
-					line-height: 30px;
-					text-align: center;
-					border-radius: 3px;
-					cursor: pointer;
-				}
-				.search-btn {
-					background-color:@main-color-current;
-					margin-top:10px;
-				}
-				.batch-search-btn {
-					background-color:#5bb9fe;
-					color:#fff;
-					margin-top:10px;
-				}
-			}*/
-			.goods-detail {
-				width:100%;
-				font-size:14px;
+				font-size:12px;
 				tr {
-					width:100%;
-					height:50px;
-					line-height: 50px;
-					td {
-						span {
-							float:left;
+					border-bottom:2px solid @main-color-border;
+					td  {
+						margin:0;
+						.checkbox-table {
+							margin-top:20px;
 						}
-						.select {
-							width:100px;
-							height:30px;
-							line-height: 30px;
-							border:1px solid #eff1f6;
-							padding-left:10px;
-							margin-top:10px;
-							border-radius:3px;
+						.barcode {
+							
+						}
+						.down,.split,.detail {
+							margin-right:10px;
+							color:@main-color-blue;
 							cursor: pointer;
-							.xiala {
-								float: right;
-								margin-right:5px;
-								color:#999;
-								cursor: pointer;
-							}
-						}
-						.barcode-input {
-							width:168px;
-							height:30px;
-							line-height: 30px;
-							padding-left:10px;
-							/*border:1px solid @main-color-border;*/
-							border:1px solid #eff1f6;
-							outline: none;
-						}
-						.btn-box {
-							.btn {
-								width:80px;
-								height:30px;
-								line-height: 30px;
-								text-align: center;
-								border-radius: 3px;
-								cursor: pointer;
-								display: inline-block;
-							}
-							.search-btn {
-								float: left;
-								/*background-color:@main-color-current;*/
-								background-color:#fccc00;
-								margin-top:10px;
-							}
-							.batch-search-btn {
-								float: left;
-								background-color:#5bb9fe;
-								color:#fff;
-								margin-top:10px;
-								margin-left:20px;
-							}
-							a {
-								font-size: 12px;
-								color:#5bb9fe;
-								border-bottom:1px solid #5bb9fe;
-								margin-left:10px;
-							}
 						}
 					}
-				}
-			}
-			.checkbox {
-				float:left;
-				width:14px;
-				height:14px;
-				background:url("../../images/common/checkbox.png");
-				display:inline-block;
-				margin: 13px 10px 0 10px;
-				cursor: pointer;
-			}
-			.checkon {
-				background-position: 0px -14px;
-			}
-			.choose-all {
-				width:100%;
-				height:40px;
-				line-height: 40px;
-				background-color:@main-color-background;
-				.choose-all-text {
-					width:40px;
-					display:inline-block;
-					cursor: pointer;
-				}
-				.down-choose {
-					width:70px;
-					height:26px;
-					line-height: 26px;
-					text-align: center;
-					border-radius:3px;
-					color:@main-color-current;
-					border:1px solid @main-color-current;
-					display:inline-block;
-					margin-bottom:7px;
-					cursor: pointer;
-				}
-				.pager {
-					float:right;
-					font-size: 12px;
-					margin-right:10px;
-					display:flex;
-					.goods-total,.pager-num {
-						margin-right:10px;
-					}
-					.prev,.next {
-						width:50px;
-						height:20px;
-						line-height: 19px;
-						text-align: center;
-						border-radius:3px;
-						margin:10px 10px 0 0;
-						cursor: pointer;
-					}
-					.prev {
-						border:1px solid @main-color-border;
-					}
-					.next {
-						border:1px solid @main-color-current;
-						color:@main-color-current;
-					}
-					.prevNum {
-						color:@main-color-current;
-					}
-				}
-			}
-			.goods-list {
-				width:100%;
-				.thead {
-					width:100%;
-					height:50px;
-					line-height: 50px;
-					text-align: center;
-					font-size:16px;
-					border-bottom:4px solid @main-color-border;
-				}
-				.tbody {
-					width:100%;
-					font-size:12px;
 				}
 			}
 		}
-		
 	}
-	
+
 }
