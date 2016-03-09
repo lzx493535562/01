@@ -1,5 +1,6 @@
 define([
-		'app'
+		'app',
+		'service-user'
 	],function(app){
 		app.service('lmGoodsService', ['$http','lmUserService',function($http,userService){
 			var urlPrefix = 'http://192.168.1.240:88';
@@ -23,7 +24,7 @@ define([
 					url:urlDict.goods,
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken(),
+						access_token:userService.token(),
 						barcode:barcode,
 						name:name,
 						type:type,
@@ -39,7 +40,7 @@ define([
 					url:urlDict.detail.replace('{id}',id),
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken()
+						access_token:userService.token()
 					}
 				});
 			};
@@ -50,7 +51,7 @@ define([
 					url:urlDict.verify,
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken(),
+						access_token:userService.token(),
 						startTime:startTime,
 						endTime:endTime,
 						status:status
@@ -65,7 +66,7 @@ define([
 					url:urlDict.progress.replace('{batchNumber}',batchNumber),
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken()
+						access_token:userService.token()
 					}
 				});
 			};
@@ -76,7 +77,7 @@ define([
 					url:urlDict.info.replace('{batchNumber}',batchNumber),
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken(),
+						access_token:userService.token(),
 						type:type,
 						status:status,
 						barcode:barcode
@@ -90,7 +91,7 @@ define([
 					url:urlDict.info2.replace('{batchNumber}',batchNumber).replace('{barcode}',barcode),
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken()
+						access_token:userService.token()
 					}
 				});
 			};
@@ -101,7 +102,7 @@ define([
 					url:urlDict.submit.replace('{batchNumber}',batchNumber),
 					method:methodDict.post,
 					data:{
-						access_token:userService.getToken(),
+						access_token:userService.token(),
 						barcode:barcode,
 						status:status,
 						rejectType:rejectType,
