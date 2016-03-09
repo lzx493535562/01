@@ -19,7 +19,8 @@ requirejs.config({
 		app:"script/app",
 		
 		// service
-		// "service-request":"service/script/request",
+		"service-goods":"service/script/goods",
+		"service-user":"service/script/user",
 		// ctrl
 		"ctrl-index":"controller/script/index",
 		"ctrl-mygoodspage":"controller/script/mygoodspage",
