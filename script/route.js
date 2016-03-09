@@ -2,6 +2,7 @@ define(["app",
 	"angularRoute",
 	'ctrl-index',
 	"ctrl-mygoodspage",
+	"ctrl-auditmanagementpage",
 	"ctrl-loginpage"
 	// "ctrl-settlement"
 	],
@@ -16,6 +17,10 @@ define(["app",
 					.when("/mygoodspage",{
 						templateUrl:"view/mygoodspage.html",
 						controller:"lmMygoodspageCtrl"
+					})
+					.when("/auditmanagementpage",{
+						templateUrl:"view/auditmanagementpage.html",
+						controller:"lmAuditmanagementpageCtrl"
 					})
 					.when("/loginpage",{
 					 	templateUrl:"view/loginpage.html",
