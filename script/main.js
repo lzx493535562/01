@@ -26,6 +26,7 @@ requirejs.config({
 		"ctrl-loginpage":"controller/script/loginpage",
 		"ctrl-auditmanagementpage":"controller/script/auditmanagementpage",
 		"ctrl-firstpage":"controller/script/firstpage",
+		"ctrl-secondpage":"controller/script/secondpage",
 		// directive
 		"directive-test":"directive/script/test",
 		"directive-mygoods":"directive/script/mygoods",
@@ -37,6 +38,7 @@ requirejs.config({
 		"directive-leftsidebar":"directive/script/leftsidebar",
 		"directive-auditmanagement":"directive/script/auditmanagement",
 		"directive-fpage":"directive/script/fpage",
+		"directive-spage":"directive/script/spage",
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",
