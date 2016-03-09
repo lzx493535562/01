@@ -3,6 +3,7 @@ define(["app",
 	'ctrl-index',
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
+	"ctrl-detailpage",
 	"ctrl-loginpage",
 	"ctrl-firstpage"
 	// "ctrl-settlement"
@@ -22,6 +23,10 @@ define(["app",
 					.when("/auditmanagementpage",{
 						templateUrl:"view/auditmanagementpage.html",
 						controller:"lmAuditmanagementpageCtrl"
+					})
+					.when("/detailpage",{
+						templateUrl:"view/detailpage.html",
+						controller:"lmDetailCtrl"
 					})
 					.when("/loginpage",{
 					 	templateUrl:"view/loginpage.html",

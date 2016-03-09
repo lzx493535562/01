@@ -25,6 +25,7 @@ requirejs.config({
 		"ctrl-mygoodspage":"controller/script/mygoodspage",
 		"ctrl-loginpage":"controller/script/loginpage",
 		"ctrl-auditmanagementpage":"controller/script/auditmanagementpage",
+		"ctrl-detailpage":"controller/script/detailpage",
 		"ctrl-firstpage":"controller/script/firstpage",
 		// directive
 		"directive-test":"directive/script/test",
@@ -36,6 +37,7 @@ requirejs.config({
 		"directive-pager":"directive/script/pager",
 		"directive-leftsidebar":"directive/script/leftsidebar",
 		"directive-auditmanagement":"directive/script/auditmanagement",
+		"directive-detail":"directive/script/detail",
 		"directive-fpage":"directive/script/fpage",
 
 		// addons
