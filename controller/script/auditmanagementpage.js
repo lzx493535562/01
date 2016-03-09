@@ -1,11 +1,11 @@
 define(["app",
-		"directive-mygoods",
+		"directive-auditmanagement",
 		"directive-topbar",
 		"directive-leftsidebar",
 		"directive-pager"
 	],
 	function(app){
-		app.controller("lmMygoodspageCtrl",["$scope",function($scope){
+		app.controller("lmAuditmanagementpageCtrl",["$scope",function($scope){
 
 		}]);
 	}

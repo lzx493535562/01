@@ -1,110 +1,112 @@
-<div class="wrap">
-	<div class="sidebar">
-		<ul>
-			<li>
-				<a class="current" href="javascript:void(0)">我的商品库</a>
-			</li>
-			<li>
-				<a href="javascript:void(0)">审核管理</a>
-			</li>
-		</ul>
+<div class="right-content">
+	<div class="content-title">
+		<div class="title-text">我的商品库</div>
 	</div>
-	<div class="right-content">
-		<div class="content-title">
-			<div class="title-text">我的商品库</div>
-		</div>
-		<!-- <ul class="goods-detail">
-			<li class="goods-type">
-				<div class="type-text">商品类型：</div>
-				<div class="select">
-					全部
+	<table class="goods-detail table">
+		<tr>
+			<td>
+				<span>商品类型：</span>
+				<div class="select">全部
 					<i class="iconfont xiala">&#xe612;</i>
 				</div>
-			</li>
-			<li class="barcode">
-				<div class="type-text">条形码：</div>
+			</td>
+			<td>
+				<span>条形码：</span>
 				<input class="barcode-input" type="text"/>
-			</li>
-			<li class="goods-name">
-				<div class="type-text">商品名称：</div>	
-				<input class="barcode-input" type="text" />
-			</li>
-			<li>
-				<div class="btn search-btn">
-					<i class="iconfont">&#xe611;</i>
-					<span>搜索</span>
+			</td>
+			<td>
+				<span>商品名称：</span>
+				<input class="barcode-input" type="text"/>
+			</td>
+			<td>
+				<div class="btn-box">
+					<div class="btn search-btn">
+						<i class="iconfont search-icon">&#xe611;</i>
+						<span class="search-text">搜索</span>
+					</div>
+					<div class="btn batch-search-btn">批量搜索</div>
+					<a href="javascript:">Excel样例</a>
 				</div>
-			</li>
-			<li>
-				<div class="btn batch-search-btn">批量搜索</div>
-			</li>
-		</ul> -->
-		<table class="goods-detail">
+			</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<div class="choose-all">
+		<div class="checkbox"></div>
+		<div class="choose-all-text">全选</div>
+		<div class="down-choose">下载所选</div>
+		<div class="pager">
+			<div class="goods-total">1234件商品数据</div>
+			<div class="prev">上一页</div>
+			<div class="pager-num"><span class="prevNum">1</span> / 100</div>
+			<div class="next">下一页</div>
+		</div>
+	</div>
+	<table class="goods-list table">
+		<thead class="thead">
+			<tr>
+				<td>条形码</td>
+				<td>商品名称</td>
+				<td>商品类型</td>
+				<td>图片数量</td>
+				<td>详情页数量</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody class="tbody">
 			<tr>
 				<td>
-					<span>商品类型：</span>
-					<div class="select">全部
-						<i class="iconfont xiala">&#xe612;</i>
+					<div>
+						<span class="checkbox checkbox-table"></span>
+						<span class="barcode">123456789987</span>
 					</div>
 				</td>
+				<td>这里是商品名称</td>
+				<td>快消食品</td>
+				<td>10</td>
+				<td>4</td>
 				<td>
-					<span>条形码：</span>
-					<input class="barcode-input" type="text"/>
-				</td>
-				<td>
-					<span>商品名称：</span>
-					<input class="barcode-input" type="text"/>
-				</td>
-				<td>
-					<div class="btn-box">
-						<div class="btn search-btn">
-							<i class="iconfont">&#xe611;</i>
-							搜索
-						</div>
-						<div class="btn batch-search-btn">批量搜索</div>
-						<a href="javascript:">Excel样例</a>
-					</div>
-				</td>
-				<td>
+					<span class="down">下载</span>
+					<span class="split">|</span>
+					<span class="detail">详情</span>
 				</td>
 			</tr>
-		</table>
-		<div class="choose-all">
-			<div class="checkbox"></div>
-			<div class="choose-all-text">全选</div>
-			<div class="down-choose">下载所选</div>
-			<div class="pager">
-				<div class="goods-total">1234件商品数据</div>
-				<div class="prev">上一页</div>
-				<div class="pager-num"><span class="prevNum">1</span> / 100</div>
-				<div class="next">下一页</div>
-			</div>
-		</div>
-		<table class="goods-list">
-			<thead class="thead">
-				<tr>
-					<td>条形码</td>
-					<td>商品名称</td>
-					<td>商品类型</td>
-					<td>图片数量</td>
-					<td>详情页数量</td>
-					<td>操作</td>
-				</tr>
-			</thead>
-			<tbody class="tbody">
-				<tr>
-					<td>
-						<div class="checkbox"></div>
-						<div>123456789987</div>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tbody>	
-		</table>
-	</div>
+			<tr>
+				<td>
+					<div>
+						<span class="checkbox checkbox-table"></span>
+						<span class="barcode">123456789987</span>
+					</div>
+				</td>
+				<td>这里是商品名称</td>
+				<td>快消食品</td>
+				<td>10</td>
+				<td>4</td>
+				<td>
+					<span class="down">下载</span>
+					<span class="split">|</span>
+					<span class="detail">详情</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<span class="checkbox checkbox-table"></span>
+						<span class="barcode">123456789987</span>
+					</div>
+				</td>
+				<td>这里是商品名称</td>
+				<td>快消食品</td>
+				<td>10</td>
+				<td>4</td>
+				<td>
+					<span class="down">下载</span>
+					<span class="split">|</span>
+					<span class="detail">详情</span>
+				</td>
+			</tr>
+		</tbody>	
+	</table>
 </div>
+

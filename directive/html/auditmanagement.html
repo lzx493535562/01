@@ -1,0 +1,172 @@
+<div class="right-content">
+	<div class="content-title">
+		<div class="title-text">审核管理</div>
+	</div>
+	<!--批次列表审核 -->
+	<div class="audit-batch" style="display:none">
+		<div class="content-detail">
+			<div class="time-text">开始时间：</div>
+			<div class="time-detail">
+				<div class="start-date"></div>
+				<div class="split"> — </div>
+				<div class="end-date"></div>
+			</div>
+			<div class="status-text">状态：</div>
+			<div class="status-select">全部
+				<i class="iconfont xiala">&#xe612;</i>
+			</div>
+			<div class="btn search-btn">
+				<i class="iconfont search-icon">&#xe611;</i>
+				<span class="search-text">搜索</span>
+			</div>
+		</div>
+		<table class="batch-list table">
+			<thead class="thead">
+				<tr>
+					<td>批次号</td>
+					<td>批次要求</td>
+					<td>批次开始时间</td>
+					<td>完成进度</td>
+					<td>联系人</td>
+					<td>状态</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td>20160309151430</td>
+					<td>这里是批次要求</td>
+					<td>2016-03-09</td>
+					<td class="progress">点击可查看详细进度</td>
+					<td>项目经理</td>
+					<td>已完成</td>
+					<td class="detail">详细</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--带阴影悬浮框-> 进度详情 -->
+		<div class="progress-detail">
+			<div class="pro-title">进度查看
+				<div class="close">×</div>
+			</div>
+			<ul class="list-detail">
+				<li>
+					<span>已提交数量：</span>
+					<span><span class="count">500</span>个商品</span>
+				</li>
+				<li>
+					<span>已审核数量：</span>
+					<span><span class="count">500</span>个商品</span>
+				</li>
+				<li>
+					<span>已入库数量：</span>
+					<span><span class="count">500</span>个商品</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--单个商品条形码审核 -->
+	<div class="audit-barcode">
+		<div class="content-detail">
+			<div class="goods-data">商品数据：</div>
+			<div class="status-select">全部
+				<i class="iconfont xiala">&#xe612;</i>
+			</div>
+			<div class="status-text">状态：</div>
+			<div class="status-select">全部
+				<i class="iconfont xiala">&#xe612;</i>
+			</div>
+			<div class="barcode-text">条形码：</div>
+			<input class="barcode-input" type="text"/>
+			<div class="btn search-btn">
+				<i class="iconfont search-icon">&#xe611;</i>
+				<span class="search-text">搜索</span>
+			</div>
+		</div>
+		<div class="choose-all">
+			<div class="checkbox"></div>
+			<div class="choose-all-text">全选</div>
+			<div class="batch-audit-btn">批量审核通过</div>
+			<div class="pager">
+				<div class="goods-total">1234件商品数据</div>
+				<div class="prev">上一页</div>
+				<div class="pager-num"><span class="prevNum">1</span> / 100</div>
+				<div class="next">下一页</div>
+			</div>
+		</div>
+		<table class="goods-list table">
+			<thead class="thead">
+				<tr>
+					<td>条形码</td>
+					<td>商品名称</td>
+					<td>商品类型</td>
+					<td>状态</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td>
+						<div>
+							<span class="checkbox checkbox-table"></span>
+							<span class="barcode">123456789987</span>
+						</div>
+					</td>
+					<td>这里是商品名称</td>
+					<td>快消食品</td>
+					<td>已完成</td>
+					<td>
+						<span class="detail">详情</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>
+							<span class="checkbox checkbox-table"></span>
+							<span class="barcode">123456789987</span>
+						</div>
+					</td>
+					<td>这里是商品名称</td>
+					<td>快消食品</td>
+					<td>已完成</td>
+					<td>
+						<span class="detail">详情</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>
+							<span class="checkbox checkbox-table"></span>
+							<span class="barcode">123456789987</span>
+						</div>
+					</td>
+					<td>这里是商品名称</td>
+					<td>快消食品</td>
+					<td>已完成</td>
+					<td>
+						<span class="detail">详情</span>
+					</td>
+				</tr>
+			</tbody>	
+		</table>
+	</div>
+	<!-- 审核悬浮框-->
+	<div class="audit-box">
+		<div class="audit-title">商品名称-审核
+			<div class="close">×</div>
+		</div>
+		<ul class="dismiss-reason">
+			<li>驳回原因</li>
+			<li>
+				 <div class="checkbox"></div>
+				 图模糊
+			</li>
+			<li>
+				<div class="checkbox"></div>
+				 文案不符合
+			</li>
+		</ul>
+		<textarea class="dismiss-text"></textarea>
+		<div class="dismiss-btn">驳回</div>
+	</div>
+</div>

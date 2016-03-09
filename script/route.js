@@ -2,7 +2,10 @@ define(["app",
 	"angularRoute",
 	'ctrl-index',
 	"ctrl-mygoodspage",
-	"ctrl-loginpage"
+	"ctrl-auditmanagementpage",
+	"ctrl-loginpage",
+	"ctrl-firstpage",
+	"ctrl-secondpage"
 	// "ctrl-settlement"
 	],
 	function(app){
@@ -17,9 +20,21 @@ define(["app",
 						templateUrl:"view/mygoodspage.html",
 						controller:"lmMygoodspageCtrl"
 					})
+					.when("/auditmanagementpage",{
+						templateUrl:"view/auditmanagementpage.html",
+						controller:"lmAuditmanagementpageCtrl"
+					})
 					.when("/loginpage",{
 					 	templateUrl:"view/loginpage.html",
 					 	controller:"lmLoginpageCtrl"
+					})
+					.when("/firstpage",{
+					 	templateUrl:"view/firstpage.html",
+					 	controller:"lmfirstpageCtrl"
+					})
+					.when("/secondpage",{
+					 	templateUrl:"view/secondpage.html",
+					 	controller:"lmsecondpageCtrl"
 					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",
