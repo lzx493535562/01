@@ -5,7 +5,7 @@ define([
 	],
 	function(app,cookie){
 		app.service('lmUserService', ['$http',function($http){
-			var urlPrefix = 'http://192.168.1.240:88';
+			var urlPrefix = 'http://192.168.1.240:8002';
 			var urlDict = {
 				login:'/oauth/access_token'
 			};

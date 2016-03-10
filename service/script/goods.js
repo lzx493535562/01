@@ -3,7 +3,7 @@ define([
 		'service-user'
 	],function(app){
 		app.service('lmGoodsService', ['$http','lmUserService',function($http,userService){
-			var urlPrefix = 'http://192.168.1.240:88';
+			var urlPrefix = 'http://192.168.1.240:8001';
 			var urlDict = {
 				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
