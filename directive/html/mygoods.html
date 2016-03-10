@@ -12,20 +12,20 @@
 			</td>
 			<td>
 				<span>条形码：</span>
-				<input class="barcode-input" type="text"/>
+				<input class="barcode-input" ng-model="barcode" type="text"/>
 			</td>
 			<td>
 				<span>商品名称：</span>
-				<input class="barcode-input" type="text"/>
+				<input class="barcode-input" ng-model="keycode" type="text"/>
 			</td>
 			<td>
 				<div class="btn-box">
 					<div class="btn search-btn">
 						<i class="iconfont search-icon">&#xe611;</i>
-						<span class="search-text">搜索</span>
+						<span class="search-text" ng-click="search()">搜索</span>
 					</div>
-					<div class="btn batch-search-btn">批量搜索</div>
-					<a href="javascript:">Excel样例</a>
+					<div class="btn batch-search-btn" ng-click="batchSearch()">批量搜索</div>
+					<a href="./sample/sample.csv" target="_blank">Excel样例</a>
 				</div>
 			</td>
 			<td>
@@ -33,14 +33,14 @@
 		</tr>
 	</table>
 	<div class="choose-all">
-		<div class="checkbox"></div>
+		<div class="checkbox" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>
 		<div class="choose-all-text">全选</div>
 		<div class="down-choose">下载所选</div>
 		<div class="pager">
-			<div class="goods-total">1234件商品数据</div>
-			<div class="prev">上一页</div>
-			<div class="pager-num"><span class="prevNum">1</span> / 100</div>
-			<div class="next">下一页</div>
+			<div class="goods-total">{{totalCount}}件商品数据</div>
+			<div class="prev" ng-click="pagePrev()">上一页</div>
+			<div class="pager-num"><span class="prevNum">{{pageIndex+1}}</span> / {{pageCount}}</div>
+			<div class="next" ng-click="pageNext()">下一页</div>
 		</div>
 	</div>
 	<table class="goods-list table">
@@ -55,58 +55,26 @@
 			</tr>
 		</thead>
 		<tbody class="tbody">
-			<tr>
+			<tr ng-repeat="d in data">
 				<td>
 					<div>
-						<span class="checkbox checkbox-table"></span>
-						<span class="barcode">123456789987</span>
+						<span class="checkbox checkbox-table" ng-class="{'checkon':!!checkids[d.id]}" ng-click="check(d.id)"></span>
+						<span class="barcode">{{d.barcode}}</span>
 					</div>
 				</td>
-				<td>这里是商品名称</td>
-				<td>快消食品</td>
-				<td>10</td>
-				<td>4</td>
+				<td>{{d.name}}</td>
+				<td>{{d.classId|goodsType}}</td>
+				<td>{{d.pictureNum}}</td>
+				<td>{{d.detailPageNum}}</td>
 				<td>
-					<span class="down">下载</span>
+					<span class="down" ng-click="down(d.id)">下载</span>
 					<span class="split">|</span>
-					<span class="detail">详情</span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div>
-						<span class="checkbox checkbox-table"></span>
-						<span class="barcode">123456789987</span>
-					</div>
-				</td>
-				<td>这里是商品名称</td>
-				<td>快消食品</td>
-				<td>10</td>
-				<td>4</td>
-				<td>
-					<span class="down">下载</span>
-					<span class="split">|</span>
-					<span class="detail">详情</span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div>
-						<span class="checkbox checkbox-table"></span>
-						<span class="barcode">123456789987</span>
-					</div>
-				</td>
-				<td>这里是商品名称</td>
-				<td>快消食品</td>
-				<td>10</td>
-				<td>4</td>
-				<td>
-					<span class="down">下载</span>
-					<span class="split">|</span>
-					<span class="detail">详情</span>
+					<span class="detail" ng-click="detail(d.id)">详情</span>
 				</td>
 			</tr>
 		</tbody>	
 	</table>
+	
 </div>
+<lmpager></lmpager>
 

@@ -13,6 +13,10 @@ define([
 				infoPro:'/lingmall/my/verify/info/{batchNumber}/{barcode}',
 				submit:'/lingmall/my/verify/submit/{batchNumber}'
 			};
+			_.each(urlDict,function(v,k){
+				urlDict[k] = urlPrefix + v;
+			});
+
 			var methodDict = {
 				post:'POST',
 				get:'GET'
@@ -23,6 +27,9 @@ define([
 				return $http({
 					url:urlDict.goods,
 					method:methodDict.post,
+					headers: {
+						"Content-Type": "application/json"
+					},
 					data:{
 						access_token:userService.token(),
 						barcode:barcode,
@@ -113,4 +120,4 @@ define([
 
 		}]);
 	}
-);)
+);

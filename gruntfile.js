@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);  
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-jsdoc');
+	// grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.initConfig({  
 		watch: {  
@@ -23,7 +23,9 @@ module.exports = function (grunt) {
 					'css/bundle.css',
 					'service/dist/*.js',
 					'controller/dist/*.js',
-					'<%= jsdoc.dist.options.destination%>/*.html'
+					'filter/dist/*.js'
+					// ,
+					// '<%= jsdoc.dist.options.destination%>/*.html'
 				]  
 			},
 			less:{
@@ -37,6 +39,11 @@ module.exports = function (grunt) {
 				files:['directive/script/**/*.js'],
 				tasks:['lessChangedAlert',"concat"]
 			},
+			filter:{
+				files:['filter/script/**/*.js'],
+				tasks:['lessChangedAlert',"concat"]
+			},
+
 			service:{
 				files:['service/script/**/*.js'],
 				tasks:["concat"]
@@ -46,10 +53,10 @@ module.exports = function (grunt) {
 				tasks:["concat"]
 			},
 			// jsdoc
-			genDoc:{
-				files:['<%= jsdoc.dist.src%>'],
-				tasks:['jsdoc']
-			}
+			// genDoc:{
+			// 	files:['<%= jsdoc.dist.src%>'],
+			// 	tasks:['jsdoc']
+			// }
 		},
 		less:{
 			dev:{
@@ -82,9 +89,12 @@ module.exports = function (grunt) {
 			  separator: ';',
 			},
 			directive: {
-			  // src: ['directive/script/**/*.js'],
 			  src: '<%= watch.directive.files %>',
 			  dest: 'directive/dist/directive-bundle.js',
+			},
+			filter: {
+			  src: '<%= watch.filter.files %>',
+			  dest: 'filter/dist/filter-bundle.js',
 			},
 			service:{
 			  // src: ['service/script/**/*.js'],

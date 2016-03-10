@@ -31,7 +31,8 @@ define([
 
 			this.token = function(token){
 				if(token === undefined){
-					return cookie.get('token');
+					// return cookie.get('token');
+					return cookie.get('token') || '1';
 				}else{
 					cookie.set('token',token);
 				}

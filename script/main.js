@@ -43,6 +43,9 @@ requirejs.config({
 		"directive-fpage":"directive/script/fpage",
 		"directive-spage":"directive/script/spage",
 
+		// filter
+		"filter-goodstype":"filter/script/goodstype",
+
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",
 
