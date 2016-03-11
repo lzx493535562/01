@@ -50,7 +50,7 @@ requirejs.config({
 		"directive-four":"directive/script/four",
 
 		// filter
-		"filter-goodstype":"filter/script/goodstype",
+		"filter-goodsType":"filter/script/goodsType",
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",

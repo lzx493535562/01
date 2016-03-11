@@ -2,7 +2,7 @@ define([
 	"app",
 	'service-goods',
 	'service-img',
-	'filter-goodstype'
+	'filter-goodsType'
 	],function(app){
 	app.directive('lmmygoods',['lmGoodsService','lmImgService',function(goodsService,imgService){
 		// Runs during compile
