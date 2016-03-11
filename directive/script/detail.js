@@ -9,19 +9,19 @@ define(["app",
 			link:function($scope,$element,$attrs){
 
 
-				$scope.getDetail = function(){
+				$scope.getDetail = function(cb){
 					var goodsId = $routeParams.goodsId;
 					goodsService.detail(goodsId)
 					.success(function(data){
 						$scope.data = data;
 						console.log("detail",data);
+						cb && cb();
 					})
 				};
 			
 
 				$scope.getPics = function(){
-					// var code = $scope.data.sku_id;
-					var code ="ceadf0860d50e36d79c0171708640835";
+					var code = $scope.data.sku_id;
 					var xType = 2;
 					imgService.getPics(code,xType,function(err,data){
 						$scope.imgData = data;
@@ -42,9 +42,8 @@ define(["app",
 
 				//
 				$scope.getThumb = function(){
-					//var code = $scope.data.sku_id;
-					var code ="ceadf0860d50e36d79c0171708640835";
-					imgService.getThumb([code],function(err,data){
+					var skuId = $scope.data.sku_id;
+					imgService.getThumb([skuId],function(err,data){
 						if(data[0]){
 							var bigimgData = imgService.getFullurl(data[0].domain+"/"+data[0].key,500);
 							$scope.bigimg = bigimgData;
@@ -56,18 +55,17 @@ define(["app",
 
 				//下载
 				$scope.down = function(){
-					//var code = $scope.data.sku_id;
-					//var skuId = $scope.data.barcode;
-					var code = 6911988018823;
-					var skuId ="ceadf0860d50e36d79c0171708640835";
+					var code = $scope.data.sku_id;
+					var skuId = $scope.data.barcode;
 					var list = {skuId:skuId,code:code};
 					imgService.getZipPro(list);
 				};
 
 
-				$scope.getDetail();
-				$scope.getThumb();				
-				$scope.getPics();
+				$scope.getDetail(function(){
+					$scope.getThumb();				
+					$scope.getPics();
+				});
 			}
 		}
 	}]);
