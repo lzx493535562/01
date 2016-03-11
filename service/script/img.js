@@ -18,7 +18,7 @@ define(["app","underscore","jquery","async","jszip","fileSaver"],function(app,_,
 	*  图片相关服务,包括获取图片,下载图片等等
 	* @namespace imageService
 	*/
-	app.service("lmimgservice",function(){
+	app.service("lmImgService",function(){
 		/**
 		* 获取缩略图
 		* @alias getThumb22

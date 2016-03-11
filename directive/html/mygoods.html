@@ -16,7 +16,7 @@
 			</td>
 			<td>
 				<span>商品名称：</span>
-				<input class="barcode-input" ng-model="keycode" type="text"/>
+				<input class="barcode-input" ng-model="keyword" type="text"/>
 			</td>
 			<td>
 				<div class="btn-box">
@@ -69,7 +69,9 @@
 				<td>
 					<span class="down" ng-click="down(d.id)">下载</span>
 					<span class="split">|</span>
-					<span class="detail" ng-click="detail(d.id)">详情</span>
+					<span class="detail">
+						<a  ng-href="#/detailpage/{{d.goodsId}}" target="_blank">详情</a>
+					</span>
 				</td>
 			</tr>
 		</tbody>	

@@ -1,9 +1,10 @@
 define([
 	"app",
 	'service-goods',
+	'service-img',
 	'filter-goodstype'
 	],function(app){
-	app.directive('lmmygoods',['lmGoodsService',function(goodsService){
+	app.directive('lmmygoods',['lmGoodsService','lmImgService',function(goodsService,imgService){
 		// Runs during compile
 		return {
 			// name: '',
@@ -101,6 +102,14 @@ define([
 							delete $scope.checkids[k];
 						});
 					});
+				};
+
+				//下载
+				$scope.down = function(id){
+					var barcode = _.find($scope.data,function(n){return n.id == id;}).barcode;
+					var skuId ="ceadf0860d50e36d79c0171708640835";
+					var list = {skuId:skuId,code:barcode};
+					imgService.getZipPro(list);
 				};
 
 				$scope.listen();
