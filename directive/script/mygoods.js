@@ -104,12 +104,26 @@ define([
 					});
 				};
 
-				//下载
-				$scope.down = function(id){
-					var barcode = _.find($scope.data,function(n){return n.id == id;}).barcode;
-					var skuId ="ceadf0860d50e36d79c0171708640835";
-					var list = {skuId:skuId,code:barcode};
+				// 下载
+				$scope.down = function(idList){
+					idList = _.isArray(idList) ? idList : [idList];
+					if(idList.length==0){return;}
+					var list = _.map(idList,function(id){
+						var item = _.find($scope.data,function(n){return n.id == id;});
+						var skuId = item.sku_id;
+						var barcode = item.barcode;
+						return {skuId:skuId,code:barcode};
+					});
 					imgService.getZipPro(list);
+				};
+
+				// 选择下载
+				$scope.downChoose = function(){
+					var idList = [];
+					_.each($scope.checkids,function(v,k){
+						v && idList.push(k);
+					});
+					$scope.down(idList);
 				};
 
 				// 初始化csv上传控件
