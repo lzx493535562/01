@@ -6,7 +6,9 @@ define(["app",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
 	"ctrl-firstpage",
-	"ctrl-secondpage"
+	"ctrl-secondpage",
+	"ctrl-thirdpage",
+	"ctrl-fourpage",
 	// "ctrl-settlement"
 	],
 	function(app){
@@ -25,7 +27,7 @@ define(["app",
 						templateUrl:"view/auditmanagementpage.html",
 						controller:"lmAuditmanagementpageCtrl"
 					})
-					.when("/detailpage",{
+					.when("/detailpage/:goodsId",{
 						templateUrl:"view/detailpage.html",
 						controller:"lmDetailCtrl"
 					})
@@ -40,6 +42,14 @@ define(["app",
 					.when("/secondpage",{
 					 	templateUrl:"view/secondpage.html",
 					 	controller:"lmsecondpageCtrl"
+					})
+					.when("/thirdpage",{
+						templateUrl:"view/thirdpage.html",
+						controller:"lmThirdpageCtrl"
+					})
+					.when("/fourpage",{
+						templateUrl:"view/fourpage.html",
+						controller:"lmfourpageCtrl"
 					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",

@@ -30,6 +30,8 @@ requirejs.config({
 		"ctrl-detailpage":"controller/script/detailpage",
 		"ctrl-firstpage":"controller/script/firstpage",
 		"ctrl-secondpage":"controller/script/secondpage",
+		"ctrl-thirdpage":"controller/script/thirdpage",
+		"ctrl-fourpage":"controller/script/fourpage",
 		// directive
 		"directive-test":"directive/script/test",
 		"directive-mygoods":"directive/script/mygoods",
@@ -41,8 +43,11 @@ requirejs.config({
 		"directive-leftsidebar":"directive/script/leftsidebar",
 		"directive-auditmanagement":"directive/script/auditmanagement",
 		"directive-detail":"directive/script/detail",
-		"directive-fpage":"directive/script/fpage",
-		"directive-spage":"directive/script/spage",
+		"directive-first":"directive/script/first",
+		"directive-second":"directive/script/second",
+		"directive-third":"directive/script/third",
+		"directive-login":"directive/script/login",
+		"directive-four":"directive/script/four",
 
 		// filter
 		"filter-goodstype":"filter/script/goodstype",
