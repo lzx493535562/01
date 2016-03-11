@@ -25,7 +25,7 @@ define(["app",
 						templateUrl:"view/auditmanagementpage.html",
 						controller:"lmAuditmanagementpageCtrl"
 					})
-					.when("/detailpage",{
+					.when("/detailpage/:goodsId",{
 						templateUrl:"view/detailpage.html",
 						controller:"lmDetailCtrl"
 					})
