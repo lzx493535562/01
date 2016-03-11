@@ -2,20 +2,22 @@ define(["app",
 		"service-goods",
 		"service-img"
 	],function(app){
-	app.directive("lmdetail",["lmGoodsService","lmimgservice",function(goodsService,imgservice){
+	app.directive("lmdetail",["$routeParams","lmGoodsService","lmimgservice",function($routeParams,goodsService,imgservice){
 		return {
 			restrict:"E",
 			templateUrl:"../directive/html/detail.html",
 			link:function($scope,$element,$attrs){
 
+
 				$scope.getDetail = function(){
-					goodsService.detail(2)
+					var goodsId = $routeParams.goodsId;
+					goodsService.detail(goodsId)
 					.success(function(data){
 						$scope.data = data;
 						console.log("detail",data);
 					})
 				};
-				$scope.getDetail();
+			
 
 				$scope.getPics = function(){
 					// var code = $scope.data.sku_id;
@@ -37,7 +39,6 @@ define(["app",
 						$scope.$apply();
 					});
 				};
-				$scope.getPics();
 
 				//
 				$scope.getThumb = function(){
@@ -52,16 +53,21 @@ define(["app",
 						}
 					})
 				};
-				$scope.getThumb();
 
 				//下载
 				$scope.down = function(){
 					//var code = $scope.data.sku_id;
+					//var skuId = $scope.data.barcode;
 					var code = 6911988018823;
 					var skuId ="ceadf0860d50e36d79c0171708640835";
 					var list = {skuId:skuId,code:code};
 					imgservice.getZipPro(list);
 				};
+
+
+				$scope.getDetail();
+				$scope.getThumb();				
+				$scope.getPics();
 			}
 		}
 	}]);
