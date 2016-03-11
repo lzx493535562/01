@@ -1,17 +1,25 @@
 <div class="detail-title">
 	<div class="title">
-		<div class="goods-name">双鱼牌猪肉铺100g</div>
+		<div class="goods-name">{{data.name}}</div>
 		<div class="down-box">
-			<div class="select">下载全部
+			<!-- <div class="select">下载全部
 				<i class="iconfont xiala">&#xe612;</i>
-			</div>
-			<div class="down">立即下载</div>
+			</div> -->
+			<div class="down" ng-click="down()">立即下载</div>
+			<!-- <ul class="img-type">
+				<li>下载全部
+					<i class="iconfont xiala">&#xe612;</i>
+				</li>
+				<li>主图</li>
+				<li>细节图</li>
+				<li>标签图</li>
+			</ul> -->
 		</div>
 	</div>
 </div>
 <div class="detail-content">
 	<div class="detail-left">
-		<img src="">
+		<img ng-src="{{bigimg}}">
 	</div>
 	<div class="detail-right">
 		<div class="right-title">(共11张图片)</div>
@@ -21,41 +29,29 @@
 				<dd>
 					<div class="list-title">主图</div>
 					<ul class="img-list">
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li ng-repeat="d in pics_main">
+							<img ng-src="{{d}}">
+						</li>
 					</ul>
 				</dd>
 				<dd>
 					<div class="list-title">细节图</div>
 					<ul class="img-list">
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li ng-repeat="d in pics_detail">
+							<img ng-src="{{d}}">
+						</li>
 					</ul>
 				</dd>
 				<dd>
 					<div class="list-title">标签图</div>
 					<ul class="img-list">
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
+						<li ng-repeat="d in pics_tag">
+							<img ng-src="{{d}}">
+						</li>
 					</ul>
 				</dd>
 			</dl>
-			<div class="detail-btn">查看详情页</div>
 		</div>
+		<div class="detail-btn">查看详情页</div>
 	</div>
 </div>
