@@ -1,5 +1,5 @@
 define(["app"],function(app){
-	app.directive("lmleftsidebar",[function(){
+	app.directive("lmleftsidebar",['$window',function($window){
 		return {
 			restrice:"E",
 			templateUrl:"../directive/html/leftsidebar.html",
@@ -10,11 +10,11 @@ define(["app"],function(app){
 					{name:'共享数据',url:'goodsdata'}
 				];
 
-				$scope.linkTo = function(menuName){
-					// var menu = _.find($scope.menuData,function(menu){return menu.name == })
-				};
-
-				$scope.sidebarHeight = window.innerHeight-80;
+				$window.onresize = _.debounce(function(){
+					$scope.sidebarHeight = $window.innerHeight-80;
+					$scope.$apply();
+				},200);
+				$($window).trigger('resize');
 			}
 		}
 	}]);
