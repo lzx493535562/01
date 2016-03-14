@@ -3,6 +3,7 @@ define(["app",
 	'ctrl-index',
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
+	"ctrl-categorydatapage",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
 	"ctrl-firstpage",
@@ -26,6 +27,10 @@ define(["app",
 					.when("/auditmanagementpage",{
 						templateUrl:"view/auditmanagementpage.html",
 						controller:"lmAuditmanagementpageCtrl"
+					})
+					.when("/categorydatapage",{
+						templateUrl:"view/categorydatapage.html",
+						controller:"lmCategorydatapageCtrl"
 					})
 					.when("/detailpage/:goodsId",{
 						templateUrl:"view/detailpage.html",
