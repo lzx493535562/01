@@ -1,10 +1,7 @@
 <div class="sidebar" style="height:{{sidebarHeight}}px;">
 	<ul>
-		<li>
-			<a class="current" href="javascript:void(0)">我的商品库</a>
-		</li>
-		<li>
-			<a href="javascript:void(0)">审核管理</a>
+		<li ng-repeat="m in menuData">
+			<a ng-class="{'current':m.name==currName}" ng-href="#/{{m.url}}">{{m.name}}</a>
 		</li>
 	</ul>
 </div>

@@ -4,17 +4,10 @@ define(["app"],function(app){
 			restrice:"E",
 			templateUrl:"../directive/html/leftsidebar.html",
 			link:function($scope,$element,$attrs){
+				$scope.currName = $attrs.menuName;
 				$scope.menuData = [
 					{name:'我的商品库',url:'mygoodspage'},
-					{name:'定制化服务',children:[
-						{name:'服务状态',url:''},
-						{name:'服务订购',url:''}
-					]},
-					{name:'共享数据',children:[
-						{name:'商品数据',url:''},
-						{name:'商品数据',url:''},
-					]},
-					{name:'订单管理',children:[],url:''},
+					{name:'共享数据',url:'goodsdata'}
 				];
 
 				$scope.linkTo = function(menuName){
