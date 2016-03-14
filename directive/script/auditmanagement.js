@@ -1,4 +1,7 @@
-define(["app"],function(app){
+define(["app",
+		"directive-allorders",
+		"directive-verify"
+	],function(app){
 		app.directive("lmauditmanagement",[function(){
 			return {
 				restrict:"E",

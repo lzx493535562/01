@@ -47,6 +47,8 @@ requirejs.config({
 		"directive-detail":"directive/script/detail",
 		"directive-headbar":"directive/script/headbar",
 		"directive-categorydata":"directive/script/categorydata",
+		"directive-allorders":"directive/script/allorders",
+		"directive-verify":"directive/script/verify",
 		"directive-modal":"directive/script/modal",
 		"directive-first":"directive/script/first",
 		"directive-second":"directive/script/second",
