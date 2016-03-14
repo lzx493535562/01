@@ -43,6 +43,7 @@ requirejs.config({
 		"directive-leftsidebar":"directive/script/leftsidebar",
 		"directive-auditmanagement":"directive/script/auditmanagement",
 		"directive-detail":"directive/script/detail",
+		"directive-headbar":"directive/script/headbar",
 		"directive-first":"directive/script/first",
 		"directive-second":"directive/script/second",
 		"directive-third":"directive/script/third",

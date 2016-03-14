@@ -1,0 +1,34 @@
+@import "../../less/colors.less";
+lmheadbar {
+	.header {
+		width:100%;
+		height:30px;
+		line-height: 30px;
+		background-color:@main-color-background;
+		font-size: 12px;
+		padding:0 20px;
+		cursor: pointer;
+		.gohome {
+			display:inline-block;
+		}
+		.split {
+			width:1px;
+			height:16px;
+			margin-top:8px;
+			color:#999;
+		}
+		.headbar {
+			float:right;
+			li{
+				float:left;
+				padding-right:10px;
+				a {
+					height:30px;
+					line-height: 30px;
+					display:inline-block;
+					color:@main-color-text;
+				}
+			}
+		}
+	}
+}

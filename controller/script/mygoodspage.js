@@ -1,6 +1,7 @@
 define(["app",
 		"directive-mygoods",
 		"directive-topbar",
+		"directive-headbar",
 		"directive-leftsidebar",
 		"directive-pager"
 	],
