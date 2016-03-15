@@ -14,6 +14,7 @@ requirejs.config({
 
 		underscore:"bower_components/underscore/underscore",
 		async:"bower_components/async/dist/async.min",
+		dateJs:'bower_components/DateJS/build/production/date-zh-CN.min',
 		//
 		route:"script/route",
 		app:"script/app",
@@ -61,13 +62,15 @@ requirejs.config({
 
 		// addons
 		"cookie":"bower_components/cookie/cookie.min",
+		'datePicker':'bower_components/DatePicker/js/datepicker',
 
 		// end tail
-		"jquery":"bower_components/jquery/dist/jquery.min"
+		"jquery":"bower_components/jquery/jquery.min"
 	},
 	shim:{
 		'angularRoute':["angular"],
-		"angularMd5":["angular"]
+		"angularMd5":["angular"],
+		'datePicker':['jquery']
 	}
  
 });

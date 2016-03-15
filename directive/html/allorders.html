@@ -4,11 +4,13 @@
 			<div class="time-text">开始时间：</div>
 			<div class="time-detail">
 				<!-- <div class="start-date"></div> -->
-				<datepicker date-format="yyyy-MM-dd">
+				<input type="text" class="start-date" value="{{startTime|date:'yyyy-MM-dd'}}"></input>
+				<!-- <datepicker date-format="yyyy-MM-dd">
 					<input ng-model="startTime" type="text" class="start-date" />
-				</datepicker>
+				</datepicker> -->
 				<div class="split"> — </div>
-				<div class="end-date"></div>
+				<input type="text" class="end-date" value="{{endTime|date:'yyyy-MM-dd'}}"></input>
+
 			</div>
 			<div class="status-text">状态：</div>
 			<div class="status-select">全部

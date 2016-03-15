@@ -1,4 +1,4 @@
-define(["app",'service-goods','dataJs'],function(app){
+define(["app",'service-goods','dateJs','datePicker'],function(app){
 	app.directive("lmallorders",['lmGoodsService',function(goodsService){
 		return {
 			restrict:"E",
@@ -42,7 +42,40 @@ define(["app",'service-goods','dataJs'],function(app){
 					});
 				};
 
+				$scope.bind = function(){
+					var options = 
+					$($elememt).find('.start-date,.end-date').each(function(){
+						$(this).DatePicker({
+							mode: 'single',
+							extraHeight:10,
+							extraWidth:20,
+							// position:'right',
+							// inline: true,
+							// date: new Date(),
+							onChange: function(date,el) {
+								// $(this).val(date.format('Y-m-d'));
+								if($(el).hasClass('start-date')){
+									$scope.startTime = date;
+									$scope.$apply();
+								}else if($(el).hasClass('end-date')){
+									$scope.endTime = date;
+									$scope.$apply();
+								}
+								$(el).DatePickerHide();
+							},
+							locale:{
+								daysMin: ["日", "一", "二", "三", "四", "五", "六"],
+								months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+								monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+							}
+						});
+					});
+					
+				};
+
 				$scope.listen();
+
+				$scope.bind();
 
 				$scope.search();
 			}
