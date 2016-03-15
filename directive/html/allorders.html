@@ -3,7 +3,10 @@
 		<div class="content-detail">
 			<div class="time-text">开始时间：</div>
 			<div class="time-detail">
-				<div class="start-date"></div>
+				<!-- <div class="start-date"></div> -->
+				<datepicker date-format="yyyy-MM-dd">
+					<input ng-model="startTime" type="text" class="start-date" />
+				</datepicker>
 				<div class="split"> — </div>
 				<div class="end-date"></div>
 			</div>
@@ -13,7 +16,7 @@
 			</div>
 			<div class="btn search-btn">
 				<i class="iconfont search-icon">&#xe611;</i>
-				<span class="search-text">搜索</span>
+				<span class="search-text" ng-click="search()">搜索</span>
 			</div>
 		</div>
 		<table class="batch-list table">
@@ -29,34 +32,35 @@
 				</tr>
 			</thead>
 			<tbody class="tbody">
-				<tr>
-					<td>20160309151430</td>
-					<td>这里是批次要求</td>
-					<td>2016-03-09</td>
-					<td class="progress">点击可查看详细进度</td>
-					<td>项目经理</td>
-					<td>已完成</td>
-					<td class="detail">详细</td>
+				<tr ng-repeat="d in data">
+					<td>{{d.batchNumber}}</td>
+					<td>{{d.batchDemand}}</td>
+					<td>{{d.startTime}}</td>
+					<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
+					<td>{{d.contacts}}</td>
+					<td>{{d.status}}</td>
+					<td class="detail" ng-click="detail(d.id)">详细</td>
 				</tr>
 			</tbody>
 		</table>
+		<pager></pager>
 		<!--带阴影悬浮框-> 进度详情 -->
-		<div class="progress-detail">
+		<div class="progress-detail" ng-show="isShowProgress">
 			<div class="pro-title">进度查看
-				<div class="close">×</div>
+				<div class="close" ng-click="closeProgress()">×</div>
 			</div>
 			<ul class="list-detail">
 				<li>
 					<span>已提交数量：</span>
-					<span><span class="count">500</span>个商品</span>
+					<span><span class="count">{{commitNumber}}</span>个商品</span>
 				</li>
 				<li>
 					<span>已审核数量：</span>
-					<span><span class="count">500</span>个商品</span>
+					<span><span class="count">{{progressNumber}}</span>个商品</span>
 				</li>
 				<li>
 					<span>已入库数量：</span>
-					<span><span class="count">500</span>个商品</span>
+					<span><span class="count">{{storageNumber}}</span>个商品</span>
 				</li>
 			</ul>
 		</div>

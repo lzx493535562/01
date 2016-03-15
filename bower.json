@@ -28,6 +28,7 @@
     "angular-md5": "~0.1.10",
     "requirejs": "~2.1.22",
     "jszip": "^2.5.0",
-    "filesaver": "*"
+    "filesaver": "*",
+    "DatePicker": "https://github.com/foxrunsoftware/DatePicker.git"
   }
 }

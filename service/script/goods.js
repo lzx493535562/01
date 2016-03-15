@@ -7,7 +7,7 @@ define([
 			var urlDict = {
 				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
-				verify:'lingmall/my/verify',
+				verify:'/lingmall/my/verify',
 				progress:'/lingmall/my/verify/progress/{batchNumber}',
 				info:'/lingmall/my/verify/info/{batchNumber}',
 				infoPro:'/lingmall/my/verify/info/{batchNumber}/{barcode}',
@@ -53,7 +53,7 @@ define([
 			};
 
 			// 查询审核
-			this.verify = function(startTime,endTime,status){
+			this.verify = function(startTime,endTime,status,pageIndex,pageSize){
 				return $http({
 					url:urlDict.verify,
 					method:methodDict.post,
@@ -61,7 +61,9 @@ define([
 						access_token:userService.token(),
 						startTime:startTime,
 						endTime:endTime,
-						status:status
+						status:status,
+						page:pageIndex-0+1,
+						count:pageSize
 					}
 				});
 			};
