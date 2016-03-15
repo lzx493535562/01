@@ -1,9 +1,147 @@
 @import "../../less/colors.less";
 lmallorders {
-	.audit-batch {
-
+	.allorders {
+		padding-top:20px;
+		/*background-color:@main-color-background;*/
+		.leftbar {
+			float:left;
+			width:200px;
+			height:50px;
+			line-height: 50px;
+			text-align: center;
+			border:1px solid @main-color-border;
+			border-radius:3px;
+			background-color:#fff;
+			margin-left:40px;
+			font-size:16px;
+		}
+		.right-content {
+			padding:0 50px;
+			.content-title {
+				width:100%;
+				height:50px;
+				line-height: 50px;
+				border-bottom:1px solid @main-color-border;
+				.title-text {
+					float:left;
+					font-size: 16px;
+					width:100px;
+					height:20px;
+					line-height: 20px;
+					padding-left:5px;
+					margin-top:15px;
+					border-left:2px solid @main-color-current;
+				}
+				.title-right {
+					float:right;
+					.time-text {
+						display: inline-block;
+					}
+					.time-detail {
+						margin-bottom:10px;
+						display:inline-block;
+						.start-date,.end-date {
+							float:left;
+							width:100px;
+							height:40px;
+							border:1px solid @main-color-border;
+							border-radius:3px;
+							cursor: pointer;
+							display:inline-block;
+						}
+						.split {
+							float:left;
+							width:30px;
+							line-height: 40px;
+							text-align: center;
+						}
+					}
+					.btn {
+						height:40px;
+						line-height: 40px;
+						text-align: center;
+						border-radius:3px;
+						display:inline-block;
+						margin-bottom:10px;
+						cursor: pointer;
+					}
+					.search-btn {
+						width:100px;
+						background-color: @main-color-current;
+					}
+					.custom-service-btn {
+						width:120px;
+						border:1px solid @main-color-border;
+						padding-left:15px;
+						position: relative;
+						margin:0 10px 10px 10px;
+					}
+					.add-icon {
+						width:20px;
+						height:20px;
+						line-height: 17px;
+						border-radius: 10px;
+						border:1px solid @main-color-border;
+						display:inline-block;
+						position: absolute;
+						top:10px;
+						left:10px;
+					}
+				}
+			}
+			.table {
+				width:100%;
+			}
+			.batch-list {
+				font-size:14px;
+				.thead {
+					background-color:#f2f2f2;
+				}
+				tr {
+					width:100%;
+					height:50px;
+					line-height: 50px;
+					text-align: center;
+				}
+				.tbody {
+					font-size:12px;
+					border-top:1px solid @main-color-border;
+					.progress {
+						color:@main-color-blue;
+						cursor: pointer;
+					}
+				}
+			}
+			.detail-btn {
+				float:right;
+				width:100px;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				border:1px solid @main-color-current;
+				border-radius:3px;
+				color:@main-color-current;
+				margin-top:10px;
+				cursor: pointer;
+			}
+			textarea {
+				border:none;
+			}
+			.service-require {
+				width:100%;
+				height:30px;
+				line-height: 30px;
+				border-top:1px solid @main-color-border;
+				border-bottom:1px solid @main-color-border;
+				outline: none;
+				margin-top:10px;
+			}
+		}
 	}
-	.content-detail {
+
+
+
+	/*.content-detail {
 		font-size:14px;
 		width:100%;
 		height:50px;
@@ -107,5 +245,5 @@ lmallorders {
 				}
 			}
 		}
-	}
+	}*/
 }
