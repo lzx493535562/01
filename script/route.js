@@ -17,8 +17,8 @@ define(["app",
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
 					.when("/",{
-						templateUrl:"view/index.html",
-						controller:"lmIndexCtrl"
+						templateUrl:"view/mygoodspage.html",
+						controller:"lmMygoodspageCtrl"
 					})
 					.when("/mygoodspage",{
 						templateUrl:"view/mygoodspage.html",
