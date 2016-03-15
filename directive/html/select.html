@@ -1,0 +1,12 @@
+<div class="status-select" ng-click="toggle()">
+	<div>
+		
+	{{currType.value}}
+	<i class="iconfont xiala">&#xe612;</i>
+	</div>
+	<div ng-show="isShow" class="selector" >
+		<div class="option" ng-repeat="t in types" ng-click="select(t.resid)">
+			{{t.value}}
+		</div>
+	</div>
+</div>

@@ -7,6 +7,7 @@ define(["app",
 	/*"directive-popuplogin",
 	"directive-popupbuy",*/
 	"service-util",
+	'directive-select',
 	"directive-modal"
 	],function(app,_,cookie){
 	app.directive("lmcategorydata",function(){
