@@ -1,119 +1,93 @@
-<!-- <div class="wrap">
-	<div class="container">
-		<dl class="all-category" ng-class="{'moreHeight':isMoreHeight==true}">
-			<dt class="category">所有分类</dt>
-			<dd class="mar-left42" ng-class="{'current':$index==currCategoryIndex}" ng-repeat="c in categoryData" ng-click="setCurrCategoryIndex($index)">{{c.type}}</dd>
-			<span ng-click="seeMore()" ng-show="!isShowSeemore">更多 
-				<i class="iconfont" >&#xe614;</i>
-			</span>
-			<span ng-click="hideMore()" ng-show="isShowSeemore">收起 
-				<i class="iconfont">&#xe63c;</i>
-			</span>
-		</dl>
-		<dl class="sidebar">
-			<dt class="sidebar-title">{{categoryData[currCategoryIndex].type}}</dt>
-			<dd ng-class="{'sidebar-current':$index==currSubcategoryIndex}" ng-repeat="s in (categoryData[currCategoryIndex].subType)" ng-click="setCurrSubcategoryIndex($index)">
-				{{s.type}}
-			</dd>
-		</dl>
-		<div class="right-content">
-			<div class="filter-result">
-				<div class="filter-text">筛选结果 (共<span class="total-count">{{itemCount}}</span>件)</div>
-				<div class="page-min">
-					<i class="iconfont"  ng-click="pagePrev()">&#xe616;</i>
-					
-					<span class="currpage">{{currPage+1}}</span>/
-					<span class="totalpage">{{pageCount}}</span>
-					<i class="iconfont"  ng-click="pageNext()">&#xe615;</i>
-				</div>
-			</div>
-			<div class="filter-box">
-				<div class="result-text">
-					<span>{{categoryData[currCategoryIndex].type}}</span> > 
-					<span>{{categoryData[currCategoryIndex].subType[currSubcategoryIndex].type}}</span>
-				</div>
-				<div class="choose-all">
-					<div class="checkbox" ng-class="{'checkon':isCheckAll}" ng-click="checkId('all')"></div>全选
-					<div  ng-click="batchAddMygood()" ng-class="{'add-goods-btn':canBatchAddGood,'addgoods-btn':!canBatchAddGood}">加入商品库</div>
-				</div>
-			</div>
-			<div class="category-list">
-				<div class="category-detail" ng-repeat="n in data" ng-mouseenter="showCheckbox(n.id)" ng-mouseleave="hideCheckbox()" >
-					<div class="checkbox checkbox-pos" ng-class="{'checkon':checkIds.indexOf(n.id)>=0}" ng-show="currHoverId == n.id || checkIds.indexOf(n.id)>=0" ng-click="checkId(n.id)"></div>
-					<div class="category-img">
-						<img ng-src="{{n.pic}}" ng-click="linkToDetail(n.id)">
-					</div>
-					<div class="category-text">
-						<div class="cate-text">
-							
-						</div>
-						<div class="cate-data">
-							<div class="cate-name">{{n.name}}</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 <div class="goods-content">
 	<div class="content-title">
-		<div class="title-text">共享数据</div>
+		<div class="title-text">数据中心</div>
 	</div>
-	<dl class="all-category" ng-class="{'moreHeight':isMoreHeight==true}">
-		<dt class="category">所有分类</dt>
-		<dd class="mar-left42" ng-class="{'current':$index==currCategoryIndex}" ng-repeat="c in categoryData" ng-click="setCurrCategoryIndex($index)">{{c.type}}</dd>
-		<span ng-click="seeMore()" ng-show="!isShowSeemore">更多 
-			<i class="iconfont" >&#xe614;</i>
-		</span>
-		<span ng-click="hideMore()" ng-show="isShowSeemore">收起 
-			<i class="iconfont">&#xe63c;</i>
-		</span>
-	</dl>
-	<dl class="sidebar">
-		<dt class="sidebar-title">{{categoryData[currCategoryIndex].type}}</dt>
-		<dd ng-class="{'sidebar-current':$index==currSubcategoryIndex}" ng-repeat="s in (categoryData[currCategoryIndex].subType)" ng-click="setCurrSubcategoryIndex($index)">
-			{{s.type}}
-		</dd>
-	</dl>
-	<div class="right-content">
-		<div class="filter-result">
-			<div class="filter-text">筛选结果 (共<span class="total-count">{{itemCount}}</span>件)</div>
-			<div class="page-min">
-				<i class="iconfont"  ng-click="pagePrev()">&#xe616;</i>
-				
-				<span class="currpage">{{currPage+1}}</span>/
-				<span class="totalpage">{{pageCount}}</span>
-				<i class="iconfont"  ng-click="pageNext()">&#xe615;</i>
+	<div class="content-center">
+		<div class="category-box">
+			展开分类
+			<i class="iconfont">&#xe612;</i>
+		</div>
+		<div class="search-box">
+			<input type="text">
+			<div class="search-btn">搜索</div>
+		</div>
+		<div class="batch-btn">批量搜索</div>
+		<div class="shop-cart">我的购物车
+			<i class="iconfont cart">&#xe618;</i>
+			<div class="count">10</div>
+		</div>
+	</div>
+	<div class="content-detail">
+		<div class="detail-top">
+			<div class="curr-pos">当前位置：</div>
+			<div class="category-pos">饼干糕点
+				<div class="close">×</div>
 			</div>
 		</div>
-		<div class="filter-box">
-			<div class="result-text">
-				<span>{{categoryData[currCategoryIndex].type}}</span> > 
-				<span>{{categoryData[currCategoryIndex].subType[currSubcategoryIndex].type}}</span>
-			</div>
+		<div class="category-type">
+			<div class="type-text">休闲食品</div>
+			<ul class="type-detail">
+				<li class="current">饼干糕点</li>
+				<li>糖果巧克力</li>
+				<li>坚果炒货</li>
+				<li>蜜饯果铺</li>
+				<li>零食</li>
+			</ul>
+		</div>
+		<div class="choose-box">
 			<div class="choose-all">
-				<div class="checkbox" ng-class="{'checkon':isCheckAll}" ng-click="checkId('all')"></div>全选
-				<div  ng-click="batchAddMygood()" ng-class="{'add-goods-btn':canBatchAddGood,'addgoods-btn':!canBatchAddGood}">加入商品库</div>
+				<div class="checkbox"></div>全选
+			</div>
+			<div class="addgoods-btn">加入购物车</div>
+			<div class="pager">
+				<span>共2314件商品</span>
+				<span class="pager-btn prev">上一页</span>
+				<span>1/100</span>
+				<span class="pager-btn next">下一页</span>
 			</div>
 		</div>
 		<div class="category-list">
-			<div class="category-detail" ng-repeat="n in data" ng-mouseenter="showCheckbox(n.id)" ng-mouseleave="hideCheckbox()" >
-				<div class="checkbox checkbox-pos" ng-class="{'checkon':checkIds.indexOf(n.id)>=0}" ng-show="currHoverId == n.id || checkIds.indexOf(n.id)>=0" ng-click="checkId(n.id)"></div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
 				<div class="category-img">
-					<img ng-src="{{n.pic}}" ng-click="linkToDetail(n.id)">
+					<img src="">
 				</div>
-				<div class="category-text">
-					<div class="cate-text">
-						<!-- <div class="cate-name">名&nbsp;称:</div> -->
-						<!-- <div class="name-text">条形码:</div> -->
-					</div>
-					<div class="cate-data">
-						<div class="cate-name">{{n.name}}</div>
-						<!-- <div class="name-text">{{n.code}}</div> -->
-					</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
+			</div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
+				<div class="category-img">
+					<img src="">
 				</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
+			</div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
+				<div class="category-img">
+					<img src="">
+				</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
+			</div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
+				<div class="category-img">
+					<img src="">
+				</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
+			</div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
+				<div class="category-img">
+					<img src="">
+				</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
+			</div>
+			<div class="category-detail">
+				<div class="checkbox"></div>
+				<div class="category-img">
+					<img src="">
+				</div>
+				<div class="category-text">韩国进口泡面碗面组合</div>
 			</div>
 		</div>
 	</div>
