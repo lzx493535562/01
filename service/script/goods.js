@@ -5,13 +5,14 @@ define([
 		app.service('lmGoodsService', ['$http','lmUserService',function($http,userService){
 			var urlPrefix = 'http://192.168.1.240:8001';
 			var urlDict = {
+				metadata:'/lingmall/metadata/{type}',
 				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
-				verify:'/lingmall/my/verify',
-				progress:'/lingmall/my/verify/progress/{batchNumber}',
-				info:'/lingmall/my/verify/info/{batchNumber}',
-				infoPro:'/lingmall/my/verify/info/{batchNumber}/{barcode}',
-				submit:'/lingmall/my/verify/submit/{batchNumber}'
+				service:'/lingmall/my/service',
+				progress:'/lingmall/my/service/progress/{batchNumber}',
+				info:'/lingmall/my/service/info/{batchNumber}',
+				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
+				submit:'/lingmall/my/service/submit/{batchNumber}'
 			};
 			_.each(urlDict,function(v,k){
 				urlDict[k] = urlPrefix + v;
@@ -22,14 +23,19 @@ define([
 				get:'GET'
 			};
 
+			// 获取枚举的元数据
+			this.metadata = function(type){
+				return $http({
+					url:urlDict.metadata.replace('{type}',type),
+					method:methodDict.get
+				});
+			};
+
 			// 我的商品库
 			this.goods = function(barcode,name,type,pageIndex,pageSize){
 				return $http({
 					url:urlDict.goods,
 					method:methodDict.post,
-					headers: {
-						"Content-Type": "application/json"
-					},
 					data:{
 						access_token:userService.token(),
 						barcode:barcode,
@@ -53,9 +59,9 @@ define([
 			};
 
 			// 查询审核
-			this.verify = function(startTime,endTime,status,pageIndex,pageSize){
+			this.service = function(startTime,endTime,status,pageIndex,pageSize){
 				return $http({
-					url:urlDict.verify,
+					url:urlDict.service,
 					method:methodDict.post,
 					data:{
 						access_token:userService.token(),

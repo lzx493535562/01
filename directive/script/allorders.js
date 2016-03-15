@@ -22,13 +22,23 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 					var pageIndex = $scope.pageIndex,
 					pageSize = $scope.pageSize;
 					
-					goodsService.verify(startTime,endTime,status,pageIndex,pageSize)
+					goodsService.service(startTime,endTime,status,pageIndex,pageSize)
 					.success(function(data){
 						$scope.data = data.data;
 						$scope.totalCount = data.count;
 						$scope.$emit('afterSearch',data);
 					});
 				},searchDelay);
+
+				$scope.getTypes = function(){
+					var type = 6;
+					goodsService.metadata(type)
+					.success(function(data){
+						$scope.types  = data;
+						$scope.currType = data[0];
+						console.log($scope.types);
+					});
+				};
 
 				$scope.listen = function(){
 					$scope.$on('pageIndexChanged',function(e,args){
@@ -43,7 +53,6 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 				};
 
 				$scope.bind = function(){
-					var options = 
 					$($elememt).find('.start-date,.end-date').each(function(){
 						$(this).DatePicker({
 							mode: 'single',
@@ -76,6 +85,8 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 				$scope.listen();
 
 				$scope.bind();
+
+				$scope.getTypes();
 
 				$scope.search();
 			}
