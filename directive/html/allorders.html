@@ -1,78 +1,93 @@
-
 <div class="allorders">
 	<div class="leftbar">所有服务订单</div>
-<div class="right-content">
-	<div class="audit-batch">
-		<div class="content-detail">
-			<div class="time-text">开始时间：</div>
-			<div class="time-detail">
-				<!-- <div class="start-date"></div> -->
-				<input type="text" class="start-date" value="{{startTime|date:'yyyy-MM-dd'}}"></input>
-				<!-- <datepicker date-format="yyyy-MM-dd">
-					<input ng-model="startTime" type="text" class="start-date" />
-				</datepicker> -->
-				<div class="split"> — </div>
-				<input type="text" class="end-date" value="{{endTime|date:'yyyy-MM-dd'}}"></input>
+	<div class="right-content">
+        <div class="content-title">
+	        <div class="title-text">订购详情</div>
+	        <div class="title-right">
+	            <div class="time-text">交易时间：</div>
+	            <div class="time-detail">
+	                <input type="text" class="start-date" value="{{startTime|date:'yyyy-MM-dd'}}"></input>
+	                <div class="split"> — </div>
+	                <input type="text" class="end-date" value="{{endTime|date:'yyyy-MM-dd'}}"></input>
+	            </div>
+	            <div class="search-btn btn"  ng-click="search()">搜索</div>
+	            <div class="custom-service-btn btn">
+	                <div class="add-icon">+</div>
+	            定制服务
+	            </div>
+	        </div>                
+	    </div>
+		<!-- <div class="audit-batch"> -->
+			<!-- <div class="content-detail">
+				<div class="time-text">开始时间：</div>
+				<div class="time-detail">
+					<input type="text" class="start-date" value="{{startTime|date:'yyyy-MM-dd'}}"></input>
+					<div class="split"> — </div>
+					<input type="text" class="end-date" value="{{endTime|date:'yyyy-MM-dd'}}"></input>
 
-			</div>
-			<div class="status-text">状态：</div>
-			<div class="status-select">全部
-				<i class="iconfont xiala">&#xe612;</i>
-			</div>
-			<div class="btn search-btn">
-				<i class="iconfont search-icon">&#xe611;</i>
-				<span class="search-text" ng-click="search()">搜索</span>
-			</div>
-		</div>
-		<table class="batch-list table">
-			<thead class="thead">
-				<tr>
-					<td>服务号</td>
-					<td>服务类型</td>
-					<td>申请数量</td>
-					<td>申请时间</td>
-					<td>完成进度</td>
-					<td>联系人</td>
-					<td>服务状态</td>
-				</tr>
-			</thead>
-			<tbody class="tbody">
+				</div>
+				<div class="status-text">状态：</div>
+				<div class="status-select">全部
+					<i class="iconfont xiala">&#xe612;</i>
+				</div>
+				<div class="btn search-btn">
+					<i class="iconfont search-icon">&#xe611;</i>
+					<span class="search-text" ng-click="search()">搜索</span>
+				</div>
+			</div> -->
+			<table class="batch-list table">
+				<thead class="thead">
+					<tr>
+						<td>服务号</td>
+						<td>服务类型</td>
+						<td>申请数量</td>
+						<td>申请时间</td>
+						<td>完成进度</td>
+						<td>联系人</td>
+						<td>服务状态</td>
+					</tr>
+				</thead>
+				<tbody class="tbody">
 
-				<tr ng-repeat="d in data">
-					<td>{{d.batchNumber}}</td>
-					<td>{{d.batchDemand}}</td>
-					<td>{{d.startTime}}</td>
-					<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
-					<td>{{d.contacts}}</td>
-					<td>{{d.status}}</td>
-					<td class="detail" ng-click="detail(d.id)">详细</td>
-				</tr>
-				<textarea class="service-require">服务要求：
-				</textarea>
-			</tbody>
-			<div class="detail-btn">查看详情</div>
-		</table>
+					<tr ng-repeat="d in data">
+						<td>{{d.batchNumber}}</td>
+						<td>{{d.batchDemand}}</td>
+						<td>{{d.startTime}}</td>
+						<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
+						<td>{{d.contacts}}</td>
+						<td>{{d.status}}</td>
+						<td class="detail" ng-click="detail(d.id)">详细</td>
+					</tr>
+					<tr>
+						<div class="detail-btn">查看详情</div>
+					</tr>
+					<textarea class="service-require">服务要求：
+					</textarea>
+				</tbody>
+				
+			</table>
 
-		<pager></pager>
-		<!--带阴影悬浮框-> 进度详情 -->
-		<div class="progress-detail" ng-show="isShowProgress">
-			<div class="pro-title">进度查看
-				<div class="close" ng-click="closeProgress()">×</div>
+			<pager></pager>
+			<!--带阴影悬浮框-> 进度详情 -->
+			<div class="progress-detail" ng-show="isShowProgress">
+				<div class="pro-title">进度查看
+					<div class="close" ng-click="closeProgress()">×</div>
+				</div>
+				<ul class="list-detail">
+					<li>
+						<span>已提交数量：</span>
+						<span><span class="count">{{commitNumber}}</span>个商品</span>
+					</li>
+					<li>
+						<span>已审核数量：</span>
+						<span><span class="count">{{progressNumber}}</span>个商品</span>
+					</li>
+					<li>
+						<span>已入库数量：</span>
+						<span><span class="count">{{storageNumber}}</span>个商品</span>
+					</li>
+				</ul>
 			</div>
-			<ul class="list-detail">
-				<li>
-					<span>已提交数量：</span>
-					<span><span class="count">{{commitNumber}}</span>个商品</span>
-				</li>
-				<li>
-					<span>已审核数量：</span>
-					<span><span class="count">{{progressNumber}}</span>个商品</span>
-				</li>
-				<li>
-					<span>已入库数量：</span>
-					<span><span class="count">{{storageNumber}}</span>个商品</span>
-				</li>
-			</ul>
-		</div>
+		<!-- </div> -->
 	</div>
 </div>
