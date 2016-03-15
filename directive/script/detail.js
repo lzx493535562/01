@@ -55,8 +55,8 @@ define(["app",
 
 				//下载
 				$scope.down = function(){
-					var code = $scope.data.sku_id;
-					var skuId = $scope.data.barcode;
+					var skuId = $scope.data.sku_id;
+					var code = $scope.data.barcode;
 					var list = {skuId:skuId,code:code};
 					imgService.getZipPro(list);
 				};
