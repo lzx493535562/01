@@ -7,6 +7,8 @@ define([
 			var urlDict = {
 				metadata:'/lingmall/metadata/{type}',
 				goods:'/lingmall/my/goods',
+				category:'/lingmall/category',
+				goodslist:'/lingmall/goods/list',
 				detail:'/lingmall/my/goods/{id}',
 				service:'/lingmall/my/service',
 				progress:'/lingmall/my/service/progress/{batchNumber}',
@@ -124,6 +126,23 @@ define([
 						rejectContent:rejectContent
 					}
 				});
+			};
+
+			//获取商品分类
+			this.category = function(){
+				return $http({
+					url:urlDict.category,
+					method:methodDict.get
+
+				})
+			};
+
+			this.goodlist = function(opts){
+				return $http({
+					url:urlDict.goodslist,
+					method:methodDict.post,
+					data:opts
+				})
 			};
 
 		}]);

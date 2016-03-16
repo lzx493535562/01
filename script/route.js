@@ -4,6 +4,7 @@ define(["app",
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
 	"ctrl-categorydatapage",
+	"ctrl-goodsdatapage",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
 	"ctrl-firstpage",
@@ -31,6 +32,10 @@ define(["app",
 					.when("/categorydatapage",{
 						templateUrl:"view/categorydatapage.html",
 						controller:"lmCategorydatapageCtrl"
+					})
+					.when("/goodsdatapage",{
+						templateUrl:"view/goodsdatapage.html",
+						controller:"lmGoodsdatapageCtrl"
 					})
 					.when("/detailpage/:goodsId",{
 						templateUrl:"view/detailpage.html",
