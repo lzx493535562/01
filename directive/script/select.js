@@ -8,8 +8,8 @@ define(["app",'service-goods'],function(app){
                     	// 是否有'全选'选项
                     	var hasAll = !!$attrs.hasAll;
 
-                    	$scope	.currType = null;
-                    	$scope	.types = null;
+                    	$scope.currType = null;
+                    	$scope.types = null;
                     	$scope.isShow =false;
 
                     	// 获取服务端元数据
