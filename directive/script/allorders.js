@@ -4,9 +4,8 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 			restrict:"E",
 			templateUrl:"../directive/html/allorders.html",
 			link:function($scope,$elememt,$attrs){
-				var today = Date.today();
-				$scope.startTime = today.addDays(-7);
-				$scope.endTime = today;
+				$scope.startTime = Date.today().addDays(-7);
+				$scope.endTime = Date.today();
 				$scope.status = 1;
 
 				$scope.pageIndex = 0;
