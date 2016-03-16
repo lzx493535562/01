@@ -56,33 +56,8 @@ lmcategorydata {
 				display:inline-block;
 				cursor: pointer;
 			}
-			.shop-cart {
-				float:right;
-				width:140px;
-				height:40px;
-				line-height: 40px;
-				text-align: center;
-				border:1px solid @main-color-border;
-				background-color:@main-color-background;
-				padding:0 10px;
-				cursor: pointer;
-				position: relative;
-				.cart {
-					float:left;
-					color:@main-color-current;
-				}
-				.count {
-					width:20px;
-					height:20px;
-					line-height: 20px;
-					text-align: center;
-					border-radius:10px;
-					background-color: @main-color-current;
-					font-size: 12px;
-					position:absolute;
-					top:2px;
-					right:6px;
-				}
+			lmshopcart{
+
 			}
 		}
 		.content-detail {
@@ -179,18 +154,8 @@ lmcategorydata {
 				span {
 					margin-right:10px;
 				}
-				.pager-btn {
-					padding:2px 5px;
-					border:1px solid @main-color-border;
-					border-radius:3px;
-					background-color:#fff;
-					cursor: pointer;
-				}
-				.prev {
-				}
-				.next {
-					border:1px slid @main-color-current;
-					color:@main-color-current;
+				lmpager {
+					float:left;
 				}
 			}
 			.category-list {

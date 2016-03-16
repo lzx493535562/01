@@ -66,7 +66,7 @@ define([
 				};
 
 				// 向前翻页
-				$scope.pagePrev = function(){
+				/*$scope.pagePrev = function(){
 					if($scope.pageIndex == 0){
 						return;
 					}
@@ -81,7 +81,7 @@ define([
 					}
 					$scope.pageIndex ++;
 					$scope.$emit('pageIndexChanged',$scope.pageIndex);
-				};
+				};*/
 
 				$scope.listen = function(){
 					$scope.$on('pageIndexChanged',function(e,args){

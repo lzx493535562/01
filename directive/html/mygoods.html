@@ -38,10 +38,8 @@
 		<div class="choose-all-text">全选</div>
 		<div class="down-choose" ng-click="downChoose()">下载所选</div>
 		<div class="pager">
-			<div class="goods-total">{{totalCount}}件商品数据</div>
-			<div class="prev" ng-click="pagePrev()">上一页</div>
-			<div class="pager-num"><span class="prevNum">{{pageIndex+1}}</span> / {{pageCount}}</div>
-			<div class="next" ng-click="pageNext()">下一页</div>
+			<span class="goods-total">{{totalCount}}件商品数据</span>
+			<lmminpager></lmminpager>
 		</div>
 	</div>
 	<table class="goods-list table">
