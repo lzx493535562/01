@@ -15,8 +15,11 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-chevron-up:before { content: "\e61e"; }
+.icon-chevron-down:before { content: "\e61f"; }
 .icon-shiyongguanli:before { content: "\e604"; }
 .icon-wode:before { content: "\e605"; }
+.icon-guanbi:before { content: "\e61b"; }
 .icon-tongzhi:before { content: "\e610"; }
 .icon-gouwuche:before { content: "\e618"; }
 .icon-zhanghu:before { content: "\e614"; }
@@ -32,8 +35,12 @@
 .icon-mp-nav-institution:before { content: "\e607"; }
 .icon-xiazai:before { content: "\e60b"; }
 .icon-sousuo1:before { content: "\e60c"; }
+.icon-xiangyou:before { content: "\e61a"; }
+.icon-icon:before { content: "\e619"; }
 .icon-shuju:before { content: "\e608"; }
+.icon-wode1:before { content: "\e61c"; }
 .icon-shapecopy23:before { content: "\e60f"; }
+.icon-dingdanxiangqingyingpianzhizuodonecccccc:before { content: "\e61d"; }
 .icon-anquan:before { content: "\e60d"; }
 .icon-guanli1:before { content: "\e613"; }
 .icon-lianxiwomen:before { content: "\e601"; }

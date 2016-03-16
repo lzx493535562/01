@@ -25,6 +25,56 @@ define(["app",
 					$scope.params = JSON.parse($routeParams.params || "{}");
 					$scope.data = {};
 					
+					//获取分类
+					/*$scope.getCategory = function(next){
+						goodsService.category()
+						.success(function(data){
+							$scope.categoryData = data.data;
+							console.log("categorydata",data);
+							next && next();
+						})
+					};
+
+					$scope.getCategory();
+
+					//获取分类
+					$scope.renderData = function(){
+						$scope.getCategory(function(){
+							_.each($scope.categoryData,function(cate){
+								$scope.getGoods(cate);
+							});
+						});
+					};
+					$scope.renderData();*/
+					
+					/*{
+					  "access_token": "token,userId",
+					  "level": "1 or 2 or 3 分类级别",
+					  "catId": "分类ID",
+					  "page": "页码",
+					  "count": "条数",
+					}*/
+					//获取商品
+					/*$scope.getGoods = function(cate){
+						var opts = {
+							access_token:userService.token(),
+							level:1,
+							catId:cate.id,
+							page:0,
+							count:10
+						};
+						goodsService.goodlist(opts)
+						.success(function(data){
+							$scope.data = data.data;
+							console.log("goodsData",$scope.data);
+						})
+					};
+
+					$scope.getGoods();
+*/
+
+
+
 					$scope.getThumbList = function(sourceData,next){
 						var codelist = _.map(sourceData,function(n){return n.sku_id;});
 
@@ -44,14 +94,14 @@ define(["app",
 					$scope.linkToDetail = function(id){
 						utilService.linkTo("/productdetail/"+id,true);
 					};
-
+					
 					
 					//进入二级分类
 					$scope.toCategory = function(c){
-						var id = c.id;
+					 	var id = c.id;
 						/*var params = {type_id:c.id};
 						$scope.searchCate(params);*/
-						$location.path("/categorydata/"+id);
+						$location.path("/categorydatapage");
 					};
 
 
@@ -68,7 +118,7 @@ define(["app",
 					$scope.getCategory = function(next){
 						goodsService.category()
 						.success(function(data){
-							$scope.categoryData = categoryData(data);
+							$scope.categoryData = data.data;
 							next && next();
 						});
 					};
@@ -84,7 +134,7 @@ define(["app",
 						};
 						goodsService.goodlist(opts)
 						.success(function(data){
-							var sourceData = format(data.data);
+							var sourceData = data.data;
 							$scope.data[category.id] = sourceData;
 							$scope.getThumbList(sourceData);
 						});
@@ -109,41 +159,6 @@ define(["app",
 					
 				}
 			};
-
-			// format
-			function format(data){
-				data = _.map(data,function(n){
-					return {
-						id:n.id,
-						code:n.barcode,
-						name:n.name,
-						brand:n.brand,
-						producePlace:n.address,
-						exists:n.exists,
-						sku_id:n.sku_id,
-						refer:n.refer
-					};
-				});
-				return data;
-			};
-
-			function categoryData(data){
-				return _.map(data,function(n){
-					return {
-						id:n.id,
-						code:n.code,
-						type:n.value,
-						subType:_.map(n.subset,function(n){
-							return {
-								id:n.id,
-								code:n.code,
-								type:n.value
-							};
-						})
-					};
-				});
-			}
-
 
 	}]);
 
