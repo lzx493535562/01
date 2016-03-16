@@ -2,6 +2,7 @@ define(["app",'service-goods'],function(app){
     app.directive("lmselect",['lmGoodsService',function(goodsService){
             return{
                     restrict:"E",
+                    scope:{},
                     templateUrl:"../directive/html/select.html",
                     link:function($scope,$element,$attrs){
                     	var metaType = $attrs.metaType;
