@@ -2,6 +2,7 @@ define(["app"],function(app){
 	app.directive("lmcatebar",[function(){
 		return {
 			restrict:"E",
+			scope:{},
 			templateUrl:"../directive/html/catebar.html",
 			link:function($scope,$element,$attrs){
 				$scope.type = null;
