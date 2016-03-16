@@ -5,23 +5,20 @@ define(["app"],function(app){
 			scope:{},
 			templateUrl:"../directive/html/catebar.html",
 			link:function($scope,$element,$attrs){
-				$scope.type = null;
+				$scope.title = null;
 				$scope.data = null;
 				$scope.selectedData = [];
 				$scope.isMulti = null;
+				$scope.name = null;
 
+				$scope.name = $attrs.name;
+				$scope.isMulti = $attrs.isMulti || false;
+				
 				// 加载分类元数据
-				$scope.getMetadata = function(type){
-					// mock
-					$scope.data = [
-						{text:'快餐1',value:1},
-						{text:'快餐2',value:2},
-						{text:'快餐3',value:3},
-						{text:'快餐4',value:4},
-						{text:'快餐5',value:5},
-						{text:'快餐6',value:6},
-						{text:'快餐7',value:7},
-					];
+				$scope.setMetadata = function(title,data){
+					$scope.title = title;
+					$scope.data = data;
+					$scope.selectedData = [];
 				};
 
 				// 选择
@@ -32,6 +29,7 @@ define(["app"],function(app){
 							$scope.selectedData = [];
 						}
 						$scope.selectedData.push(item);
+						$scope.$emit('catebar.change',{name:$scope.name,data:$scope.selectedData});
 					}
 				};
 
@@ -42,10 +40,25 @@ define(["app"],function(app){
 					});
 				};
 
-				$scope.type = $attrs.type;
-				$scope.isMulti = $attrs.isMulti || false;
+				$scope.listen = function(){
+					$scope.$on('catebar.setMetadata',function(e,args){
+						// args ->{name:..,data:..}
+						var name = args.name;
+						if(name!=$scope.name){return;}
 
-				$scope.getMetadata($scope.type);
+						var data = args.data;
+						var title = args.title;
+
+						// if(hasAll){
+						// 	data.unshift({value:-1,text:'全部'});
+						// };
+						$scope.setMetadata(title,data);
+						// 选择第一个
+						$scope.select($scope.data[0].value);
+					});
+				};
+
+				$scope.listen();
 
 			}
 		}

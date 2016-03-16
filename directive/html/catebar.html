@@ -5,7 +5,7 @@
 	</div>
 </div>
 <div class="category-type">
-	<div class="type-text">{{type}}</div>
+	<div class="type-text">{{title}}</div>
 	<ul class="type-detail">
 		<li ng-class="{'current':selectedData.indexOf(n)>=0}" ng-repeat="n in data" ng-click="select(n.value)">{{n.text}}</li>
 	</ul>
