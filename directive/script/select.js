@@ -34,7 +34,8 @@ define(["app",'service-goods'],function(app){
 
                     	// 开关选择框
                     	$scope.toggle = function(flag){
-                   			$scope.isShow = flag ===undefined ? !$scope.isShow : flag;
+				$scope.isShow = flag ===undefined ? !$scope.isShow : flag;
+
                     	};
 
 

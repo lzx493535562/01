@@ -1,16 +1,18 @@
 @import "../../less/colors.less";
 lmselect{
 	@selectorWidth:160px;
+	@selectorHeight:40px;
 	.status-select {
 		/*position: relative;*/
 		width:@selectorWidth;
-		height:30px;
-		line-height: 30px;
+		height:@selectorHeight;
+		line-height: @selectorHeight;
 		margin-bottom:10px;
 		border:1px solid @main-color-border;
 		border-radius:3px;
 		display: inline-block;
 		cursor: pointer;
+
 		.xiala {
 			float: right;
 			margin-right:5px;
@@ -19,18 +21,21 @@ lmselect{
 			font-size: 30px;
 			margin-top:-2px;
 		}
-	}
-
-	.selector{
-		width: @selectorWidth;
-		position: absolute;
-		border:1px solid @main-color-border;
-		border-radius:3px;
-		display: inline-block;
-		cursor: pointer;
-		.option{
-			// float: left;
-
+		.selector{
+			width: @selectorWidth;
+			position: absolute;
+			border:1px solid @main-color-border;
+			border-radius:3px;
+			display: inline-block;
+			cursor: pointer;
+			background-color: white;
+			.option{
+				text-align: center;
+			}
+		}
+		.selected{
+			text-align: center;
 		}
 	}
+
 }
