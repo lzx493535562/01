@@ -8,6 +8,7 @@ define(["app"],function(app){
 				$scope.type = null;
 				$scope.data = null;
 				$scope.selectedData = [];
+				$scope.isMulti = null;
 
 				// 加载分类元数据
 				$scope.getMetadata = function(type){
@@ -27,6 +28,9 @@ define(["app"],function(app){
 				$scope.select = function(value){
 					var item = _.find($scope.data,function(n){return n.value == value;});
 					if(_.indexOf($scope.selectedData,item)==-1){
+						if(!$scope.isMulti){
+							$scope.selectedData = [];
+						}
 						$scope.selectedData.push(item);
 					}
 				};
@@ -39,6 +43,7 @@ define(["app"],function(app){
 				};
 
 				$scope.type = $attrs.type;
+				$scope.isMulti = $attrs.isMulti || false;
 
 				$scope.getMetadata($scope.type);
 
