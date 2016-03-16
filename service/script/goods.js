@@ -7,6 +7,8 @@ define([
 			var urlDict = {
 				metadata:'/lingmall/metadata/{type}',
 				goods:'/lingmall/my/goods',
+				category:'/lingmall/category',
+				goodslist:'/lingmall/goods/list',
 				detail:'/lingmall/my/goods/{id}',
 				service:'/lingmall/my/service',
 				progress:'/lingmall/my/service/progress/{batchNumber}',
@@ -128,7 +130,6 @@ define([
 				});
 			};
 
-
 			// 获取分类
 			this.category = function(){
 				return $http({
@@ -146,6 +147,13 @@ define([
 			};
 
 
+			this.goodlist = function(opts){
+				return $http({
+					url:urlDict.goodslist,
+					method:methodDict.post,
+					data:opts
+				})
+			};
 		}]);
 	}
 );
