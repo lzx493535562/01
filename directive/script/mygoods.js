@@ -61,7 +61,7 @@ define([
 				$scope.checkAll = function(){
 					var flag = $scope.isAllChecked = !$scope.isAllChecked;
 					_.each($scope.data,function(d){
-						$scope.checkids[d.id] = flag;
+						$scope.checkids[d.goodsId] = flag;
 					});
 				};
 
@@ -109,7 +109,7 @@ define([
 					idList = _.isArray(idList) ? idList : [idList];
 					if(idList.length==0){return;}
 					var list = _.map(idList,function(id){
-						var item = _.find($scope.data,function(n){return n.id == id;});
+						var item = _.find($scope.data,function(n){return n.goodsId == id;});
 						var skuId = item.sku_id;
 						var barcode = item.barcode;
 						return {skuId:skuId,code:barcode};

@@ -57,7 +57,7 @@
 			<tr ng-repeat="d in data">
 				<td>
 					<div>
-						<span class="checkbox checkbox-table" ng-class="{'checkon':!!checkids[d.id]}" ng-click="check(d.id)"></span>
+						<span class="checkbox checkbox-table" ng-class="{'checkon':!!checkids[d.goodsId]}" ng-click="check(d.goodsId)"></span>
 						<span class="barcode">{{d.barcode}}</span>
 					</div>
 				</td>
@@ -66,7 +66,7 @@
 				<td>{{d.pictureNum}}</td>
 				<td>{{d.detailPageNum}}</td>
 				<td>
-					<span class="down" ng-click="down(d.id)">下载</span>
+					<span class="down" ng-click="down(d.goodsId)">下载</span>
 					<span class="split">|</span>
 					<span class="detail">
 						<a  ng-href="#/detailpage/{{d.goodsId}}" target="_blank">详情</a>
