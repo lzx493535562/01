@@ -57,6 +57,7 @@ requirejs.config({
 		"directive-login":"directive/script/login",
 		"directive-four":"directive/script/four",
 		"directive-select":"directive/script/select",
+		"directive-catebar":"directive/script/catebar",
 
 		// filter
 		"filter-goodsType":"filter/script/goodsType",
