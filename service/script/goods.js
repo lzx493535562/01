@@ -12,7 +12,9 @@ define([
 				progress:'/lingmall/my/service/progress/{batchNumber}',
 				info:'/lingmall/my/service/info/{batchNumber}',
 				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
-				submit:'/lingmall/my/service/submit/{batchNumber}'
+				submit:'/lingmall/my/service/submit/{batchNumber}',
+				category:'/lingmall/category',
+				subCategory:'/lingmall/category/{id}'
 			};
 			_.each(urlDict,function(v,k){
 				urlDict[k] = urlPrefix + v;
@@ -125,6 +127,24 @@ define([
 					}
 				});
 			};
+
+
+			// 获取分类
+			this.category = function(){
+				return $http({
+					url:urlDict.category,
+					method:methodDict.get
+				});
+			};
+
+			// 获取次级分类
+			this.subCategory = function(subId){
+				return $http({
+					url:urlDict.subCategory.replace('{id}',subId),
+					method:methodDict.get
+				});
+			};
+
 
 		}]);
 	}

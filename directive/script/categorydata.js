@@ -1,5 +1,6 @@
 define(["app",
 	"underscore",
+	'async',
 	"cookie",
 	"service-img",
 	"directive-shopcart",
@@ -11,7 +12,7 @@ define(["app",
 	'directive-select',
 	'directive-catebar',
 	"directive-modal"
-	],function(app,_,cookie){
+	],function(app,_,async,cookie){
 	app.directive("lmcategorydata",function(){
 		return {
 			restrict:"E",
@@ -24,6 +25,71 @@ define(["app",
 			"lmUtilService",
 			"lmGoodsService",
 				function($rootScope,$routeParams,$scope,imgService,userService,utilService,goodsService){
+					// 获取一级分类
+					$scope.getTypes = function(cb){
+						goodsService.category().
+						success(function(data){
+							console.log(data);
+							$scope.types = data.data;
+							cb && cb();
+						});
+					};
+
+					// 获取二级分类
+					$scope.getSubTypes = _.debounce(function(cb){
+						goodsService.subCategory($scope.subCateId)
+						.success(function(data){
+							$scope.subTypes = data;
+							console.log(data);
+							cb && cb();
+						});
+					},200);
+
+					// 搜索
+					$scope.search = function(){
+
+					};
+
+					$scope.listen = function(){
+						$scope.$on('select.change',function(e,args){
+							var name = args.name;
+							var value = args.data;
+
+							$scope.subCateId = value;
+							$scope.getSubTypes(function(){
+
+							});
+						});
+					};
+
+					$scope.listen();
+
+					async.series({
+						'types':function(cb){
+							$scope.getTypes(function(){
+								var data = format($scope.types);
+								$scope.$broadcast('select.setMetadata',{name:'category',data:data});
+								$scope.$broadcast('catebar.setMetadata',{name:'category',data:data});
+								cb();
+							});
+
+
+							function format(data){
+								return _.map(data,function(n){
+									return {
+										value:n.id,
+										text:n.value
+									};
+								});
+							};
+						}
+					},function(err,data){
+
+					});
+
+
+					return ;
+					// ----------------------------------------------------------------------
 					$scope.pageCount = 0;
 					//获取分类
 					$scope.currCategoryIndex = 0;
