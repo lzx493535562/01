@@ -31,17 +31,17 @@
 			</thead>
 			<tbody class="tbody" ng-repeat="d in data">
 				<tr>
-					<td>{{d.batchNumber}}</td>
-					<td>{{d.batchDemand}}</td>
+					<td>{{d.serviceNumber}}</td>
+					<td>{{d.type}}</td>
+					<td>{{d.count}}</td>
 					<td>{{d.startTime}}</td>
 					<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
 					<td>{{d.contacts}}</td>
-					<td>{{d.status}}</td>
-					<td class="detail" ng-click="detail(d.id)">详细</td>
+					<td >{{d.status}}</td>
 				</tr>
 				<tr>
 					<td>
-						<div class="detail-btn">查看详情</div>
+						<div class="detail-btn" ng-click="detail(d.id)">查看详情</div>
 					</td>	
 				</tr>
 				<tr>
