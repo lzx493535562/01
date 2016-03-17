@@ -74,6 +74,6 @@ define(["app",
 					$scope.getPics();
 				});
 			}
-		}
+		};
 	}]);
 });
