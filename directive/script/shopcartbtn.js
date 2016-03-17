@@ -1,8 +1,8 @@
 define(["app"],function(app){
-	app.directive("lmshopcart",function(){
+	app.directive("lmshopcartbtn",function(){
 		return {
 			restrict:"E",
-			templateUrl:"../directive/html/shopcart.html",
+			templateUrl:"../directive/html/shopcartbtn.html",
 			link:function($scope,$element,$attrs){
 				
 			}

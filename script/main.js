@@ -50,7 +50,7 @@ requirejs.config({
 		"directive-headbar":"directive/script/headbar",
 		"directive-categorydata":"directive/script/categorydata",
 		"directive-allorders":"directive/script/allorders",
-		"directive-shopcart":"directive/script/shopcart",
+		"directive-shopcartbtn":"directive/script/shopcartbtn",
 		"directive-minpager":"directive/script/minpager",
 		"directive-goodsdata":"directive/script/goodsdata",
 		"directive-verify":"directive/script/verify",
