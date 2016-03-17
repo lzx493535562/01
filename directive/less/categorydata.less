@@ -1,3 +1,4 @@
+@import "../../less/ui";
 @import "../../less/colors";
 lmcategorydata {
 	.goods-content {
@@ -101,14 +102,7 @@ lmcategorydata {
 				font-size:14px;
 				.checkbox {
 					float:left;
-					width:14px;
-					height:14px;
-					background-image:url(../image/common/checkbox.png);
 					margin:13px 10px 0 0;
-					cursor: pointer;
-				}
-				.checkon {
-					background-position: 0px -14px;
 				}
 				.choose-all {
 					float:left;
@@ -139,6 +133,7 @@ lmcategorydata {
 			.category-list {
 				margin-top:20px;
 				.category-detail {
+					position: relative;
 					float:left;
 					width:238px;
 					height:290px;
@@ -159,6 +154,11 @@ lmcategorydata {
 						line-height: 50px;
 						background-color:#fff;
 						text-align: center;
+					}
+					.checkbox{
+						position: absolute;
+						left: 10px;
+						top:10px;
 					}
 				}
 				.category-detail:hover {

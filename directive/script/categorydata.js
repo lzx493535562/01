@@ -120,7 +120,18 @@ define(["app",
 						$scope.$on('afterSearch',function(e,args){
 							var ids = _.map(args.data,function(n){return n.goodsId;});
 							$scope.$emit('checker.setMetadata',ids);
-						});	
+						});
+
+
+						// pager
+						$scope.$on('afterSearch',function(e,args){
+							var totalCount = args.count;
+							$scope.pageCount = Math.floor((totalCount + ($scope.pageSize - 1)) / $scope.pageSize);
+						});
+						
+						$scope.$on('pageIndexChanged',function(e,args){
+							$scope.search();
+						});
 					};
 
 					$scope.listen();
@@ -129,7 +140,7 @@ define(["app",
 						var data = formatCategory($scope.category);
 						$scope.$broadcast('select.setMetadata',{name:'category',data:data});
 					});
-					
+
 					// 格式化category的信息
 					// 使之成为{text:..,value:..}格式
 					function formatCategory(data){
