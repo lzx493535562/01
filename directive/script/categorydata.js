@@ -30,7 +30,7 @@ define(["app",
 					// 分类 
 					$scope.category = null;
 					$scope.pageIndex = 0;
-					$scope.pageSize = 8;
+					$scope.pageSize = 2;
 					$scope.data = null;
 					// 被选择的"二级"分类的"值"
 					$scope.selectedCategory = null;
@@ -63,7 +63,7 @@ define(["app",
 					// },200);
 
 					// 搜索
-					$scope.search = function(){
+					$scope.search = _.debounce(function(){
 						var level = 2;
 						var catId = $scope.selectedCategory;
 						var pageIndex = $scope.pageIndex;
@@ -76,6 +76,33 @@ define(["app",
 							console.log(data);
 
 							$scope.$emit('afterSearch',data);
+						});
+					},500);
+
+					// 加入购物车
+					$scope.shopcartAdd = function(){
+						var goodsIdList = _.map()
+						var goodlist =[];
+						_.each($scope.checkids,function(flag,goodsId){
+							if(!flag){return; };
+
+							var item = _.find($scope.data,function(d){return d.goodsId == goodsId;});
+							goodlist.push({goodsId:item.goodsId, db:item.db });
+						});
+						goodsService.shopcartAdd(goodlist)
+						.success(function(data,status){
+							console.log(data,status);
+							if(status==204){
+								$scope.$emit('shopcart.afterAdd');
+							}
+						});
+					};
+
+					// 查询购物车
+					$scope.shopcart = function(){
+						goodsService.shopcart(0,1)
+						.success(function(data){
+							$scope.shopcartTotalcount = data.count;
 						});
 					};
 
@@ -108,6 +135,8 @@ define(["app",
 						$scope.$on('afterSearch',function(e,args){
 							var data = args.data;
 							var skuidList = _.map(data,function(n){return n.sku_id;});
+							if(skuidList.length==0){return;};
+
 							imgService.getThumb(skuidList,function(err,parturlList){
 								_.each(data,function(n,i){
 									n.img = parturlList[i]?imgService.getFullurl([parturlList[i].domain,parturlList[i].key].join('/'),500):null;
@@ -128,9 +157,15 @@ define(["app",
 							var totalCount = args.count;
 							$scope.pageCount = Math.floor((totalCount + ($scope.pageSize - 1)) / $scope.pageSize);
 						});
-						
+
 						$scope.$on('pageIndexChanged',function(e,args){
 							$scope.search();
+						});
+
+						// 购物车
+						$scope.$on('shopcart.afterAdd',function(e,args){
+							// 刷新下购物车的信息
+							$scope.shopcart();
 						});
 					};
 
@@ -140,6 +175,8 @@ define(["app",
 						var data = formatCategory($scope.category);
 						$scope.$broadcast('select.setMetadata',{name:'category',data:data});
 					});
+
+					$scope.shopcart();
 
 					// 格式化category的信息
 					// 使之成为{text:..,value:..}格式

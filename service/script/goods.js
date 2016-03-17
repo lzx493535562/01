@@ -17,7 +17,10 @@ define([
 				progress:'/lingmall/my/service/progress/{batchNumber}',
 				info:'/lingmall/my/service/info/{batchNumber}',
 				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
-				submit:'/lingmall/my/service/submit/{batchNumber}'
+				submit:'/lingmall/my/service/submit/{batchNumber}',
+
+				// shopcart
+				shopcart:'/lingmall/my/shopcart'
 			};
 			_.each(urlDict,function(v,k){
 				urlDict[k] = urlPrefix + v;
@@ -25,7 +28,9 @@ define([
 
 			var methodDict = {
 				post:'POST',
-				get:'GET'
+				get:'GET',
+				put:'PUT',
+				delete:'DELETE'
 			};
 
 			// 获取枚举的元数据
@@ -147,6 +152,8 @@ define([
 				});
 			};
 
+
+			// 通过分类Id获取商品
 			this.goodlist = function(level,catId,pageIndex,pageSize){
 				var opts = {
 					level:level,
@@ -160,6 +167,53 @@ define([
 					data:opts
 				});
 			};
+
+			// --------------------------------------------------------------------------------------
+			// 购物车 -------------------------------------------------------------------------------
+			// --------------------------------------------------------------------------------------
+
+			// 获取购物车中的商品
+			this.shopcart = function(pageIndex,pageSize){
+				var opts ={
+					access_token:userService.token(),
+					page:pageIndex-0+1,
+					count:pageSize
+				};
+				return $http({
+					url:urlDict.shopcart,
+					method:methodDict.post,
+					data:opts
+				});
+			};
+
+			// 商品放入购物车
+			// goodlist格式为{goodsId:...,db:...}
+			this.shopcartAdd = function(goodlist){
+				var opts = {
+					access_token:userService.token(),
+					param:goodlist
+				};
+				return	$http({
+					url:urlDict.shopcart,
+					method:methodDict.put,
+					data:opts
+				});
+			};
+
+			// 商品移出购物车
+			// goodlist格式为{goodsId:...,db:...}
+			this.shopcartRemove = function(goodlist){
+				var opts = {
+					access_token:userService.token(),
+					param:goodlist
+				};
+				return	$http({
+					url:urlDict.shopcart,
+					method:methodDict.delete,
+					data:opts
+				});
+			};
+
 		}]);
 	}
 );
