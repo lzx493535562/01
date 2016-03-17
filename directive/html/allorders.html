@@ -29,29 +29,32 @@
 					<td>服务状态</td>
 				</tr>
 			</thead>
-			<tbody class="tbody" ng-repeat="d in data">
-				<tr>
-					<td>{{d.serviceNumber}}</td>
-					<td>{{d.type}}</td>
-					<td>{{d.count}}</td>
-					<td>{{d.startTime}}</td>
-					<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
-					<td>{{d.contacts}}</td>
-					<td >{{d.status}}</td>
-				</tr>
-				<tr>
-					<td colspan="7">
-						<div class="detail-btn" ng-click="detail(d.id)">查看详情</div>
-					</td>	
-				</tr>
-				<tr>
-					<td colspan="7">
-						<textarea class="service-require">服务要求： </textarea>
-					</td>					
-				</tr>
-			</tbody>
-			
 		</table>
+		<div class="table-box">
+			<table class="batch-list table">
+				<tbody class="tbody" ng-repeat="d in data">
+					<tr>
+						<td>{{d.serviceNumber}}</td>
+						<td>{{d.type}}</td>
+						<td>{{d.count}}</td>
+						<td>{{d.startTime}}</td>
+						<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
+						<td>{{d.contacts}}</td>
+						<td >{{d.status}}</td>
+					</tr>
+					<tr class="textarea">
+						<td colspan="7">
+							<textarea class="service-require">服务要求： </textarea>
+						</td>					
+					</tr>
+					<tr>
+						<td colspan="7">
+							<div class="detail-btn" ng-click="detail(d.id)">查看详情</div>
+						</td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	<pager></pager>
 	<!--带阴影悬浮框-> 进度详情 -->
 	<div class="progress-detail" ng-show="isShowProgress">
