@@ -15,11 +15,24 @@ lmcategorydata {
 				background-color:@main-color-current;
 			}
 		}
+		.table-box {
+			width:100%;
+		}
+		.table {
+			width:100%;
+			tr {
+				td {
+					width:25%;
+				}
+				.btn-box {
+					min-width: 520px;
+				}
+			}
+		}
 		.content-center {
 			width:100%;
-			min-width:1200px;
-			height:100px;
-			padding-top:20px;
+			/*min-width:930px;*/
+			margin:20px 0;
 			font-size:16px;
 			lmselect{
 				float: left;
@@ -27,7 +40,6 @@ lmcategorydata {
 			.search-box {
 				float:left;
 				width:400px;
-				margin-left:150px;
 				input {
 					width:281px;
 					height:34px;
@@ -123,9 +135,6 @@ lmcategorydata {
 			.pager {
 				float:right;
 				margin-right:20px;
-				span {
-					margin-right:10px;
-				}
 				lmpager {
 					float:left;
 				}
