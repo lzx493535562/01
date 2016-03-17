@@ -63,6 +63,9 @@ requirejs.config({
 		"directive-select":"directive/script/select",
 		"directive-catebar":"directive/script/catebar",
 
+		// tool directive
+		"tool-checker":"directive/script/checker",
+
 		// filter
 		"filter-goodsType":"filter/script/goodsType",
 

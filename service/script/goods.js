@@ -6,17 +6,18 @@ define([
 			var urlPrefix = 'http://192.168.1.240:8001';
 			var urlDict = {
 				metadata:'/lingmall/metadata/{type}',
-				goods:'/lingmall/my/goods',
 				category:'/lingmall/category',
 				goodslist:'/lingmall/goods/list',
+				category:'/lingmall/category',
+				subCategory:'/lingmall/category/{id}',
+				// my
+				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
 				service:'/lingmall/my/service',
 				progress:'/lingmall/my/service/progress/{batchNumber}',
 				info:'/lingmall/my/service/info/{batchNumber}',
 				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
-				submit:'/lingmall/my/service/submit/{batchNumber}',
-				category:'/lingmall/category',
-				subCategory:'/lingmall/category/{id}'
+				submit:'/lingmall/my/service/submit/{batchNumber}'
 			};
 			_.each(urlDict,function(v,k){
 				urlDict[k] = urlPrefix + v;
@@ -146,13 +147,18 @@ define([
 				});
 			};
 
-
-			this.goodlist = function(opts){
+			this.goodlist = function(level,catId,pageIndex,pageSize){
+				var opts = {
+					level:level,
+					catId:catId,
+					page:pageIndex-0+1,
+					count:pageSize
+				};
 				return $http({
 					url:urlDict.goodslist,
 					method:methodDict.post,
 					data:opts
-				})
+				});
 			};
 		}]);
 	}
