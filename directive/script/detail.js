@@ -46,11 +46,18 @@ define(["app",
 					imgService.getThumb([skuId],function(err,data){
 						if(data[0]){
 							var bigimgData = imgService.getFullurl(data[0].domain+"/"+data[0].key,500);
-							$scope.bigimg = bigimgData;
+							$scope.setBigimg(bigimgData);
 							console.log("bigimg",$scope.bigimg);
 							$scope.$apply();
 						}
 					})
+				};
+
+				//点击小图变成大图
+				$scope.setBigimg = function(data){
+					$scope.currBigimg = data.replace(/\d+$/,'');
+					data = data.replace(/\d+$/,"500");
+					$scope.bigimg = data;
 				};
 
 				//下载

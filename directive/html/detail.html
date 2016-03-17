@@ -29,24 +29,24 @@
 				<dd>
 					<div class="list-title">主图</div>
 					<ul class="img-list">
-						<li ng-repeat="d in pics_main">
-							<img ng-src="{{d}}">
+						<li ng-repeat="d in pics_main" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
 						</li>
 					</ul>
 				</dd>
 				<dd>
 					<div class="list-title">细节图</div>
 					<ul class="img-list">
-						<li ng-repeat="d in pics_detail">
-							<img ng-src="{{d}}">
+						<li ng-repeat="d in pics_detail" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
 						</li>
 					</ul>
 				</dd>
 				<dd>
 					<div class="list-title">标签图</div>
 					<ul class="img-list">
-						<li ng-repeat="d in pics_tag">
-							<img ng-src="{{d}}">
+						<li ng-repeat="d in pics_tag" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
 						</li>
 					</ul>
 				</dd>
