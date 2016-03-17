@@ -39,6 +39,35 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 					});
 				};
 
+				//查看进度
+				$scope.progress = function(serviceNumber){
+					goodsService.progress(serviceNumber)
+					.success(function(data){
+						$scope.progressData = data;
+						console.log("progress",data);
+						$scope.isShowProgress = true;
+					})
+				};
+				//查看联系人方式
+				$scope.contact = function(contactsID){
+					goodsService.contact(contactsID)
+					.success(function(data){
+						$scope.contactData = data;
+						$scope.isShowContact = true;
+						console.log("contact",data);
+					})
+				};
+
+				//隐藏查看进度框
+				$scope.closeProgress = function(){
+					$scope.isShowProgress = false;
+				};
+
+				//隐藏联系人框
+				$scope.closeContact = function(){
+					$scope.isShowContact = false;
+				};				
+
 				$scope.listen = function(){
 					$scope.$on('pageIndexChanged',function(e,args){
 						$scope.search();

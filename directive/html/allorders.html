@@ -38,13 +38,13 @@
 						<td>{{d.type}}</td>
 						<td>{{d.count}}</td>
 						<td>{{d.startTime}}</td>
-						<td class="progress" ng-click="progress(d.id)">点击可查看详细进度</td>
-						<td>{{d.contacts}}</td>
+						<td class="progress" ng-click="progress(d.serviceNumber)">点击可查看详细进度</td>
+						<td class="contact" ng-click="contact(d.contactsID)">项目经理</td>
 						<td >{{d.status}}</td>
 					</tr>
 					<tr class="textarea">
 						<td colspan="7">
-							<textarea class="service-require">服务要求： </textarea>
+							<textarea class="service-require">服务要求： {{d.serviceDemand}}</textarea>
 						</td>					
 					</tr>
 					<tr>
@@ -64,18 +64,43 @@
 		<ul class="list-detail">
 			<li>
 				<span>已提交数量：</span>
-				<span><span class="count">{{commitNumber}}</span>个商品</span>
+				<span><span class="count">{{progressData.commitNumber}}</span> 个商品</span>
 			</li>
 			<li>
 				<span>已审核数量：</span>
-				<span><span class="count">{{progressNumber}}</span>个商品</span>
+				<span><span class="count">{{progressData.progressNumber}}</span> 个商品</span>
 			</li>
 			<li>
 				<span>已入库数量：</span>
-				<span><span class="count">{{storageNumber}}</span>个商品</span>
+				<span><span class="count">{{progressData.storageNumber}}</span> 个商品</span>
 			</li>
 		</ul>
 	</div>
-	<!-- </div> -->
+
+	<!--悬浮框 联系方式 -->
+	<div class="progress-detail" ng-show="isShowContact">
+		<div class="pro-title">联系方式
+			<div class="close" ng-click="closeContact()">×</div>
+		</div>
+		<ul class="list-detail">
+			<li>
+				<span>姓名：</span>
+				<span>项目经理</span>
+			</li>
+			<li>
+				<span>联系电话：</span>
+				<span>{{contactData.phone}}</span>
+			</li>
+			<li>
+				<span>微信：</span>
+				<span>{{contactData.weixin}}</span>
+			</li>
+			<li>
+				<span>邮箱：</span>
+				<span>{{contactData.email}}</span>
+			</li>
+		</ul>
+	</div>
+
 </div>
 </div>

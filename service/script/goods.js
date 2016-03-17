@@ -16,6 +16,7 @@ define([
 				service:'/lingmall/my/service',
 				progress:'/lingmall/my/service/progress/{batchNumber}',
 				info:'/lingmall/my/service/info/{batchNumber}',
+				contact:'/lingmall/my/service/contacts/{contactsID}',
 				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
 				submit:'/lingmall/my/service/submit/{batchNumber}'
 			};
@@ -84,6 +85,17 @@ define([
 			this.progress = function(batchNumber){
 				return $http({
 					url:urlDict.progress.replace('{batchNumber}',batchNumber),
+					method:methodDict.post,
+					data:{
+						access_token:userService.token()
+					}
+				});
+			};
+
+			// 查看联系人
+			this.contact = function(contactsID){
+				return $http({
+					url:urlDict.contact.replace('{contactsID}',contactsID),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()
