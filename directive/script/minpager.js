@@ -6,7 +6,6 @@ define(["app"],function(app){
 			link:function($scope,$element,$attrs){
 
 				$scope.pageIndex = 0;
-				$scope.pageSize = 1;
 
 				// 向前翻页
 				$scope.pagePrev = function(){
