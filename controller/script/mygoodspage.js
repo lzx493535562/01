@@ -7,7 +7,7 @@ define(["app",
 	],
 	function(app){
 		app.controller("lmMygoodspageCtrl",["$scope",function($scope){
-
+			
 		}]);
 	}
 	);
