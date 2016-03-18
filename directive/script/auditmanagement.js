@@ -9,12 +9,18 @@ define(["app",
 				link:function($scope,$element,$attrs){
 					$scope.showStep = 0;
 
+					// 当前服务
+					$scope.service = null;
 
-					$scope.$on('order.detail',function(){
+					$scope.$on('service.detail',function(e,args){
 						$scope.showStep = 1;
+						$scope.service = args;
+						console.log('service',$scope.service);
+
+						$scope.$broadcast('serviceDetail.change',$scope.service);
 					});
 
-					$scope.$on('order.list',function(){
+					$scope.$on('service.list',function(){
 						$scope.showStep = 0;
 					});
 				}

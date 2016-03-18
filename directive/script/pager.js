@@ -62,11 +62,12 @@ define(["app"],function(app){
 					$scope.pageIndexs = getPageIndexs($scope.pageIndex,$scope.pageCount,$scope.showLen);
 					refreshShowDots();
 				});
+				
 				$scope.$watch("showLen",function  () {
 					$scope.pageIndexs = getPageIndexs($scope.pageIndex,$scope.pageCount,$scope.showLen);
 					refreshShowDots();
 				});
-
+				
 				// 刷新前后的dot
 				function refreshShowDots(){
 					$scope.isShowHeadDots = getRowIndex($scope.pageIndex) > getRowIndex($scope.showLen-1); 
