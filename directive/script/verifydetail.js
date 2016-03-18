@@ -9,10 +9,7 @@ define(["app",
 			link:function($scope,$element,$attrs){
 
 				$scope.getDetail = function(cb){
-					//var goodsId = $routeParams.goodsId;
-					var serviceNumber = 20160315000001;
-					var barcode = 3014400022637;
-					goodsService.varifydetail(serviceNumber,barcode)
+					goodsService.verifydetail($scope.serviceNumber,$scope.barcode)
 					.success(function(data){
 						$scope.data = data;
 						console.log("detail",data);
@@ -20,7 +17,6 @@ define(["app",
 					})
 				};
 			
-
 				$scope.getPics = function(){
 					var code = $scope.data.sku_id;
 					var xType = 2;
@@ -61,12 +57,50 @@ define(["app",
 					$scope.bigimg = data;
 				};
 
-				
+				//通过
+				$scope.through = function(serviceNumber){
+					//var barcode = 3014400022637;
+					var status = 8;
+					var rejectType = 3;
+					var rejectContent = null;
+					goodsService.submit($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+					.success(function(data){
+						console.log("通过data",data);
+					})
+				};
 
-				$scope.getDetail(function(){
-					$scope.getThumb();				
-					$scope.getPics();
-				});
+				//驳回
+				$scope.rejected = function(serviceNumber){
+					var status = 8;
+					var rejectType = 4;
+					var rejectContent = "222";
+					goodsService.submit($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+					.success(function(data){
+						console.log("驳回data",data);
+						$scope.rejectedBox = true;
+					})
+				};
+
+				//隐藏驳回悬浮框
+				$scope.closeRejected = function(){
+					$scope.rejectedbox = false;
+				};
+
+				$scope.listen = function(){
+					$scope.$on('verify.detail',function(e,args){
+						$scope.serviceNumber = args.serviceNumber;
+						$scope.barcode = args.barcode;
+						console.log("serviceNumber",$scope.serviceNumber,$scope.barcode);
+						
+						$scope.getDetail(function(){
+							$scope.getThumb();				
+							$scope.getPics();
+						});
+					});
+
+				};
+
+				$scope.listen();
 			}
 		}
 	}]);

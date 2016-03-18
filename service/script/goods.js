@@ -139,7 +139,7 @@ define([
 
 			// 查询审核的批次的条码详情
 
-			this.varifydetail = function(serviceNumber,barcode){
+			this.verifydetail = function(serviceNumber,barcode){
 				return $http({
 					url:urlDict.verifydetail.replace('{serviceNumber}',serviceNumber).replace('{barcode}',barcode),
 					method:methodDict.post,

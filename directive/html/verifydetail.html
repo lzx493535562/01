@@ -2,11 +2,11 @@
 	<div class="title">
 		<div class="goods-name">{{data.name}}</div>
 		<div class="verify-box">
-			<div class="rejected">
+			<div class="rejected" ng-click="rejected(serviceNumber)">
 				<div class="verify-icon">×</div>
 			驳回
 			</div>
-			<div class="through">
+			<div class="through" ng-click="through(serviceNumber)">
 			<div class="verify-icon">√</div>
 			通过</div>
 		</div>
@@ -49,4 +49,23 @@
 		</div>
 <!-- 		<div class="detail-btn">查看详情页</div> -->
 	</div>
+</div>
+<!-- 驳回弹框 -->
+<div class="audit-box" ng-show="rejectedbox==true">
+	<div class="audit-title">商品名称-审核
+		<div class="close">×</div>
+	</div>
+	<ul class="dismiss-reason">
+		<li>驳回原因</li>
+		<li>
+			<div class="checkbox"></div>
+			图模糊
+		</li>
+		<li>
+			<div class="checkbox"></div>
+			文案不符合
+		</li>
+	</ul>
+	<textarea class="dismiss-text"></textarea>
+	<div class="dismiss-btn">驳回</div>
 </div>
