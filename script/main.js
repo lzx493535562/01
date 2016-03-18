@@ -56,6 +56,7 @@ requirejs.config({
 		"directive-minpager":"directive/script/minpager",
 		"directive-goodsdata":"directive/script/goodsdata",
 		"directive-verify":"directive/script/verify",
+		"directive-verifydetail":"directive/script/verifydetail",
 		"directive-modal":"directive/script/modal",
 		"directive-first":"directive/script/first",
 		"directive-second":"directive/script/second",

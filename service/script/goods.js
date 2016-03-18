@@ -17,7 +17,7 @@ define([
 				serviceDetail:'/lingmall/my/service/{serviceNumber}',
 				progress:'/lingmall/my/service/progress/{serviceNumber}',
 				contact:'/lingmall/my/service/contacts/{contactsID}',
-				infoPro:'/lingmall/my/service/info/{serviceNumber}/{barcode}',
+				verifydetail:'/lingmall/my/service/info/{serviceNumber}/{barcode}',
 				submit:'/lingmall/my/service/{serviceNumber}',
 
 				// shopcart
@@ -138,9 +138,10 @@ define([
 			};
 
 			// 查询审核的批次的条码详情
-			this.info2 = function(serviceNumber,barcode){
+
+			this.varifydetail = function(serviceNumber,barcode){
 				return $http({
-					url:urlDict.info2.replace('{serviceNumber}',serviceNumber).replace('{barcode}',barcode),
+					url:urlDict.verifydetail.replace('{serviceNumber}',serviceNumber).replace('{barcode}',barcode),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()
