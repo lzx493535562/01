@@ -58,7 +58,7 @@ define(["app",
 
 				// 跳到详情板块
 				$scope.detail = function(data){
-					$scope.$emit('verify.detail',{serviceNumber:data.serviceNumber,barcode:data.barcode});
+					$scope.$emit('verify.detail',{serviceNumber:$scope.service.serviceNumber,barcode:data.barcode});
 				};
 
 				// 审核
