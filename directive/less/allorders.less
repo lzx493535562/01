@@ -102,8 +102,8 @@ lmallorders {
 				padding:0 20px;
 				background-color:#fff;
 				border-top:1px solid #ececec;
-				position: relative;
 				z-index:1;
+				min-height: 250px;
 			}
 			.batch-list {
 				font-size:14px;
@@ -158,7 +158,7 @@ lmallorders {
 			}
 
 			/*悬浮框样式*/
-			.progress-detail {
+			.progress-detail,.progress-contact {
 				border:1px solid @main-color-border;
 				box-shadow: 0 0 10px #888;
 				padding-bottom:20px;
@@ -195,6 +195,13 @@ lmallorders {
 						color:red;
 					}
 				}
+			}
+
+			.progress-detail{
+				width: 250px;
+			}
+			.progress-contact{
+				width: 300px;
 			}
 		}
 	}

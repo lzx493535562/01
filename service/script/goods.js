@@ -14,11 +14,11 @@ define([
 				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
 				service:'/lingmall/my/service',
-				progress:'/lingmall/my/service/progress/{batchNumber}',
-				info:'/lingmall/my/service/info/{batchNumber}',
+				serviceDetail:'/lingmall/my/service/{serviceNumber}',
+				progress:'/lingmall/my/service/progress/{serviceNumber}',
 				contact:'/lingmall/my/service/contacts/{contactsID}',
-				varifydetail:'/lingmall/my/service/info/{batchNumber}/{barcode}',
-				submit:'/lingmall/my/service/submit/{batchNumber}',
+				verifydetail:'/lingmall/my/service/info/{serviceNumber}/{barcode}',
+				submit:'/lingmall/my/service/{serviceNumber}',
 
 				// shopcart
 				shopcart:'/lingmall/my/shopcart'
@@ -33,6 +33,19 @@ define([
 				put:'PUT',
 				delete:'DELETE'
 			};
+
+			// 元数据类型编号
+			this.metadataTypeDict = {
+				// 服务状态
+				serviceStatus:6,
+				goodsType:7,
+				// sub服务状态
+				serviceDetailStatus:8
+			};
+
+			// 特殊状态
+			// 审核通过状态
+			this.SERVICE_DETAIL_PASS_STATUS = 3;
 
 			// 获取枚举的元数据
 			this.metadata = function(type){
@@ -87,9 +100,9 @@ define([
 
 
 			// 查询审核的进度
-			this.progress = function(batchNumber){
+			this.progress = function(serviceNumber){
 				return $http({
-					url:urlDict.progress.replace('{batchNumber}',batchNumber),
+					url:urlDict.progress.replace('{serviceNumber}',serviceNumber),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()
@@ -109,23 +122,26 @@ define([
 			};
 
 			// 查询审核的批次详情
-			this.info = function(batchNumber,type,status,barcode){
+			this.serviceDetail = function(serviceNumber,classId,status,barcode,pageIndex,pageSize){
 				return $http({
-					url:urlDict.info.replace('{batchNumber}',batchNumber),
+					url:urlDict.serviceDetail.replace('{serviceNumber}',serviceNumber),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token(),
-						type:type,
+						classId:classId,
 						status:status,
-						barcode:barcode
+						barcode:barcode,
+						page:pageIndex-0+1,
+						count:pageSize
 					}
 				});
 			};
 
 			// 查询审核的批次的条码详情
-			this.varifydetail = function(batchNumber,barcode){
+
+			this.varifydetail = function(serviceNumber,barcode){
 				return $http({
-					url:urlDict.varifydetail.replace('{batchNumber}',batchNumber).replace('{barcode}',barcode),
+					url:urlDict.verifydetail.replace('{serviceNumber}',serviceNumber).replace('{barcode}',barcode),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()
@@ -133,17 +149,21 @@ define([
 				});
 			};
 
-			// 调教审核信息
-			this.submit = function(batchNumber,barcode,status,rejectType,rejectContent){
+			// 审核
+			// list:
+			/*
+				barcode:barcode,
+				status:status,
+				rejectType:rejectType,
+				rejectContent:rejectContent
+			*/
+			this.submit = function(serviceNumber,list){
 				return $http({
-					url:urlDict.submit.replace('{batchNumber}',batchNumber),
-					method:methodDict.post,
+					url:urlDict.submit.replace('{serviceNumber}',serviceNumber),
+					method:methodDict.put,
 					data:{
 						access_token:userService.token(),
-						barcode:barcode,
-						status:status,
-						rejectType:rejectType,
-						rejectContent:rejectContent
+						param:list
 					}
 				});
 			};
