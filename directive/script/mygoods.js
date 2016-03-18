@@ -26,10 +26,6 @@ define([
 				$scope.pageIndex = 0;
 				$scope.pageSize = 1;
 
-				// 被选择的商品的id字典
-				$scope.checkids = {};
-				// 是否全选
-				$scope.isAllChecked = false;
 
 				// 搜索
 				$scope.search = function(){
@@ -49,39 +45,7 @@ define([
 					});
 				};
 
-				// 选择商品
-				$scope.check = function(id){
-					$scope.checkids[id] = !$scope.checkids[id];
-					var totalCount = _.size($scope.data);
-					var checkedCount =  _.size(_.filter($scope.checkids,function(v){return v}));
-					$scope.isAllChecked = checkedCount == totalCount && checkedCount != 0;
-				};
-
-				// 全选
-				$scope.checkAll = function(){
-					var flag = $scope.isAllChecked = !$scope.isAllChecked;
-					_.each($scope.data,function(d){
-						$scope.checkids[d.goodsId] = flag;
-					});
-				};
-
-				// 向前翻页
-				/*$scope.pagePrev = function(){
-					if($scope.pageIndex == 0){
-						return;
-					}
-					$scope.pageIndex --;
-					$scope.$emit('pageIndexChanged',$scope.pageIndex);
-				};
-
-				// 向后翻页
-				$scope.pageNext = function(){
-					if($scope.pageIndex == $scope.pageCount-1){
-						return;
-					}
-					$scope.pageIndex ++;
-					$scope.$emit('pageIndexChanged',$scope.pageIndex);
-				};*/
+				
 
 				$scope.listen = function(){
 					$scope.$on('pageIndexChanged',function(e,args){
@@ -91,16 +55,13 @@ define([
 					// 搜索之后,调整页码
 					$scope.$on('afterSearch',function(e,args){
 						var data = args;
-						$scope.pageCount = Math.floor(($scope.totalCount + ($scope.pageSize - 1)) / $scope.pageSize);
+						$scope.pageCount = Math.floor((data.count + ($scope.pageSize - 1)) / $scope.pageSize);
 					});
 
-					// 搜索之后,取消所有选择(checkbox)
+					// checker
 					$scope.$on('afterSearch',function(e,args){
-						var data = args;
-						$scope.isAllChecked = false;
-						_.each($scope.checkids,function(v,k){
-							delete $scope.checkids[k];
-						});
+						var ids = _.map(args.data,function(n){return n.goodsId;});
+						$scope.$emit('checker.setMetadata',ids);
 					});
 				};
 
