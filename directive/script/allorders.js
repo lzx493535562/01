@@ -91,7 +91,7 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 					// 搜索之后,调整页码
 					$scope.$on('afterSearch',function(e,args){
 						var data = args;
-						$scope.pageCount = Math.floor(($scope.totalCount + ($scope.pageSize - 1)) / $scope.pageSize);
+						$scope.pageCount = Math.floor((data.count + ($scope.pageSize - 1)) / $scope.pageSize);
 					});
 				};
 
