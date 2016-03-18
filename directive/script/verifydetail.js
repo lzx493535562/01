@@ -12,7 +12,7 @@ define(["app",
 					//var goodsId = $routeParams.goodsId;
 					var serviceNumber = 20160315000001;
 					var barcode = 3014400022637;
-					goodsService.varifydetail(serviceNumber,barcode)
+					goodsService.verifydetail(serviceNumber,barcode)
 					.success(function(data){
 						$scope.data = data;
 						console.log("detail",data);
@@ -62,6 +62,52 @@ define(["app",
 				};
 
 				
+				/*{
+			    "access_token": "用户访问凭证",
+			    "param": [
+			        {
+			            "barcode": "条形码过滤",
+			            "status": "状态 metaData.type:8",
+			            "rejectType": "如果是驳回,原因 metaData.type:5",
+			            "rejectContent": "驳回详情"
+			        }
+			    ]
+			}*/	
+
+				$scope.$on('verify.detail',function(e,args){
+					$scope.serviceNumber = args.serviceNumber;
+					$scope.barcode = args.barcode;
+				});
+				//通过
+				$scope.through = function(serviceNumber){
+					//var barcode = 3014400022637;
+					var status = 8;
+					var rejectType = 3;
+					var rejectContent = null;
+					goodsService.verify($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+					.success(function(data){
+						console.log("通过data",data);
+					})
+				};
+
+
+				//驳回
+				$scope.rejected = function(serviceNumber){
+					//var barcode = 3014400022637;
+					var status = 8;
+					var rejectType = 4;
+					var rejectContent = "222";
+					goodsService.verify($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+					.success(function(data){
+						console.log("驳回data",data);
+						$scope.rejectedBox = true;
+					})
+				};
+
+				//隐藏驳回悬浮框
+				$scope.closeRejected = function(){
+					$scope.rejectedbox = false;
+				};
 
 				$scope.getDetail(function(){
 					$scope.getThumb();				
