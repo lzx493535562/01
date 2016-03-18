@@ -17,7 +17,7 @@ define([
 				progress:'/lingmall/my/service/progress/{batchNumber}',
 				info:'/lingmall/my/service/info/{batchNumber}',
 				contact:'/lingmall/my/service/contacts/{contactsID}',
-				infoPro:'/lingmall/my/service/info/{batchNumber}/{barcode}',
+				varifydetail:'/lingmall/my/service/info/{batchNumber}/{barcode}',
 				submit:'/lingmall/my/service/submit/{batchNumber}',
 
 				// shopcart
@@ -123,9 +123,9 @@ define([
 			};
 
 			// 查询审核的批次的条码详情
-			this.info2 = function(batchNumber,barcode){
+			this.varifydetail = function(batchNumber,barcode){
 				return $http({
-					url:urlDict.info2.replace('{batchNumber}',batchNumber).replace('{barcode}',barcode),
+					url:urlDict.varifydetail.replace('{batchNumber}',batchNumber).replace('{barcode}',barcode),
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()

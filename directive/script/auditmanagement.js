@@ -1,6 +1,7 @@
 define(["app",
 		"directive-allorders",
-		"directive-verify"
+		"directive-verify",
+		"directive-verifydetail"
 	],function(app){
 		app.directive("lmauditmanagement",[function(){
 			return {
@@ -16,6 +17,10 @@ define(["app",
 
 					$scope.$on('order.list',function(){
 						$scope.showStep = 0;
+					});
+				
+					$scope.$on('verify.detail',function(){
+						$scope.showStep = 2;
 					});
 				}
 			}

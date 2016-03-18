@@ -1,0 +1,52 @@
+<div class="detail-title">
+	<div class="title">
+		<div class="goods-name">{{data.name}}</div>
+		<div class="verify-box">
+			<div class="rejected">
+				<div class="verify-icon">×</div>
+			驳回
+			</div>
+			<div class="through">
+			<div class="verify-icon">√</div>
+			通过</div>
+		</div>
+	</div>
+</div>
+<div class="detail-content">
+	<div class="detail-left">
+		<img ng-src="{{bigimg}}">
+	</div>
+	<div class="detail-right">
+		<div class="right-title">(共{{data.pictureNum}}张图片)</div>
+		<div class="right-content">
+			<dl>
+				<dt></dt>
+				<dd>
+					<div class="list-title">主图</div>
+					<ul class="img-list">
+						<li ng-repeat="d in pics_main" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
+						</li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="list-title">细节图</div>
+					<ul class="img-list">
+						<li ng-repeat="d in pics_detail" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
+						</li>
+					</ul>
+				</dd>
+				<dd>
+					<div class="list-title">标签图</div>
+					<ul class="img-list">
+						<li ng-repeat="d in pics_tag" ng-click="setBigimg(d)">
+							<img ng-src="{{d}}" ng-class="{'img-currBorder':d.indexOf(currBigimg)>=0}">
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+<!-- 		<div class="detail-btn">查看详情页</div> -->
+	</div>
+</div>

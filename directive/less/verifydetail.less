@@ -1,0 +1,128 @@
+@import "../../less/colors.less";
+lmverifydetail {
+	.detail-title {
+		width:100%;
+		height:60px;
+		line-height: 60px;
+		border-bottom:1px solid @main-color-border;
+		.title {
+			width:1200px;
+			margin:0 auto;
+			font-size:14px;
+			.goods-name {
+				float:left;
+				font-size: 16px;
+			}
+			.verify-box {
+				float:right;
+				.through,.rejected {
+					float:left;
+					width:100px;
+					height:40px;
+					line-height: 40px;
+					text-align: center;
+					border-radius:3px;
+					margin:10px 20px 0 0;
+					cursor: pointer;
+					color:#fff;
+				}
+				.through {
+					background-color:rgb(139,198,132);
+				}
+				.rejected {
+					background-color:rgb(251,141,142);
+				}
+				.verify-icon {
+					float:left;
+					width:20px;
+					height:20px;
+					line-height: 20px;
+					text-align: center;
+					border-radius:10px;
+					border:1px solid #fff;
+					margin:10px 0 0 15px;
+				}
+			}
+			.img-type {
+				width:100px;
+				border:1px solid @main-color-border;
+				border-radius:3px;
+				border-bottom:none;
+				background-color: #fff;
+				position: absolute;
+				li {
+					height:40px;
+					line-height: 40px;
+					text-align: center;
+					cursor: pointer;
+					border-bottom:1px solid @main-color-border;
+				}
+			}
+		}
+	}
+	.detail-content {
+		width:1200px;
+		margin:30px auto 0 auto;
+		font-size:14px;
+		padding-bottom:50px;
+		.detail-left {
+			float:left;
+			width:400px;
+			height:400px;
+			background-color:#fafafa;
+			img {
+				width:400px;
+				height:400px;
+			}
+		}
+		.detail-right {
+			padding-left:50px;
+			.right-title {
+				float:right;
+				margin-right:100px;
+			}
+			.right-content {
+				display:inline-block;
+				dl {
+					margin-top:30px;
+					dd {
+						float: left;
+						width:780px;
+						ul {
+							li {
+								float:left;
+								width:100px;
+								height:100px;
+								border:1px solid @main-color-border;
+								margin:0 20px 20px 0;
+								cursor:pointer;
+							}
+						}
+					}
+					.img-list {
+						overflow:hidden;
+					}
+					.list-title {
+						float:left;
+						width:60px;
+						text-align: center;
+					}
+					.img-currBorder {
+						border:2px solid @main-color-current;
+					}
+				}
+			}
+			.detail-btn {
+				width:160px;
+				height:50px;
+				line-height: 50px;
+				text-align: center;
+				background-color: @main-color;
+				border-radius:3px;
+				cursor: pointer;
+				display: inline-block;
+				margin-left: 60px
+			}
+		}
+	}
+}
