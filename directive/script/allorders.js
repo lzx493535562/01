@@ -2,6 +2,7 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 	app.directive("lmallorders",['lmGoodsService',function(goodsService){
 		return {
 			restrict:"E",
+			scope:{},
 			templateUrl:"../directive/html/allorders.html",
 			link:function($scope,$elememt,$attrs){
 				$scope.startTime = Date.today().addDays(-7);
@@ -40,21 +41,35 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 				};
 
 				//查看进度
-				$scope.progress = function(serviceNumber){
+				$scope.progress = function(serviceNumber,$event){
 					goodsService.progress(serviceNumber)
 					.success(function(data){
 						$scope.progressData = data;
 						console.log("progress",data);
 						$scope.isShowProgress = true;
+
+						// 确定位置
+						var offset = $($event.target).offset();
+						$scope.progressStyle = {
+							left:offset.left+100,
+							top:offset.top+50
+						};
 					})
 				};
 				//查看联系人方式
-				$scope.contact = function(contactsID){
+				$scope.contact = function(contactsID,$event){
 					goodsService.contact(contactsID)
 					.success(function(data){
 						$scope.contactData = data;
 						$scope.isShowContact = true;
 						console.log("contact",data);
+
+						// 确定位置
+						var offset = $($event.target).offset();
+						$scope.contactStyle = {
+							left:offset.left+100,
+							top:offset.top+50
+						};
 					})
 				};
 
@@ -78,6 +93,10 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 						var data = args;
 						$scope.pageCount = Math.floor(($scope.totalCount + ($scope.pageSize - 1)) / $scope.pageSize);
 					});
+				};
+
+				$scope.detail = function(order){
+					$scope.$emit('service.detail',order);
 				};
 
 				$scope.bind = function(){
