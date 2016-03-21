@@ -4,7 +4,8 @@ lmselect{
 	@selectorHeight:40px;
 	.status-select {
 		/*position: relative;*/
-		width:@selectorWidth;
+		min-width:@selectorWidth;
+		font-size: 14px;
 		height:@selectorHeight;
 		line-height: @selectorHeight;
 		border:1px solid @main-color-border;
@@ -14,7 +15,6 @@ lmselect{
 
 		.xiala {
 			float: right;
-			margin-right:5px;
 			color:#999;
 			cursor: pointer;
 			font-size: 30px;
@@ -22,6 +22,10 @@ lmselect{
 		}
 		.selector{
 			width: @selectorWidth;
+			min-width: 860px;
+			z-index: 2;
+			font-size: 14px;
+			margin-top:-2px;
 			position: absolute;
 			border:1px solid @main-color-border;
 			border-radius:3px;
@@ -29,12 +33,14 @@ lmselect{
 			cursor: pointer;
 			background-color: white;
 			.option{
-				padding-left: 20px;
+				float:left;
+				padding-left: 26px;
 				text-align: left;
 			}
 		}
 		.selected{
 			text-align: center;
+			padding:0 5px;
 		}
 	}
 

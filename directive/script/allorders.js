@@ -1,5 +1,5 @@
 define(["app",'service-goods','dateJs','datePicker'],function(app){
-	app.directive("lmallorders",['lmGoodsService',function(goodsService){
+	app.directive("lmallorders",['$location','lmGoodsService','lmUtilService',function($location,goodsService,UtilService){
 		return {
 			restrict:"E",
 			scope:{},
@@ -97,6 +97,11 @@ define(["app",'service-goods','dateJs','datePicker'],function(app){
 
 				$scope.detail = function(order){
 					$scope.$emit('service.detail',order);
+				};
+
+				//跳转页面
+				$scope.linkTo = function(path,isNewTab){
+					UtilService.linkTo(path,isNewTab);
 				};
 
 				$scope.bind = function(){
