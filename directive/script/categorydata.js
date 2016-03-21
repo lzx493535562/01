@@ -42,6 +42,9 @@ define(["app",
 					// 是否全选
 					$scope.isAllChecked = false;
 
+					//批量搜索页面默认隐藏
+					$scope.batchSearchPage = false;
+
 					// 获取一级分类
 					$scope.getCategory = function(cb){
 						goodsService.category().
@@ -104,6 +107,11 @@ define(["app",
 						.success(function(data){
 							$scope.shopcartTotalcount = data.count;
 						});
+					};
+
+					//跳转搜索页面
+					$scope.batchsearch = function(){
+						$scope.$emit("batchSearchPage",{batchSearchPage:true});
 					};
 
 					$scope.listen = function(){
