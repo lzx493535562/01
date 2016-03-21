@@ -6,9 +6,12 @@
 				<div class="verify-icon">×</div>
 			驳回
 			</div>
-			<div class="through" ng-click="through(serviceNumber)">
+			<div class="through" ng-click="through(serviceNumber)" ng-show="afterThrough==false">
 			<div class="verify-icon">√</div>
 			通过</div>
+			<div class="after-through through" ng-show="afterThrough==true">
+			<div class="verify-icon">√</div>
+			已通过</div>
 		</div>
 	</div>
 </div>
@@ -51,21 +54,21 @@
 	</div>
 </div>
 <!-- 驳回弹框 -->
-<div class="audit-box" ng-show="rejectedbox==true">
+<div class="audit-box" ng-show="rejectedBox==true">
 	<div class="audit-title">商品名称-审核
-		<div class="close">×</div>
+		<div class="close" ng-click="closeRejected()">×</div>
 	</div>
 	<ul class="dismiss-reason">
 		<li>驳回原因</li>
-		<li>
-			<div class="checkbox"></div>
+		<li ng-click="rejectType=1">
+			<div class="checkbox" ng-class="{'checkon':rejectType==1}"></div>
 			图模糊
 		</li>
-		<li>
-			<div class="checkbox"></div>
+		<li ng-click="rejectType=2">
+			<div class="checkbox" ng-class="{'checkon':rejectType==2}"></div>
 			文案不符合
 		</li>
 	</ul>
-	<textarea class="dismiss-text"></textarea>
-	<div class="dismiss-btn">驳回</div>
+	<textarea class="dismiss-text" type="text" ng-model="rejectContent"></textarea>
+	<div class="dismiss-btn" ng-click="confirmRejected()">驳回</div>
 </div>

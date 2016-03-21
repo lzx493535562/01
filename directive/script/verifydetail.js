@@ -8,6 +8,8 @@ define(["app",
 			templateUrl:"../directive/html/verifydetail.html",
 			link:function($scope,$element,$attrs){
 
+				$scope.afterThrough = false;
+
 				$scope.getDetail = function(cb){
 					goodsService.verifydetail($scope.serviceNumber,$scope.barcode)
 					.success(function(data){
@@ -63,27 +65,52 @@ define(["app",
 					var status = 8;
 					var rejectType = 3;
 					var rejectContent = null;
-					goodsService.submit($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+					var list = [{
+						barcode:$scope.barcode,
+						status:status,
+						rejectType:rejectType,
+						rejectContent:rejectContent
+					}];
+					goodsService.submit($scope.serviceNumber,list)
 					.success(function(data){
 						console.log("通过data",data);
+						$scope.afterThrough = true;
 					})
 				};
 
 				//驳回
-				$scope.rejected = function(serviceNumber){
-					var status = 8;
-					var rejectType = 4;
-					var rejectContent = "222";
-					goodsService.submit($scope.serviceNumber,[{barcode:$scope.barcode,status:status,rejectType:rejectType,rejectContent:rejectContent}])
+				$scope.rejected = function(){
+					$scope.rejectedBox = true;
+				};
+
+				//确定驳回
+				$scope.confirmRejected = function(serviceNumber){
+
+					/*{
+					    "access_token": "用户访问凭证",
+					    "barcode":"条形码过滤",
+					    "status":"状态 2=>不通过"
+					    "rejectType": "驳回原因 1=>模糊",
+					    "rejectContent": "驳回详情",
+					}*/
+					var status = 2;
+					var list = [{
+						barcode:$scope.barcode,
+						status:status,
+						rejectType:$scope.rejectType,
+						rejectContent:$scope.rejectContent
+					}];
+
+					goodsService.submit($scope.serviceNumber,list)
 					.success(function(data){
 						console.log("驳回data",data);
-						$scope.rejectedBox = true;
+						$scope.rejectedBox = false;
 					})
 				};
 
 				//隐藏驳回悬浮框
 				$scope.closeRejected = function(){
-					$scope.rejectedbox = false;
+					$scope.rejectedBox = false;
 				};
 
 				$scope.listen = function(){
