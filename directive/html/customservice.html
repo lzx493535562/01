@@ -10,23 +10,14 @@
 				<div>
 					<ul class="service-type">
 						<li class="type-text">选择服务类型：</li>
-						<li>
-							<div class="checkbox"></div>商品拍摄
-						</li>
-						<li>
-							<div class="checkbox"></div>详情页制作
-						</li>
-						<li>
-							<div class="checkbox"></div>原文件提供
-						</li>
-						<li>
-							<div class="checkbox"></div>其他图片规格
+						<li ng-repeat="d in serviceType">
+							<div class="checkbox" ng-class="{'checkon':typeDict[d.resid]}" ng-click="selectType(d.resid)"></div>{{d.value}}
 						</li>
 					</ul>
 				</div>
 				<div class="ser-request">
 					<div class="request-text type-text">服务要求:</div>
-					<textarea></textarea>
+					<textarea ng-model="serviceDemand"></textarea>
 				</div>
 			</div>
 		</div>
@@ -36,18 +27,18 @@
 				<ul>
 					<li>
 						<div class="left-text">姓名 <span>*</span>：</div>
-						<input type="text"/>
+						<input type="text" ng-model="name" />
 					</li>
 					<li>
 						<div class="left-text">联系电话 <span>*</span>：</div>
-						<input type="text"/>
+						<input type="text" ng-model="phone" />
 					</li>
 					<li>
 						<div class="left-text">电子邮箱 <span>*</span>：</div>
-						<input type="text"/>
+						<input type="text" ng-model="email" />
 					</li>
 				</ul>
-				<div class="apply-btn">提交申请</div>
+				<div class="apply-btn" ng-click="apply();">提交申请</div>
 			</div>
 		</div>
 	</div>

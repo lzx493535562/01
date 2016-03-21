@@ -13,6 +13,7 @@ define([
 				// my
 				goods:'/lingmall/my/goods',
 				detail:'/lingmall/my/goods/{id}',
+				serviceApply:'/lingmall/service/application',
 				service:'/lingmall/my/service',
 				serviceDetail:'/lingmall/my/service/{serviceNumber}',
 				progress:'/lingmall/my/service/progress/{serviceNumber}',
@@ -36,6 +37,8 @@ define([
 
 			// 元数据类型编号
 			this.metadataTypeDict = {
+				// 服务类型
+				serviceType:4,
 				// 服务状态
 				serviceStatus:6,
 				goodsType:7,
@@ -78,6 +81,20 @@ define([
 					method:methodDict.post,
 					data:{
 						access_token:userService.token()
+					}
+				});
+			};
+			// 申请service
+			this.serviceApply = function(barcodeList,typeList,serviceDemand,contacts){
+				return $http({
+					url:urlDict.service,
+					method:methodDict.post,
+					data:{
+						access_token:userService.token(),
+						barcode:barcodeList.join(','),
+						type:typeList.join(','),
+						serviceDemand:serviceDemand,
+						contacts:contacts
 					}
 				});
 			};
