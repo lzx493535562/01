@@ -1,6 +1,6 @@
-﻿<div class="shopcart">
+﻿<div class="shopcart" lmchecker>
 	<div class="total-data">
-		<span class="total-count">全部数据123SKU</span>
+		<span class="total-count">全部数据{{totalCount}}SKU</span>
 	</div>
 	<table class="table">
 		<thead class="thead">
@@ -15,51 +15,33 @@
 		<tbody class="tbody">
 			<tr class="choose-all">
 				<td colspan="5">
-					<div class="checkbox"></div>全选
+					<div class="checkbox" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>全选
 				</td>
 			</tr>
-			<tr>
+			<tr ng-repeat="d in data">
 				<td>
-					<div class="checkbox checkbox-pos"></div>20160325101446
+					<div class="checkbox checkbox-pos" ng-class="{'checkon':!!checkids[d.goodsId]}"  ng-click="check(d.goodsId)" ></div>{{d.barcode}}
 				</td>
-				<td>这里是商品名称</td>
-				<td>12</td>
-				<td>¥5.00</td>
-				<td class="del">移除</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="checkbox checkbox-pos"></div>20160325101446
-				</td>
-				<td>这里是商品名称</td>
-				<td>12</td>
-				<td>¥5.00</td>
-				<td class="del">移除</td>
-			</tr>	
-			<tr>
-				<td>
-					<div class="checkbox checkbox-pos"></div>20160325101446
-				</td>
-				<td>这里是商品名称</td>
-				<td>12</td>
-				<td>¥5.00</td>
-				<td class="del">移除</td>
+				<td>{{d.name}}</td>
+				<td>{{d.pictureNum}}</td>
+				<td>{{d.price | currency : '¥' : 2}}</td>
+				<td class="del" ng-click="remove([{goodsId:d.goodsId,db:d.db}])">移除</td>
 			</tr>
 			<tr class="seemore">
-				<td colspan="5">点击加载更多...</td>
+				<td colspan="5" ng-click="more()">点击加载更多...</td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="settlement">
 		<div class="choose-all">
-			<div class="checkbox checkbox-pos"></div>
+			<div class="checkbox checkbox-pos" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>
 			全选
-			<span class="del-choose">删除所选商品</span>			
+			<span class="del-choose" ng-click="remove()">删除所选商品</span>
 		</div>
 		<div class="go-settlement">
-			<div class="detail">总价：￥5000.00 <br/><span class="count">共123SKU</span>
-			</div>
-			<div class="settlement-btn">去结算</div>
+			<div class="detail">总价：{{selectedPrice | currency : '¥' : 2}} <br/><span class="count">共{{selectedCount}}SKU</span>
 		</div>
+		<div class="settlement-btn" ng-click="confirm()">去结算</div>
 	</div>
+</div>
 </div>
