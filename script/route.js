@@ -7,6 +7,7 @@ define(["app",
 	"ctrl-goodsdatapage",
 	"ctrl-shopcartpage",
 	"ctrl-customservicepage",
+	"ctrl-myorderspage",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
 	"ctrl-firstpage",
@@ -46,6 +47,10 @@ define(["app",
 					.when("/customservicepage",{
 						templateUrl:"view/customservicepage.html",
 						controller:"lmCustomservicepageCtrl"
+					})
+					.when("/myorderspage",{
+						templateUrl:"view/myorderspage.html",
+						controller:"lmMyorderspageCtrl"
 					})
 					.when("/detailpage/:goodsId",{
 						templateUrl:"view/detailpage.html",
