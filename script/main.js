@@ -57,6 +57,7 @@ requirejs.config({
 		"directive-shopcart":"directive/script/shopcart",
 		"directive-customservice":"directive/script/customservice",
 		"directive-myorders":"directive/script/myorders",
+		"directive-batchsearch":"directive/script/batchsearch",
 		"directive-minpager":"directive/script/minpager",
 		"directive-goodsdata":"directive/script/goodsdata",
 		"directive-verify":"directive/script/verify",

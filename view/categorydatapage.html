@@ -2,5 +2,6 @@
 <lmtopbar></lmtopbar>
 <div class="wrap">
 	<lmleftsidebar menu-name="数据中心"></lmleftsidebar>
-	<lmcategorydata lmchecker></lmcategorydata>
+	<lmcategorydata lmchecker ng-show="batchSearchPage==false"></lmcategorydata>
+	<lmbatchsearch ng-show="batchSearchPage==true"></lmbatchsearch>
 </div>

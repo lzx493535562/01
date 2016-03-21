@@ -6,6 +6,9 @@ define(["app",
 		'tool-checker'
 	],function(app){
 	app.controller("lmCategorydatapageCtrl",["$scope",function($scope){
-
+		$scope.$on("batchSearchPage",function(e,args){
+			args.batchSearchPage = $scope.batchSearchPage;
+			$scope.batchSearchPage = true;
+		});
 	}]);
 });
