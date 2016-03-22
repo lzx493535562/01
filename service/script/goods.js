@@ -5,6 +5,9 @@ define([
 		app.service('lmGoodsService', ['$http','lmUserService',function($http,userService){
 			var urlPrefix = 'http://192.168.1.240:8001';
 			var urlDict = {
+				// 
+				goodsinfo:'/lingmall/goods/info/{goodsId}',
+				//
 				metadata:'/lingmall/metadata/{type}',
 				category:'/lingmall/category',
 				goodslist:'/lingmall/goods/list',
@@ -57,6 +60,19 @@ define([
 					method:methodDict.get
 				});
 			};
+
+			// 商品详情-来自数据中心
+			this.goodsinfo = function(goodsId){
+				return $http({
+					url:urlDict.goodsinfo.replace('{goodsId}',goodsId),
+					method:methodDict.post,
+					data:{
+						access_token:userService.token()
+					}
+				});
+			};
+
+			//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 			// 我的商品库
 			this.goods = function(barcode,name,type,pageIndex,pageSize){
