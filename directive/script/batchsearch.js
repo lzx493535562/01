@@ -1,5 +1,8 @@
-define(["app"],function(app){
-	app.directive("lmbatchsearch",function(){
+define([
+	"app",
+	'tool-batchsearchbtn'
+	],function(app){
+	app.directive("lmbatchsearch",[function(){
 		return {
 			restrict:"E",
 			templateUrl:"../directive/html/batchsearch.html",
@@ -11,5 +14,5 @@ define(["app"],function(app){
 				};
 			}
 		}
-	});
+	}]);
 });

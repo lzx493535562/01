@@ -73,6 +73,7 @@ requirejs.config({
 
 		// tool directive
 		"tool-checker":"directive/script/checker",
+		"tool-batchsearchbtn":"directive/script/batchsearchbtn",
 
 		// filter
 		"filter-goodsType":"filter/script/goodsType",

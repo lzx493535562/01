@@ -33,6 +33,7 @@ lmbatchsearch {
 					}
 					.btn-box {
 						min-width:525px;
+						vertical-align: middle;
 					}
 				}
 			}
@@ -62,15 +63,25 @@ lmbatchsearch {
 						background-color:@main-color-current;
 					}
 				}
+				@importBtnWidth:100px;
+				@importBtnHeight:40px;
 				.import-btn {
-					width:100px;
-					height:40px;
-					line-height: 40px;
+					width:@importBtnWidth;
+					height:@importBtnHeight;
+					line-height: @importBtnHeight;
 					text-align: center;
 					border:1px solid @main-color-current;
 					color:@main-color-current;
 					margin-left:20px;
-					display:inline-block;
+					float: left;
+					cursor: pointer;
+				}
+				input.csvUploader{
+					float: left;
+					margin-left:-@importBtnWidth;
+					width:@importBtnWidth;
+					height:@importBtnHeight;
+					opacity:0;
 					cursor: pointer;
 				}
 				lmshopcartbtn{
