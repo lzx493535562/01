@@ -63,11 +63,7 @@ requirejs.config({
 		"directive-verify":"directive/script/verify",
 		"directive-verifydetail":"directive/script/verifydetail",
 		"directive-modal":"directive/script/modal",
-		"directive-first":"directive/script/first",
-		"directive-second":"directive/script/second",
-		"directive-third":"directive/script/third",
 		"directive-login":"directive/script/login",
-		"directive-four":"directive/script/four",
 		"directive-select":"directive/script/select",
 		"directive-catebar":"directive/script/catebar",
 
