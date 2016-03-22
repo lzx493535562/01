@@ -252,14 +252,19 @@ define([
 			// 商品移出购物车
 			// goodlist格式为{goodsId:...,db:...}
 			this.shopcartRemove = function(goodlist){
+				var headers = {
+					'Content-Type':'application/json'
+				};
 				var opts = {
 					access_token:userService.token(),
 					param:goodlist
 				};
 				return	$http({
+					headers:headers,
 					url:urlDict.shopcart,
 					method:methodDict.delete,
 					data:opts
+
 				});
 			};
 
