@@ -1,5 +1,6 @@
 define(["app",
-		"service-user"
+	'tool-batchsearchbtn',
+	"service-user"
 	],function(app){
 	app.directive("lmbatchsearch",["lmUserService",function(userService){
 		return {
