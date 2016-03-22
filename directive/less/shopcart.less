@@ -1,4 +1,5 @@
 @import "../../less/colors.less";
+@import "../../less/ui.less";
 lmshopcart {
 	.shopcart {
 		width:100%;
@@ -33,6 +34,8 @@ lmshopcart {
 		}
 		.table {
 			width:100%;
+		}
+		.shopgoods-box {
 			.thead {
 				tr {
 					font-size:16px;
@@ -78,17 +81,22 @@ lmshopcart {
 			}
 		}
 		.settlement {
-			width:100%;
-			min-width:1200px;
-			height:60px;
-			line-height: 60px;
+			/*width:100%;*/
+			/*min-width:1200px;*/
 			border:1px solid @main-color-border;
 			border-left:none;
 			border-right:none;
 			background-color:#fff;
 			margin-top:20px;
+			tr {
+				height:58px;
+				line-height: 58px;
+				td {
+
+				}
+			}
 			.choose-all {
-				float:left;
+				/*float:left;*/
 				padding-left:5px;
 				.del-choose {
 					padding-left:30px;
@@ -100,13 +108,14 @@ lmshopcart {
 			}
 			
 			.go-settlement {
-				float:right;
-				.price {
+				text-align: right;
+				.price,.count{
 					font-size: 16px;
 				}
-				.count {}
+				.count {
+					padding-right:10px;
+				}
 				.settlement-btn {
-					float:right;
 					width:120px;
 					height:60px;
 					line-height: 60px;
@@ -118,11 +127,8 @@ lmshopcart {
 					display: inline-block;
 				}
 				.detail {
-					float:left;
-					line-height: 30px;
-					.count {
-						padding-left:40px;
-					}
+					display:inline-block;
+					margin-bottom:-22px;
 				}
 			}
 		}

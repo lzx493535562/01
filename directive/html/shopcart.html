@@ -2,7 +2,7 @@
 	<div class="total-data">
 		<span class="total-count">全部数据{{totalCount}}SKU</span>
 	</div>
-	<table class="table">
+	<table class="table shopgoods-box">
 		<thead class="thead">
 			<tr>
 				<td class="padd-left">条形码</td>
@@ -32,16 +32,21 @@
 			</tr>
 		</tbody>
 	</table>
-	<div class="settlement">
-		<div class="choose-all">
-			<div class="checkbox checkbox-pos" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>
-			全选
-			<span class="del-choose" ng-click="remove()">删除所选商品</span>
-		</div>
-		<div class="go-settlement">
-			<div class="detail">总价：{{selectedPrice | currency : '¥' : 2}} <br/><span class="count">共{{selectedCount}}SKU</span>
-		</div>
-		<div class="settlement-btn" ng-click="confirm()">去结算</div>
-	</div>
+	<table class="settlement table">
+		<tr>
+			<td class="choose-all">
+				<div class="checkbox checkbox-pos" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>
+				全选
+				<span class="del-choose" ng-click="remove()">删除所选商品</span>
+			</td>
+			<td class="go-settlement">
+				<div class="detail">
+					<span class="count">共{{selectedCount}}SKU</span>
+					<span class="price">总价：{{selectedPrice | currency : '¥' : 2}} </span>
+				</div>
+					<span class="settlement-btn" ng-click="confirm()">去结算</span>
+			</td>
+		</tr>
+	</table>
 </div>
 </div>
