@@ -116,7 +116,7 @@ define(["app",
 
 					//跳转商品详情页
 					$scope.linkToDetail = function(goodsId){
-						var path="/detailpage/"+goodsId;
+						var path="/detailpage/"+goodsId+'/goodsinfo';
 						utilService.linkTo(path,false);
 					};
 

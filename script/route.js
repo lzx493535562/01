@@ -9,12 +9,7 @@ define(["app",
 	"ctrl-customservicepage",
 	"ctrl-myorderspage",
 	"ctrl-detailpage",
-	"ctrl-loginpage",
-	"ctrl-firstpage",
-	"ctrl-secondpage",
-	"ctrl-thirdpage",
-	"ctrl-fourpage",
-	// "ctrl-settlement"
+	"ctrl-loginpage"
 	],
 	function(app){
 		var initRoute = function(){		
@@ -52,7 +47,7 @@ define(["app",
 						templateUrl:"view/myorderspage.html",
 						controller:"lmMyorderspageCtrl"
 					})
-					.when("/detailpage/:goodsId",{
+					.when("/detailpage/:goodsId/:detailType?",{
 						templateUrl:"view/detailpage.html",
 						controller:"lmDetailCtrl"
 					})
