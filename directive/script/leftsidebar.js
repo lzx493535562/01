@@ -6,8 +6,8 @@ define(["app"],function(app){
 			link:function($scope,$element,$attrs){
 				$scope.currName = $attrs.menuName;
 				$scope.menuData = [
-					{name:'我的商品库',url:'mygoodspage'},
-					{name:'数据中心',url:'categorydatapage'}
+					{name:'数据中心',url:'categorydatapage'},
+					{name:'我的商品库',url:'mygoodspage'}
 				];
 
 				$window.onresize = _.debounce(function(){
