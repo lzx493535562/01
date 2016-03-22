@@ -46,7 +46,7 @@
 		<div class="category-list">
 			<div class="category-detail" ng-repeat="d in data">
 				<div class="checkbox" ng-class="{'checkon':!!checkids[d.goodsId]}" ng-click="check(d.goodsId)"></div>
-				<div class="category-img">
+				<div class="category-img" ng-click="linkToDetail(d.goodsId)">
 					<img ng-src="{{d.img}}">
 				</div>
 				<div class="category-text">{{d.name}}</div>

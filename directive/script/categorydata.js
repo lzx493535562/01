@@ -20,9 +20,9 @@ define(["app",
 		// "$scope",
 		"lmImgService",
 		// "lmUserService",
-		// "lmUtilService",
+		 "lmUtilService",
 		"lmGoodsService",
-		function(/*$rootScope,$routeParams,$scope,imgService,userService,utilService,*/imgService,goodsService){
+		function(/*$rootScope,$routeParams,$scope,imgService,userService,*/imgService,utilService,goodsService){
 			return {
 				restrict:"E",
 				templateUrl:"../directive/html/categorydata.html",
@@ -112,6 +112,12 @@ define(["app",
 					//跳转搜索页面
 					$scope.batchsearch = function(){
 						$scope.$emit("batchSearchPage",{batchSearchPage:true});
+					};
+
+					//跳转商品详情页
+					$scope.linkToDetail = function(goodsId){
+						var path="/detailpage/"+goodsId;
+						utilService.linkTo(path,false);
 					};
 
 					$scope.listen = function(){
