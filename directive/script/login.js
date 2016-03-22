@@ -30,7 +30,9 @@ define(["app",
 
                 	//登录
                 	$scope.login = function(){
-                		userService.login($scope.username,$scope.password)
+                            if(!$scope.username || !$scope.pwd){return;};
+                            
+                		userService.login($scope.username,$scope.pwd)
                 		.success(function(data){
                 			console.log("login",data);
                 		})

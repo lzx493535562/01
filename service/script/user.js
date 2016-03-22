@@ -17,7 +17,7 @@ define([
 				get:'GET'
 			};
 
-			// 我的商品库
+			// 登陆
 			this.login = function(username,pwd){
 				return $http({
 					url:urlPrefix+urlDict.login,
