@@ -82,7 +82,7 @@ define(["app",
 						});
 
 						// 这里需要重新核实
-						$scope.isAllChecked = _.all($scope.checkids,function(v,k){return v;});
+						$scope.isAllChecked = $scope.count && _.all($scope.checkids,function(v,k){return v;});
 					});
 
 					// watch
