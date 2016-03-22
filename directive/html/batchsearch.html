@@ -1,1 +1,89 @@
-123456+
+<div class="batchsearch">
+	<div class="goods-content">
+		<div class="content-title">
+			<div class="title-text" ng-click="goback()">向上一级</div>
+		</div>
+		<div class="table-box">
+			<table class="table content-center">
+				<tr>
+					<td></td>
+					<td colspan="2" class="btn-box">
+						<div class="add-box">
+							<input type="text">
+							<div class="add-btn">添加</div>
+						</div>
+						<div class="import-btn">导入Excel</div>
+					</td>
+					<td>
+						<lmshopcartbtn></lmshopcartbtn>
+					</td>
+				</tr>
+			</table>			
+		</div>
+		<ul class="match-box">
+			<li class="current">
+				<i class="arrow-down"></i>
+				<a href="javascript:">匹配到商品500SKU</a>
+			</li>
+			<li>
+				<!-- <i class="arrow-down"></i> -->
+				<a href="javascript:">未匹配到的商品500SKU</a>
+			</li>
+		</ul>
+		<table class="table">
+			<thead class="thead">
+				<tr>
+					<td class="padd-left">条形码</td>
+					<td>商品名称</td>
+					<td>商品图片</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td>
+						<div class="checkbox"></div>
+						2016032212315
+					</td>
+					<td>这里是商品名称</td>
+					<td>10</td>
+					<td class="detail">详情</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox"></div>
+						2016032212315
+					</td>
+					<td>这里是商品名称</td>
+					<td>10</td>
+					<td class="detail">详情</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox"></div>
+						2016032212315
+					</td>
+					<td>这里是商品名称</td>
+					<td>10</td>
+					<td class="detail">详情</td>
+				</tr>
+				<tr class="seemore">
+					<td colspan="4">点击加载更多......</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="settlement table">
+			<tr>
+				<td class="choose-all">
+					<div class="checkbox checkbox-pos" ng-class="{'checkon':isAllChecked}" ng-click="checkAll()"></div>
+					全选
+					<span class="del-choose" ng-click="remove()">删除所选商品</span>
+				</td>
+				<td class="go-settlement">
+					<span class="total-count">共500SKU</span>
+					<span class="settlement-btn" ng-click="confirm()">去结算</span>
+				</td>				
+			</tr>
+		</table>
+	</div>
+</div>

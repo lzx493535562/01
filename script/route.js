@@ -21,8 +21,8 @@ define(["app",
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
 					.when("/",{
-						templateUrl:"view/mygoodspage.html",
-						controller:"lmMygoodspageCtrl"
+						templateUrl:"view/categorydatapage.html",
+						controller:"lmCategorydatapageCtrl"
 					})
 					.when("/mygoodspage",{
 						templateUrl:"view/mygoodspage.html",
