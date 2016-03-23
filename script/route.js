@@ -10,7 +10,8 @@ define(["app",
 	"ctrl-customservicepage",
 	"ctrl-myorderspage",
 	"ctrl-detailpage",
-	"ctrl-loginpage"
+	"ctrl-loginpage",
+	"ctrl-registerpage"
 	],
 	function(app){
 		var initRoute = function(){		
@@ -60,22 +61,6 @@ define(["app",
 					 	templateUrl:"view/loginpage.html",
 					 	controller:"lmLoginpageCtrl"
 					})
-					.when("/firstpage",{
-					 	templateUrl:"view/firstpage.html",
-					 	controller:"lmfirstpageCtrl"
-					})
-					.when("/secondpage",{
-					 	templateUrl:"view/secondpage.html",
-					 	controller:"lmsecondpageCtrl"
-					})
-					.when("/thirdpage",{
-						templateUrl:"view/thirdpage.html",
-						controller:"lmThirdpageCtrl"
-					})
-					.when("/fourpage",{
-						templateUrl:"view/fourpage.html",
-						controller:"lmfourpageCtrl"
-					})
 					// .when("/worktable",{
 					// 	templateUrl:"view/worktable",
 					// 	controller:"lmWorktableCtrl"
@@ -113,10 +98,10 @@ define(["app",
 					// 	templateUrl:"view/customservicepage.html",
 					// 	controller:"lmCustomservicepageCtrl"
 					// })
-					// .when("/registerpage",{
-					// 	templateUrl:"view/registerpage.html",
-					// 	controller:"lmRegisterpageCtrl"
-					// })
+					.when("/registerpage",{
+						templateUrl:"view/registerpage.html",
+						controller:"lmRegisterpageCtrl"
+					})
 					// .when("/forgetpw",{
 					// 	templateUrl:"view/forgetpw.html",
 					// 	controller:"lmForgetpwCtrl"
