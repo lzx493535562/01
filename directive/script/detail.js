@@ -19,6 +19,10 @@ define(["app",
 					goodsService[$scope.detailType](goodsId)
 					.success(function(data){
 						$scope.data = data;
+						$scope.exists = data.exists;
+						//"exists": "0=>不存在(发布需求); 1=>不存在商品库(加入商品库); 
+						//2=>存在(已经加入商品库); 3=>已购买; 4=>未加入购物车 ; 5=>已加入购物车"
+						console.log("exists",$scope.exists);
 						console.log("detail",data);
 						cb && cb();
 					});
@@ -82,8 +86,9 @@ define(["app",
 						console.log(data,status,"加入购物车");
 						if(status==204){
 							$scope.$emit('shopcart.afterAdd');
-							$scope.afterAdd = true;
+							$scope.exists = 5;
 						}
+
 					});
 				};
 
@@ -92,6 +97,7 @@ define(["app",
 					goodsService.shopcart(0,1)
 					.success(function(data){
 						$scope.shopcartTotalcount = data.count;
+						//$scope.getDetail();
 					});
 				};
 
