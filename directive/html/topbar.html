@@ -1,6 +1,34 @@
-<div class="topmenu">
+<div class="topmenu" ng-show="$rootScope.isLogin">
 	<img class="logo-img" src="../../image/logo.png"/>
 	<div class="username">这是用户名
 		<i class="iconfont">&#xe612;</i>
+	</div>
+</div>
+
+<!--未登录前 -->
+<div class="bg" ng-show="!$rootScope.isLogin">
+	<div class="content">
+		<div class="logo" title="零猫首页" ng-click="linkTo('/')">
+			<img src="../image/logo-lingmall.png">
+		</div>
+		<div class="menu">
+			<ul class="nav">
+				<li ng-click="linkTo('/homepage')">
+					<a href="">首页</a>
+				</li>
+				<li ng-click="linkTo('/goodsdatapage')">
+					<a href="">商品数据</a>
+				</li>
+				<li ng-click="linkTo('/customservicepage')">
+					<a href="">定制服务</a>
+				</li>
+			</ul>			
+		</div>
+		<div class="btn-box">
+			<ul>
+				<li class="login-btn curp" ng-click="linkTo('/loginpage')">登录</li>
+				<li class="regist-btn curp" ng-click="linkTo('/registerpage')">注册</li>
+			</ul>
+		</div>
 	</div>
 </div>

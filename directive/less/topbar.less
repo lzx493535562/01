@@ -1,11 +1,16 @@
 @import "../../less/colors.less";
 lmtopbar {
-	.topmenu {
+	.topmenu,.bg {
 		width:100%;
 		height:80px;
 		line-height:80px;
 		font-family: "微软雅黑";
 		background-color:@main-color-topmenu;
+	}
+	.curp {
+		cursor:pointer;
+	}
+	.topmenu{
 		.logo-img {
 			float:left;
 			margin:13px 0 0 20px;
@@ -18,6 +23,67 @@ lmtopbar {
 			display:inline-block;
 			cursor: pointer;
 			color:#fff;
+		}
+	}
+	.bg {
+		.content {
+			width:1200px;
+			height:80px;
+			margin:0 auto;
+			.logo {
+				float:left;
+				img {
+					margin:15px 0 0 15px;
+					display: inline-block;
+				}
+			}
+			.menu {
+				float:left;
+				margin-left:55px;
+				.nav {
+					font-size:16px;
+					li{
+						float:left;
+						margin-left:75px;
+						.activeText{
+							color: @main-color;
+							padding-bottom:5px;
+							border-bottom:@main-color 3px solid;
+						}
+						
+					}
+					li a {
+						color:@main-color-current;
+						line-height:80px;
+						display: inline-block;
+					}
+				}
+			}
+			.btn-box {
+				float:right;
+				ul {
+					li {
+						float:left;
+					}
+					.login-btn,.regist-btn {
+						width:120px;
+						height:40px;
+						line-height: 40px;
+						text-align: center;
+						border-radius:3px;
+						margin-top:20px;
+						margin-right:10px;
+					}
+					.login-btn {
+						color:#333;
+						background-color:@main-color-current;
+					}
+					.regist-btn {
+						color:@main-color-current;
+						border:1px solid @main-color-current;
+					}
+				}
+			}
 		}
 	}
 }
