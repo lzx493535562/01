@@ -18,6 +18,9 @@ define(["app",
 							console.log("login",data);
 							$scope.$emit('afterLogin',data);
 
+							$rootScope.isLogin = true;
+							$rootScope.username = $scope.username;
+
 							$location.path('/homepage');
 						})
 						.error(function(err,data){
