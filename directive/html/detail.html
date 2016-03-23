@@ -6,7 +6,8 @@
 				<span>应付金额：¥10.00</span>
 				<span class="prompt">（温馨提示：如果图片数据未能满足需求，可点击右上角申请定制服务！）</span>
 			</div>
-			<div class="addgoods-btn" ng-show="detailType=='goodsinfo'">加入购物车</div>
+			<div class="addgoods-btn" ng-show="detailType=='goodsinfo'&&afterAdd==false" ng-click="addGoods()">加入购物车</div>
+			<div class="afteradd-btn" ng-show="detailType=='goodsinfo'&&afterAdd==true">已加入</div>
 			<!-- <div class="buy-btn">登录后购买</div> -->
 		</div>
 		<div class="verify-box" ng-show="detailType=='verifydetail'">

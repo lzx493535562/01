@@ -7,6 +7,9 @@ define(["app",
 			restrict:"E",
 			templateUrl:"../directive/html/detail.html",
 			link:function($scope,$element,$attrs){
+
+				$scope.afterAdd = false;
+
 				$scope.detailType = $routeParams['detailType'] || 'detail';
 				$scope.getDetail = function(cb){
 					var goodsId = $routeParams.goodsId;
@@ -70,6 +73,33 @@ define(["app",
 					imgService.getZipPro(list);
 				};
 
+
+				//加入购物车
+				$scope.addGoods = function(){
+					var goodlist = [{goodsId:$scope.data.goodsId,db:$scope.data.db}];
+					goodsService.shopcartAdd(goodlist)
+					.success(function(data,status){
+						console.log(data,status,"加入购物车");
+						if(status==204){
+							$scope.$emit('shopcart.afterAdd');
+							$scope.afterAdd = true;
+						}
+					});
+				};
+
+				// 查询购物车
+				$scope.shopcart = function(){
+					goodsService.shopcart(0,1)
+					.success(function(data){
+						$scope.shopcartTotalcount = data.count;
+					});
+				};
+
+				// 购物车
+				$scope.$on('shopcart.afterAdd',function(e,args){
+					// 刷新下购物车的信息
+					$scope.shopcart();
+				});
 
 				$scope.getDetail(function(){
 					$scope.getThumb();				
