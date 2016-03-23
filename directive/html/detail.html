@@ -1,7 +1,28 @@
 <div class="detail-title">
 	<div class="title">
 		<div class="goods-name">{{data.name}}</div>
-		<div class="down-box">
+		<div class="addgoods-box" ng-show="detailType=='goodsinfo'">
+			<div class="money">
+				<span>应付金额：¥10.00</span>
+				<span class="prompt">（温馨提示：如果图片数据未能满足需求，可点击右上角申请定制服务！）</span>
+			</div>
+			<div class="addgoods-btn" ng-show="detailType=='goodsinfo'&&exists!=5" ng-click="addGoods()">加入购物车</div>
+			<div class="afteradd-btn" ng-show="detailType=='goodsinfo'&&exists==5">已加入</div>
+			<!-- <div class="buy-btn">登录后购买</div> -->
+		</div>
+		<div class="verify-box" ng-show="detailType=='verifydetail'">
+			<div class="rejected" ng-click="rejected(serviceNumber)">
+				<div class="verify-icon">×</div>
+			驳回
+			</div>
+			<div class="through" ng-click="through(serviceNumber)" ng-show="afterThrough==false">
+			<div class="verify-icon">√</div>
+			通过</div>
+			<div class="after-through through" ng-show="afterThrough==true">
+			<div class="verify-icon">√</div>
+			已通过</div>
+		</div>
+		<div class="down-box" ng-show="detailType!='goodsinfo'&&detailType!='verifydetail'">
 			<!-- <div class="select">下载全部
 				<i class="iconfont xiala">&#xe612;</i>
 			</div> -->

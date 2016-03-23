@@ -1,6 +1,7 @@
 define(["app",
 	"angularRoute",
 	'ctrl-index',
+	"ctrl-homepage",
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
 	"ctrl-categorydatapage",
@@ -19,6 +20,10 @@ define(["app",
 					.when("/",{
 						templateUrl:"view/categorydatapage.html",
 						controller:"lmCategorydatapageCtrl"
+					})
+					.when("/homepage",{
+						templateUrl:"view/homepage.html",
+						controller:"lmHomepageCtrl"
 					})
 					.when("/mygoodspage",{
 						templateUrl:"view/mygoodspage.html",

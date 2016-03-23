@@ -25,8 +25,9 @@ define(["app",
 						$scope.showStep = 0;
 					});
 				
-					$scope.$on('verify.detail',function(){
+					$scope.$on('verify.detail',function(e,args){
 						$scope.showStep = 2;
+
 					});
 				}
 			}

@@ -26,6 +26,7 @@ requirejs.config({
 		"service-util":"service/script/util",
 		// ctrl
 		"ctrl-index":"controller/script/index",
+		"ctrl-homepage":"controller/script/homepage",
 		"ctrl-mygoodspage":"controller/script/mygoodspage",
 		"ctrl-loginpage":"controller/script/loginpage",
 		"ctrl-registerpage":"controller/script/registerpage",
@@ -38,6 +39,7 @@ requirejs.config({
 		"ctrl-detailpage":"controller/script/detailpage",
 		// directive
 		"directive-test":"directive/script/test",
+		"directive-home":"directive/script/home",
 		"directive-mygoods":"directive/script/mygoods",
 		"directive-topbar":"directive/script/topbar",
 		"directive-copyright":"directive/script/copyright",
