@@ -51,7 +51,6 @@ define(["app","con-const","service-user"],function(app){
 					vercode:null
 				};
 
-				$scope.data.mobile = '18701816746';
 
 
 				// 再次获取等待时间
