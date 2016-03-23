@@ -7,10 +7,13 @@ define(["app",
 			restrict:"E",
 			templateUrl:"../directive/html/detail.html",
 			link:function($scope,$element,$attrs){
-				var detailType = $routeParams['detailType'] || 'detail';
+				$scope.detailType = $routeParams['detailType'] || 'detail';
 				$scope.getDetail = function(cb){
 					var goodsId = $routeParams.goodsId;
-					goodsService[detailType](goodsId)
+					if($scope.detailType=='verifydetail'){
+						goodsId.replace(serviceNumber,barcode);
+					}
+					goodsService[$scope.detailType](goodsId)
 					.success(function(data){
 						$scope.data = data;
 						console.log("detail",data);

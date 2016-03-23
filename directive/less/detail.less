@@ -13,7 +13,77 @@ lmdetail {
 				float:left;
 				font-size: 16px;
 			}
-			.down-box {
+			.verify-box {
+				float:right;
+				.through,.rejected {
+					float:left;
+					width:100px;
+					height:40px;
+					line-height: 40px;
+					text-align: center;
+					border-radius:3px;
+					margin:10px 20px 0 0;
+					cursor: pointer;
+					color:#fff;
+				}
+				.through {
+					background-color:rgb(139,198,132);
+				}
+				.rejected {
+					background-color:rgb(251,141,142);
+				}
+				.verify-icon {
+					float:left;
+					width:20px;
+					height:20px;
+					line-height: 20px;
+					text-align: center;
+					border-radius:10px;
+					border:1px solid #fff;
+					margin:10px 0 0 15px;
+				}
+				.after-through {
+					background-color:#eaeaea;
+				}
+			}
+			.addgoods-box,.buy-box {
+				float:right;
+				.addgoods-btn,.buy-btn {
+					float:right;
+					width:120px;
+					height:40px;
+					line-height: 40px;
+					text-align: center;
+					border-radius:3px;
+					margin:10px 20px 0 0;
+					cursor: pointer;
+					color:#fff;
+				}
+				span {
+					display:block;
+					height:30px;
+					line-height: 30px;
+				}
+				.buy-btn {
+					background-color:#cfcfcf;
+				}
+				.addgoods-btn {
+					background-color:@main-color-current;
+				}
+				.money,.addgoods-btn,.buy-btn {
+					float:left;
+					font-size:16px;
+				}
+				.money {
+					text-align: right;
+					margin-right:15px;
+				}
+				.prompt {
+					color:red;
+					font-size:12px;
+				}
+			}
+			.down-box{
 				float:right;
 				.select,.down {
 					float:left;

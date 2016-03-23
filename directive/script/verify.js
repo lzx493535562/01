@@ -1,9 +1,10 @@
 define(["app",
 	'underscore',
+	'service-util',
 	'tool-checker'
 	],
 	function(app,_){
-	app.directive("lmverify",['lmGoodsService',function(goodsService){
+	app.directive("lmverify",['lmGoodsService','lmUtilService',function(goodsService,utilService){
 		return {
 			restrict:"E",
 			scope:{},
@@ -57,8 +58,11 @@ define(["app",
 				},500);
 
 				// 跳到详情板块
-				$scope.detail = function(data){
+				$scope.linkToDetail = function(data){
 					$scope.$emit('verify.detail',{serviceNumber:$scope.service.serviceNumber,barcode:data.barcode});
+					/*var params=$scope.service.serviceNumber+"/"+data.barcode;
+					var path="/detailpage/"+params+'/verifydetail';
+					utilService.linkTo(path,false);*/
 				};
 
 				// 审核
