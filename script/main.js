@@ -28,6 +28,7 @@ requirejs.config({
 		"ctrl-index":"controller/script/index",
 		"ctrl-mygoodspage":"controller/script/mygoodspage",
 		"ctrl-loginpage":"controller/script/loginpage",
+		"ctrl-registerpage":"controller/script/registerpage",
 		"ctrl-auditmanagementpage":"controller/script/auditmanagementpage",
 		"ctrl-categorydatapage":"controller/script/categorydatapage",
 		"ctrl-goodsdatapage":"controller/script/goodsdatapage",
@@ -35,10 +36,6 @@ requirejs.config({
 		"ctrl-customservicepage":"controller/script/customservicepage",
 		"ctrl-myorderspage":"controller/script/myorderspage",
 		"ctrl-detailpage":"controller/script/detailpage",
-		"ctrl-firstpage":"controller/script/firstpage",
-		"ctrl-secondpage":"controller/script/secondpage",
-		"ctrl-thirdpage":"controller/script/thirdpage",
-		"ctrl-fourpage":"controller/script/fourpage",
 		// directive
 		"directive-test":"directive/script/test",
 		"directive-mygoods":"directive/script/mygoods",
@@ -64,12 +61,16 @@ requirejs.config({
 		"directive-verifydetail":"directive/script/verifydetail",
 		"directive-modal":"directive/script/modal",
 		"directive-login":"directive/script/login",
+		"directive-register":"directive/script/register",
 		"directive-select":"directive/script/select",
 		"directive-catebar":"directive/script/catebar",
 
 		// tool directive
 		"tool-checker":"directive/script/checker",
 		"tool-batchsearchbtn":"directive/script/batchsearchbtn",
+
+		// constant
+		"con-const":"service/script/const",
 
 		// filter
 		"filter-goodsType":"filter/script/goodsType",

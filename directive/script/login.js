@@ -17,6 +17,8 @@ define(["app",
 						.success(function(data){
 							console.log("login",data);
 							$scope.$emit('afterLogin',data);
+
+							$location.path('/homepage');
 						})
 						.error(function(err,data){
 							alert("error");

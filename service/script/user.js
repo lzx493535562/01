@@ -30,8 +30,8 @@ define([
 					method:methodDict.post,
 					data:{
 						"username":username,
-						// "password":md5.createHash(pwd),
-						"password":pwd,
+						"password":md5.createHash(pwd),
+						// "password":pwd,
 						"grant_type":"password",
 						"client_id":"f3d259ddd3ed8ff3843839b",
 						"client_secret":"4c7f6f8fa93d59c45502c0ae8c4a95b"
@@ -40,13 +40,14 @@ define([
 			};
 
 			//注册
-			this.register = function(mobile,email,pwd,captcha){
+			this.register = function(mobile,email,pwd,userType,captcha){
 				return $http({
-					url:urlDirt.register,
+					url:urlDict.register,
 					method:methodDict.post,
 					data:{
-						"moblie":mobile,
-						"email":eamil,
+						"mobile":mobile,
+						"email":email,
+						"user_type":userType-0,
 						"password":md5.createHash(pwd),
 						"captcha":captcha
 					}
@@ -59,7 +60,7 @@ define([
 			//发送手机验证码
 			this.sendmobilecode = function(account,type){
 				return $http({
-					url:urlDirt.sendmobilecode,
+					url:urlDict.sendmobilecode,
 					method:methodDict.post,
 					data:{
 						"account":account,
@@ -77,7 +78,7 @@ define([
 			//验证 验证码
 			this.validationcode = function(captcha,mobile,type){
 				return $http({
-					url:urlDirt.validationcode,
+					url:urlDict.validationcode,
 					method:methodDict.post,
 					data:{
 						"captcha":captcha,
