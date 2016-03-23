@@ -1,0 +1,75 @@
+<div class="container">
+	<div class="line1 ma">
+		<div class="box">
+			<div class="left">
+				<div class="bigtitle">商品数据服务平台</div>
+				<div class="smalltitle">低成本，高质量，助力传统零售企业电商化</div>
+				<div class="searchBox">
+					<input type="text" maxlength="32" placeholder="请输入条形码、商品名称" ng-model="keyword" ng-keydown="keydown($event,'keyword')"/>
+					<div ng-click="linkTo('/goodslist')" class="searchBtn">
+						<i class="iconfont">&#xe611;</i>
+					</div>
+				</div>
+				<div class="goods-type">
+					<div class="bingobox fl">快消品</div>
+					<div class="bingobox fl">进口商品</div>
+					<div class="bingobox">生鲜类</div>
+				</div>
+			</div>
+			<div class="right"></div>
+		</div>
+	</div>
+	<div class="line2">
+		<div class="box ma">
+			<div class="title"><i class="iconfont">&#xe621;</i><span>定制服务</span></div>
+			<div class="items line2-1 fl">
+				<div class="subtitle">商品数据采集</div>
+				<div class="describe">一次拍摄，无限使用，不再为商品上架发愁</div>
+			</div>
+			<div class="items line2-2 fl">
+				<div class="subtitle">个性化营销制作</div>
+				<div class="describe">完善图片商品属性，展示强大视觉效果，让商品营销更具优势</div>
+			</div>
+			<div class="items line2-3">
+				<div class="subtitle">API快速对接</div>
+				<div class="describe">高质量商品数据通过API接口直接获取</div>
+			</div>
+			<div class="more_btn ma curp" ng-click="linkTo('/customservicepage',true)">了解更多</div>
+		</div>
+	</div>
+	<div class="line3 ma">
+		<div class="title"><i class="iconfont">&#xe622;</i><span>优势能力</span></div>
+		<div class="items line3-1 fl fix_mr50">
+			<div class="subtitle">商品数据采集</div>
+			<div class="describe">一次拍摄，无限使用，不再为商品上架发愁</div>
+		</div>
+		<div class="items line3-2 fl fix_mr50">
+			<div class="subtitle">标准商品数据</div>
+			<div class="describe">电商服务标准输出确保商品属性精准</div>
+		</div>
+		<div class="items line3-3 fl fix_mr50">
+			<div class="subtitle">一站式服务</div>
+			<div class="describe">商品数据交易数字、个性、智能</div>
+		</div>
+		<div class="items line3-4 fl">
+			<div class="subtitle">多年行业领导</div>
+			<div class="describe">多年企业服务平台直击业务需求痛点</div>
+		</div>
+	</div>
+	<div class="line4">
+		<div class="box ma">
+			<div class="title"><i class="iconfont">&#xe620;</i><span>合作伙伴</span></div>
+			<div class="logos">
+				<div class="logo line4-1 fl"><img src="../image/home/line4-1-1.png"></div>
+				<div class="logo line4-2 fl"><img src="../image/home/line4-2-1.png"></div>
+				<div class="logo line4-3 fl"><img src="../image/home/line4-3-1.png"></div>
+				<div class="logo line4-4 fl"><img src="../image/home/line4-4-1.png"></div>
+				<div class="logo line4-5 fl"><img src="../image/home/line4-5-1.png"></div>
+			</div>
+		</div>
+	</div>
+	<div class="line5">
+		<div class="serveforbusiness">为传统零售行业电商化问题提供专业解决方案!</div>
+		<div class="regist_btn ma curp" ng-click="linkTo('/registerpage',true)">立即加入</div>
+	</div>
+</div>
