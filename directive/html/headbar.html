@@ -1,8 +1,8 @@
 <div class="header">
-	<div class="gohome" ng-show="!$root.isLogin">
+	<div class="gohome" ng-show="$root.isLogin">
 		<a href="javascript:" ng-href="#/categorydatapage">返回首页</a>
 	</div>
-	<div class="popular" ng-show="$root.isLogin">您好，欢迎来到零猫商品数据平台！</div>
+	<div class="popular" ng-show="!$root.isLogin">您好，欢迎来到零猫商品数据平台！</div>
 	<ul class="headbar">
 		<li>
 			<a href="javascript:" ng-href="#/shopcartpage">购物车</a>
@@ -20,18 +20,18 @@
 			<a href="javascript:" ng-href="#/customservicepage">服务商入口</a>
 			<span class="split">|</span>
 		</li>
-		<li  ng-show="$root.isLogin">
+		<li  ng-show="!$root.isLogin">
 			<a href="javascript:">登录</a>
 			<span class="split">|</span>
 		</li>
-		<li  ng-show="$root.isLogin">
+		<li  ng-show="!$root.isLogin">
 			<a href="javascript:">注册</a>
 		</li>
-		<li ng-show="!$root.isLogin">
-			<a href="javascript:"ng-href="#/myorderspage">用户名</a>
+		<li ng-show="$root.isLogin">
+			<a href="javascript:"ng-href="#/myorderspage">{{$root.username}}hahaha</a>
 			<span class="split">|</span>
 		</li>
-		<li ng-show="!$root.isLogin">
+		<li ng-show="$root.isLogin">
 			<a href="javascript:">退出</a>
 		</li>
 	</ul>

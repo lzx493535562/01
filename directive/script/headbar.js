@@ -4,7 +4,7 @@ define(["app"],function(app){
 			restrice:"E",
 			templateUrl:"../directive/html/headbar.html",
 			link:function($scope,$element,$attrs){
-				$rootScope.isLogin = false;
+
 			}
 		}
 	}]);

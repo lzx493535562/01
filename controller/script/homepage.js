@@ -3,6 +3,6 @@ define(["app",
 		"directive-home"
 	],function(app){
 	app.controller("lmHomepageCtrl",["$scope","$rootScope",function($scope,$rootScope){
-		$rootScope.isLogin = false;
+
 	}]);
 });
