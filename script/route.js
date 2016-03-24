@@ -4,7 +4,8 @@ define(["app",
 	"ctrl-homepage",
 	"ctrl-mygoodspage",
 	"ctrl-auditmanagementpage",
-	"ctrl-categorydatapage",
+	//"ctrl-categorydatapage",
+	"ctrl-datacenterpage",
 	"ctrl-goodsdatapage",
 	"ctrl-shopcartpage",
 	"ctrl-customservicepage",
@@ -18,8 +19,8 @@ define(["app",
 			app.config(["$routeProvider",function($routeProvider){
 				$routeProvider
 					.when("/",{
-						templateUrl:"view/categorydatapage.html",
-						controller:"lmCategorydatapageCtrl"
+						templateUrl:"view/datacenterpage.html",
+						controller:"lmDatacenterpageCtrl"
 					})
 					.when("/homepage",{
 						templateUrl:"view/homepage.html",
@@ -33,10 +34,14 @@ define(["app",
 						templateUrl:"view/auditmanagementpage.html",
 						controller:"lmAuditmanagementpageCtrl"
 					})
-					.when("/categorydatapage",{
+					.when("/datacenterpage",{
+						templateUrl:"view/datacenterpage.html",
+						controller:"lmDatacenterpageCtrl"
+					})
+					/*.when("/categorydatapage",{
 						templateUrl:"view/categorydatapage.html",
 						controller:"lmCategorydatapageCtrl"
-					})
+					})*/
 					.when("/goodsdatapage",{
 						templateUrl:"view/goodsdatapage.html",
 						controller:"lmGoodsdatapageCtrl"

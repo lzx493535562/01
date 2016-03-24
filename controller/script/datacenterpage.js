@@ -2,11 +2,11 @@ define(["app",
 		"directive-headbar",
 		"directive-leftsidebar",
 		"directive-topbar",
-		"directive-categorydata",
+		"directive-datacenter",
 		"directive-batchsearch",
 		'tool-checker'
 	],function(app){
-	app.controller("lmCategorydatapageCtrl",["$scope",function($scope){
+	app.controller("lmDatacenterpageCtrl",["$scope",function($scope){
 
 		$scope.$on("batchSearchPage",function(e,args){
 			args.batchSearchPage = $scope.batchSearchPage;

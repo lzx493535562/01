@@ -14,7 +14,7 @@ define(["app",
 	'tool-checker',
 	"directive-modal"
 	],function(app,_,async,cookie){
-	app.directive("lmcategorydata",[
+	app.directive("lmdatacenter",[
 		// "$rootScope",
 		// "$routeParams",
 		// "$scope",
@@ -25,7 +25,7 @@ define(["app",
 		function(/*$rootScope,$routeParams,$scope,imgService,userService,*/imgService,utilService,goodsService){
 			return {
 				restrict:"E",
-				templateUrl:"../directive/html/categorydata.html",
+				templateUrl:"../directive/html/datacenter.html",
 				link:function($scope,$element,$attrs){
 					// 分类 
 					$scope.category = null;
