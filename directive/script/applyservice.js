@@ -2,10 +2,10 @@ define(["app",
 	'underscore',
 	'service-goods'
 	],function(app,_){
-	app.directive("lmcustomservice",['lmGoodsService',function(goodsService){
+	app.directive("lmapplyservice",['lmGoodsService',function(goodsService){
 		return {
 			restrict:"E",
-			templateUrl:"../directive/html/customservice.html",
+			templateUrl:"../directive/html/applyservice.html",
 			link:function($scope,$element,$attrs){
 				// 服务类型
 				$scope.typeDict = {};

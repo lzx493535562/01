@@ -6,9 +6,11 @@ define(["app",
 	"ctrl-auditmanagementpage",
 	//"ctrl-categorydatapage",
 	"ctrl-datacenterpage",
+	"ctrl-applyservicepage",
 	"ctrl-goodsdatapage",
 	"ctrl-shopcartpage",
-	"ctrl-customservicepage",
+	"ctrl-applyservicepage",
+	//"ctrl-customservicepage",
 	"ctrl-myorderspage",
 	"ctrl-detailpage",
 	"ctrl-loginpage",
@@ -50,10 +52,14 @@ define(["app",
 						templateUrl:"view/shopcartpage.html",
 						controller:"lmShopcartpageCtrl"
 					})
-					.when("/customservicepage",{
+					.when("/applyservicepage",{
+						templateUrl:"view/applyservicepage.html",
+						controller:"lmApplyservicepageCtrl"
+					})
+					/*.when("/customservicepage",{
 						templateUrl:"view/customservicepage.html",
 						controller:"lmCustomservicepageCtrl"
-					})
+					})*/
 					.when("/myorderspage",{
 						templateUrl:"view/myorderspage.html",
 						controller:"lmMyorderspageCtrl"

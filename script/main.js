@@ -35,7 +35,8 @@ requirejs.config({
 		//"ctrl-categorydatapage":"controller/script/categorydatapage",
 		"ctrl-goodsdatapage":"controller/script/goodsdatapage",
 		"ctrl-shopcartpage":"controller/script/shopcartpage",
-		"ctrl-customservicepage":"controller/script/customservicepage",
+		"ctrl-applyservicepage":"controller/script/applyservicepage",
+		//"ctrl-customservicepage":"controller/script/customservicepage",
 		"ctrl-myorderspage":"controller/script/myorderspage",
 		"ctrl-detailpage":"controller/script/detailpage",
 		// directive
@@ -56,6 +57,7 @@ requirejs.config({
 		"directive-allorders":"directive/script/allorders",
 		"directive-shopcartbtn":"directive/script/shopcartbtn",
 		"directive-shopcart":"directive/script/shopcart",
+		"directive-applyservice":"directive/script/applyservice",
 		"directive-customservice":"directive/script/customservice",
 		"directive-myorders":"directive/script/myorders",
 		"directive-batchsearch":"directive/script/batchsearch",
