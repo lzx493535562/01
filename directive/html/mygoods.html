@@ -11,19 +11,21 @@
 				</div>
 			</td> -->
 			<td>
-				<span>条形码：</span>
-				<input class="barcode-input" ng-model="barcode" type="text"/>
-			</td>
-			<td>
-				<span>商品名称：</span>
-				<input class="barcode-input" ng-model="keyword" type="text"/>
+				<span class="input-box">
+					<span>条形码：</span>
+					<input class="barcode-input" ng-model="barcode" type="text"/>			
+				</span>
+				<span class="input-box">
+					<span>商品名称：</span>
+					<input class="barcode-input" ng-model="keyword" type="text"/>
+				</span>
+				<div class="btn search-btn">
+					<i class="iconfont search-icon">&#xe611;</i>
+					<span class="search-text" ng-click="search()">搜索</span>
+				</div>
 			</td>
 			<td>
 				<div class="btn-box">
-					<div class="btn search-btn">
-						<i class="iconfont search-icon">&#xe611;</i>
-						<span class="search-text" ng-click="search()">搜索</span>
-					</div>
 					<div class="btn batch-search-btn">批量搜索</div>
 					<input lmbatchsearchbtn class="csvUploader" name="csv" type="file"> 
 					<a href="./sample/sample.csv" target="_blank">Excel样例</a>
